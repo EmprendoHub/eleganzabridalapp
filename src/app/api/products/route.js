@@ -19,12 +19,6 @@ export const GET = async(req, res) => {
 
         const products = await apiFilters.query
         const filteredProductsCount = products.length
-        
-        //apiFilters.pagination(resPerPage)
-
-        //products = await apiFilters.query.clone()
-
-            "filteredProductsCount", filteredProductsCount, "products.length",products.length);
 
         const response = NextResponse.json({
             message: "Products fetched succesfully",
