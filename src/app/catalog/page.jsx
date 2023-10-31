@@ -12,7 +12,6 @@ const getProducts = async (searchParams) => {
     category: searchParams.category
   }
 
-  console.log(urlParams);
   const searchQuery = queryString.stringify(urlParams)
   const res = await fetch(`${BASE_URL}?${searchQuery}`)
   const docs = await res.json()
@@ -36,7 +35,6 @@ const CatalogPage = async ({ searchParams }) => {
     const totalProductCount = entries.length
     
     entries = entries.slice(start, end)
-    console.log(totalProductCount, "totalProductCount lenght");
   return (
     <div className='flex flex-col'>
       

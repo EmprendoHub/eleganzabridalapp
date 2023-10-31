@@ -21,7 +21,6 @@ const PaginationControllerComponent = ({
 
   const prevSearchParams = "/catalog?" + queryString.stringify(searchParamsCopy) 
 
-  console.log(totalProductCount, "totalProductCount");
   const page = searchParams.get('page') ?? '1'
   const per_page = searchParams.get('per_page') ?? '8'
   

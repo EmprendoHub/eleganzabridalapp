@@ -80,9 +80,6 @@ const ProductDetailsPage = (ctx) => {
             try {
               setIsLoading(true)
                 const res = await fetch(URL_ONE);
-                
-                
-
                 const data = await res.json()
 
                 const URL_ALL = `http://localhost:3000/api/products?category=${data.product.category}`
@@ -111,9 +108,7 @@ const ProductDetailsPage = (ctx) => {
                 
                 const productsArray = Object.values(data_trending.products)
                 const randommized = shuffleArray(productsArray, product._id)
-                console.log("randommized",productsArray.length);
                 const trending = randommized.slice(0 ,4)
-                //console.log(trending)
                 setTrendingProducts(trending)
             } catch (error) {
                 console.log(error)
@@ -121,7 +116,7 @@ const ProductDetailsPage = (ctx) => {
             setIsLoading(false)
         }
         fetchDetails()
-    }, [URL_ONE])
+    }, [URL_ONE, product._id])
 
     const starRating = (props) => {
           if (props) {

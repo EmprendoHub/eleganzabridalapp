@@ -8,7 +8,6 @@ class APIFilters {
     
     searchAllFields() {
         const keyword = this.queryStr.get('keyword');
-        console.log("keyword APi Filters", keyword);
         // Define the conditions to search for the keyword in title, description, and category
         const searchConditions = {
             $or: [
@@ -71,7 +70,6 @@ class APIFilters {
     }
 
     pagination(resPerPage) {
-        console.log("resPerPage:", resPerPage )
         const currentPage = Number(this.queryStr.get('page')) || 1
         
         const skip = resPerPage * (currentPage - 1)

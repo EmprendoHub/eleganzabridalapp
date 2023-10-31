@@ -52,7 +52,6 @@ const RegisterFormComponent = () => {
                     email, 
                     password})
             })
-            console.log(res.status);
             if (res.status === 400) {
                 toast.warning("This email is already in use")
                 setError("This email is already in use")
@@ -65,7 +64,7 @@ const RegisterFormComponent = () => {
                 return
             }
         } catch (error) {
-            console.log(error)
+            console.log(error) 
         }
     }
 

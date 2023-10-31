@@ -33,16 +33,12 @@ const TrendingNewProducts = () => {
     const [trendingProducts, setTrendingProducts] = useState([])
     const [activeTab, setActiveTab] = useState("All")
 
-    console.log(activeTab);
-    
     const activatedTab = (category) => {
         setActiveTab(category);
         
-        console.log("trendingProducts", typeof(allProducts), "category", category);
         const productsArray = Object.values(allProducts)
         const randommized = shuffleArray(productsArray)
         const filteredProductData = productsArray.filter((prod) => prod.category === category);
-        console.log("filteredProductData", filteredProductData);
         if (category === "All") {
             setTrendingProducts(allProducts);
         }else {
@@ -81,7 +77,6 @@ const TrendingNewProducts = () => {
                 })
                 // const productsArray = Object.values(data_trending.products)
                 // const randommized = shuffleArray(productsArray)
-                console.log("sliced_products",sliced_products.length);
                 setAllProducts(sliced_products)
                 setTrendingProducts(sliced_products);
             } catch (error) {

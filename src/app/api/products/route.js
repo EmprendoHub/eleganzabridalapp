@@ -24,7 +24,6 @@ export const GET = async(req, res) => {
 
         //products = await apiFilters.query.clone()
 
-        console.log("productsCount:",productsCount, 
             "filteredProductsCount", filteredProductsCount, "products.length",products.length);
 
         const response = NextResponse.json({
