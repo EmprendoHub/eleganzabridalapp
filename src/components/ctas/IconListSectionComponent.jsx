@@ -1,0 +1,62 @@
+import React from 'react'
+import SectionTitle from '../texts/SectionTitle';
+import Image from 'next/image';
+import fabdress from "@/images/fabulous_dresss.webp"
+import wedicon from "@/images/wed_icon.webp"
+import quinceicon from "@/images/quince_icon.webp"
+import tuxicon from "@/images/tuxe_icon.webp"
+import { IoMdPhonePortrait, IoMdAt, IoMdLocate } from 'react-icons/io';
+
+
+const IconListSectionComponent = ({mainTitle, iconOne, iconTwo, iconThree,textTitleOne, textTitleTwo, textTitleThree, textOne, textTwo, textThree, linkOne, linkTwo, linkThree, linkOneText, linkTwoText, linkThreeText }) => {
+    return (
+        <div className='relative h-full'>
+            <div className='mt-34 flex flex-row md:flex-col-reverse mx-auto my-14 w-[80%] relative items-center'>
+                
+                <div className='flex flex-col w-full'>
+                         <h2 className="text-3xl font-semibold text-gray-800 font-playfair-display mb-6">{mainTitle}</h2>
+                        <div className='flex flex-row gap-x-5 my-3'>
+                            <div className='flex justify-center items-center w-[60px] h-[60px] bg-pink-700 p-2 rounded-full'>
+                                <IoMdPhonePortrait className='w-[30px] h-[30px] text-white' />
+                            </div>
+                            <div className='flex-col w-3/4'>
+                                <div className='font-playfair-display text-2xl'>{textTitleOne}</div>
+                                <div className='text-xs'>
+                                    {textOne}
+                                </div>
+                                <a href={linkOne}>{linkOneText}</a>
+                            </div>
+                        </div>
+                        <div className='flex flex-row gap-x-5 my-3'>
+                            <div className='flex justify-center items-center w-[60px] h-[60px] bg-pink-700 p-2 rounded-full'>
+                                    <IoMdAt className='w-[30px] h-[30px] text-white' />
+                            </div>
+                            <div className='flex-col w-3/4'>
+                                <div className='font-playfair-display text-2xl'>
+                                    {textTitleTwo}
+                                    </div>
+                                <div className='text-xs'>{textTwo}</div>
+                                <a href={linkTwo}>{linkTwoText}</a>
+                            </div>
+                           
+                        </div>
+                        <div className='flex flex-row gap-x-5 my-3'>
+                            <div className='flex justify-center items-center w-[60px] h-[60px] bg-pink-700 p-2 rounded-full'>
+                                    <IoMdLocate className='w-[30px] h-[30px] text-white' />
+                            </div>
+                            <div className='flex-col w-3/4'>
+                                <div className='font-playfair-display text-2xl'>
+                                    {textTitleThree}
+                                    </div>
+                                <div className='text-xs'>{textThree}</div>
+                                <a href={linkThree}>{linkThreeText}</a>
+                            </div>
+                        </div>
+                        
+                </div>
+            </div>
+        </div>
+      )
+}
+
+export default IconListSectionComponent

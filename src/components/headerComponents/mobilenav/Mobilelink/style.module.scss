@@ -1,0 +1,15 @@
+.link{
+    position: relative;
+    display: flex;
+    align-items: center;
+    
+    .indicator{
+        width: 10px;
+        height: 10px;
+        background: rgb(6, 6, 6);
+background: linear-gradient(129deg, rgb(0, 0, 0) 0%, rgb(27, 27, 27) 100%);
+        border-radius: 50%;
+        position: absolute;
+        left: -30px;
+    }
+}
