@@ -6,7 +6,7 @@ import FilterProductsComponent from '@/components/filters/FilterProductsComponen
 import { localproductsData } from '@/constants/localproducts'
 
 const getProducts = async (searchParams) => {
-  const BASE_URL = "http://localhost:3000/api/products"
+  const BASE_URL = "/api/products"
   const urlParams = {
     keyword: searchParams.keyword,
     category: searchParams.category

@@ -65,7 +65,7 @@ const ProductDetailsPage = (ctx) => {
     const [trendingProducts, setTrendingProducts] = useState([])
     //const BASE_URL = `/api/products`
     
-    const URL_ONE = `http://localhost:3000/api/product?${id}`
+    const URL_ONE = `/api/product?${id}`
     
     const dispatch = useDispatch()
 
@@ -82,7 +82,7 @@ const ProductDetailsPage = (ctx) => {
                 const res = await fetch(URL_ONE);
                 const data = await res.json()
 
-                const URL_ALL = `http://localhost:3000/api/products?category=${data.product.category}`
+                const URL_ALL = `/api/products?category=${data.product.category}`
                 const details = {
                     _id: data.product._id,
                     title: data.product.title,
