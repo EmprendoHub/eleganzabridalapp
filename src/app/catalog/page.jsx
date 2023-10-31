@@ -6,7 +6,7 @@ import FilterProductsComponent from '@/components/filters/FilterProductsComponen
 import { localproductsData } from '@/constants/localproducts'
 
 const getProducts = async (searchParams) => {
-  const BASE_URL = "/api/products"
+  const BASE_URL = "https://www.eleganzabridal-lv.com/api/products"
   const urlParams = {
     keyword: searchParams.keyword,
     category: searchParams.category

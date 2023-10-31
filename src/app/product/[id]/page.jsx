@@ -82,7 +82,7 @@ const ProductDetailsPage = (ctx) => {
                 const res = await fetch(URL_ONE);
                 const data = await res.json()
 
-                const URL_ALL = `/api/products?category=${data.product.category}`
+                const URL_ALL = `https://www.eleganzabridal-lv.com/api/products?category=${data.product.category}`
                 const details = {
                     _id: data.product._id,
                     title: data.product.title,

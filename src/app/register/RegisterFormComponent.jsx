@@ -42,7 +42,7 @@ const RegisterFormComponent = () => {
         }
 
         try {
-            const res = await fetch(`/api/register`, {
+            const res = await fetch(`https://www.eleganzabridal-lv.com/api/register`, {
                 headers: {
                     'Content-Type': 'application/json'
                 },
