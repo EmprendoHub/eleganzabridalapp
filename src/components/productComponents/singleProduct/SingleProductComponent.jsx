@@ -166,7 +166,7 @@ const SingleProductComponent = ({ctx, lang, singleprod}) => {
            
           <div className='w-[80%] sm:w-full mx-auto wrapper-class grid grid-cols-2 md:grid-cols-1 gap-5 bg-white p-4 rounded-lg'>
            <div className='w-full flex justify-center'>
-                <div className='images-grouped-class flex flex-col max-w-[800px]'>
+                <div className='images-grouped-class flex flex-col max-w-full'>
                     <div className='flex justify-center items-center align-middle h-full '>
                         { isLoading ? <div className={`${classes.loader} absolute h-20 `} /> 
                             : <motion.div 
