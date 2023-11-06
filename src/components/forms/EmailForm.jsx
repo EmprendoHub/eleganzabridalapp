@@ -3,7 +3,7 @@ import React from 'react'
 import { useState } from 'react'
 import emailjs from '@emailjs/browser';
 
-const EmailForm = (templateID, serviceID, publicKEY) => {
+const EmailForm = ({templateID, serviceID, publicKEY, contactform}) => {
     
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -17,8 +17,6 @@ const EmailForm = (templateID, serviceID, publicKEY) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setActiveButton(true);
-
-       
         
         // create a new object that contains dynamic params
         const templateParams = {
@@ -41,28 +39,31 @@ const EmailForm = (templateID, serviceID, publicKEY) => {
     }
 
   return (
-    <div className='relative flex fle-col bg-gray-300 p-7 m-auto w-[60%] md:w-[90%] rounded-xl z-10'>
+    <div className='relative flex fle-col bg-gray-300 p-7 m-auto w-full rounded-xl z-10'>
         <form onSubmit={handleSubmit} className='flex flex-col w-full gap-y-4'>
             <input 
             type="text"
-            placeholder='Your Name'
+            placeholder={contactform.inputname}
             value={name}
             onChange={(e) => setName(e.target.value)}
+            className='p-2'
             />
             <input 
             type="email"
-            placeholder='Your Email'
+            placeholder={contactform.inputemail}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            className='p-2'
             />
             <textarea 
             cols="30" 
             rows="5"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
+            className='p-2'
             >
             </textarea>
-            <button type='submit' className='bg-black text-white py-3 mt-5' disabled={activeButton} >Send Email</button>
+            <button type='submit' className='mt-5' disabled={activeButton} ><p className='bg-black  text-white py-3'>{contactform.btntxt}</p></button>
         </form>
     </div>
   )

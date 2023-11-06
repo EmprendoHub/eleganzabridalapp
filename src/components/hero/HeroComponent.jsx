@@ -16,7 +16,7 @@ import Image from "next/image";
 import BannerTextComponent from "../texts/BannerTextComponent";
 import SectionContainer from "../container/SectionContainer";
 
-const HeroComponent = () => {
+const HeroComponent = ({mainhero, lang}) => {
     const NextArrow = (props) => {
         const { onClick } = props 
         return (
@@ -104,7 +104,7 @@ const HeroComponent = () => {
           <div className="w-full h-full relative">
             <div className="flex flex-row md:flex-col relative">
                     <div className="flex ">
-                      <BannerTextComponent title={`Quinceañera Dresses`} titleDesc={`At Eleganza Bridal, we believe that every special occasion deserves a dress that is equally special and unique.`}/>
+                      <BannerTextComponent title={mainhero.bannerone.title} titleDesc={mainhero.bannerone.subtitle} btntext={mainhero.herobtn} btnUrl={`/${lang}/catalog`}/>
                     </div>
                     <div className="flex w-full h-full relative">
                         <Image 
@@ -120,7 +120,7 @@ const HeroComponent = () => {
           <div className="w-full h-full relative">
             <div className="flex flex-row md:flex-col w-full h-full relative">
                   <div className="flex">
-                    <BannerTextComponent title={`Wedding Dresses`} titleDesc={`We are a dedicated team of fashion experts ready to help you make your quinceañera or wedding dreams come true.`}/>
+                    <BannerTextComponent title={mainhero.bannertwo.title} titleDesc={mainhero.bannertwo.subtitle} btntext={mainhero.herobtn} btnUrl={`/${lang}/catalog`}/>
                   </div>
                   <div className="flex w-full h-full">
                       <Image 
@@ -135,7 +135,7 @@ const HeroComponent = () => {
           <div className="w-full h-full relative">
             <div className="flex flex-row md:flex-col relative">
                 <div className="flex ">
-                   <BannerTextComponent title={`Tuxedos For Men`} titleDesc={`Our passion is to help you find the perfect outfit that will make you feel radiant on one of the most important days of your life.`}/>
+                   <BannerTextComponent title={mainhero.bannerthree.title} titleDesc={mainhero.bannerthree.subtitle} btntext={mainhero.herobtn} btnUrl={`/${lang}/catalog`}/>
                 </div>
                 <div className="flex w-full h-full">
                     <Image 

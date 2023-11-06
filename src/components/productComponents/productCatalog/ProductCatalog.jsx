@@ -2,8 +2,8 @@
 import React from 'react'
 import ProductCardComponent from '../productCard/ProductCardComponent'
 
-const ProductCatalog = ({ data }) => {
-
+const ProductCatalog = ({ data, lang }) => {
+   
   return (
     <section className="mx-auto mt-5 w-[80%] md:w-[100%]">
         <div></div>
@@ -16,7 +16,7 @@ const ProductCatalog = ({ data }) => {
                         {
                             //display the products
                             data?.map((product) => (
-                                <ProductCardComponent key={product._id} product={product} />
+                                <ProductCardComponent key={product._id} product={product} lang={lang} />
                             ))
                         }
                         

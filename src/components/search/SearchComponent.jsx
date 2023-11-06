@@ -5,7 +5,7 @@ import { GiLargeDress } from "react-icons/gi";
 import { IoMdSearch } from "react-icons/io";
 
 
-const SearchComponent = () => {
+const SearchComponent = ({classname, header}) => {
     const handleFocus = (event) => event.target.select();
 
     const [keyword, setKeyword] = useState("")
@@ -23,7 +23,7 @@ const SearchComponent = () => {
     }
 
   return (
-        <div className={`search-class bg-gredient-dark h-400px flex flex-col justify-start w-[90%] md:w-[50%] pl-3`}>
+        <div className={`${classname} search-class w-[95%] `}>
                 <div className="search-box flex justify-between my-auto">
                     <form className="flex flex-row" 
                     onSubmit={submitHandler}
@@ -34,7 +34,7 @@ const SearchComponent = () => {
                              <input
                               className="flex-grow appearance-none border border-gray-200 bg-gray-100 py-2 focus:outline-none text-grey-darker text-grey-darkest  w-full px-2 outline-none text-sm text-gray-600"
                               type="text"
-                              placeholder="Enter your keyword"
+                              placeholder={header.menu.searchbar}
                               value={keyword}
                               onChange={(e) => setKeyword(e.target.value)}
                               onFocus={handleFocus}

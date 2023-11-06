@@ -14,8 +14,7 @@ const myLoader = ({ src, width, quality }) => {
 
 
 
-const ProductCardComponet = ({ product }) => {
-
+const ProductCardComponet = ({ product, lang }) => {
   const notify = () => {
     toast.success(`${product?.title.substring(0,15)} added successfully!`, {
       position: toast.POSITION.TOP_CENTER,
@@ -33,10 +32,10 @@ const ProductCardComponet = ({ product }) => {
   
   return (
    
-    <div key={product.id} className="w-full rounded-lg overflow-hidden">
+    <div key={product.id} className="rounded-lg overflow-hidden">
       <div>
         <Link href={`/product/${product._id}`}>
-          <div className="w-full h-96 group relativ object-contain">
+          <div className="w-full h-96 group relative object-contain">
             <Image
               priority
               loader={myLoader}
@@ -48,13 +47,13 @@ const ProductCardComponet = ({ product }) => {
             />
             {product?.isNewest && (
               <span className="absolute top-2 right-2 font-medium text-xs py-1 px-3 rounded-full bg-white group-hover:bg-pink-700 group-hover:text-white duration-200">
-                New Arrival
+                {lang === "en" ? "New Arrival": "" || lang === "es" ? "Nueva llegada": "" }
               </span>
             )}
           </div>
         </Link>
         <div className="border-[1px] border-slate-300 border-t-0 px-2 py-4 flex flex-col gap-y-2 bg-white rounded-b-lg">
-          <p>{product?.title}</p>
+          <p className='capitalize'>{lang === "en" && product?.title ? product?.title : "" || lang === "es" && product?.titulo ? product?.titulo : ""}</p>
           <div className="flex items-center justify-between">
             {/* <div className="border-[1px] border-pink-700 py-1 px-4 rounded-full text-xs">
               <p>{calculatePercentage(product?.price, product?.oldPrice)}% off</p>

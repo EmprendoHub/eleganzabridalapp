@@ -42,7 +42,18 @@ const RegisterFormComponent = () => {
         }
 
         try {
-            const res = await fetch(`https://www.eleganzabridal-lv.com/api/register`, {
+            // const res = await fetch(`https://www.eleganzabridal-lv.com/api/register`, {
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     method: 'POST',
+            //     body: JSON.stringify({
+            //         username, 
+            //         email, 
+            //         password})
+            // })
+
+            const res = await fetch(`/api/register`, {
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -52,6 +63,7 @@ const RegisterFormComponent = () => {
                     email, 
                     password})
             })
+
             if (res.status === 400) {
                 toast.warning("This email is already in use")
                 setError("This email is already in use")

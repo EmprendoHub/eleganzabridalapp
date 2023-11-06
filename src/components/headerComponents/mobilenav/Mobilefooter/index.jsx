@@ -4,7 +4,7 @@ import { FaFacebookF, FaLinkedin, FaInstagram, FaTiktok, FaFacebook } from "reac
 
 export default function index() { 
   return (
-    <div className={styles.footer}>
+    <div className={`${styles.footer} pt-20`}>
           {/* Social Links */}
           <motion.div 
                       initial={{y:30, opacity:0 }} 

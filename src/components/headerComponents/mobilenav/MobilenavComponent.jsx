@@ -3,7 +3,7 @@ import styles from './style.module.scss';
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { menuSlide } from '@/components/headerComponents/mobilenav/anim';
-import CustomLink from '../mobilenav/Mobilelink';
+import CustomLink from './Mobilelink';
 import Link from 'next/link';
 import Curve from '@/components/headerComponents/mobilenav/MobileCurve';
 import Footer from '@/components/headerComponents/mobilenav/Mobilefooter';
@@ -13,6 +13,7 @@ import { signOut, useSession } from 'next-auth/react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { FiLogOut } from 'react-icons/fi';
+import SearchComponent from '@/components/search/SearchComponent';
 
 const navItems = [
   {
@@ -68,7 +69,7 @@ export default function Navi() {
  
   return (
     <motion.div variants={menuSlide} initial="initial" animate="enter" exit="exit" className={`${styles.menu} bg-transparent `}>
-         {/* Cart Button */}
+         {/* Favorites Button */}
          <Link href={"/favorites"} className=' absolute left-5 top-9'>
          <div className='bg-black hover:bg-slate-950 rounded-full text-slate-100 hover:text-white flex items-center justify-center text-center mx-auto h-[30px] w-[30px] border-[1px]  border-black hover:border-yellow-600 cursor-pointer'>
               <p className='absolute'><IoMdHeart className='text-lg' /></p>
@@ -79,11 +80,23 @@ export default function Navi() {
               </span>
             </div>
           </Link>
-       <div className={`${styles.body} pl-16 pr-10 pb-5 pt-20 bg-black-gradient`}>
-                         
-            <div onMouseLeave={() => {setSelectedIndicator(pathname)}} className={' gap-y-4 '}>
+           {/* Internalisation */}
+          <div className='flex flex-row justify-start items-center gap-x-3 px-3 mt-8 ml-16'>
+            <Link href={"/"} locale="es" className='rounded-full bg-slate-200 text-black text-sm px-2 py-1.5 shadow-sm hover:scale-110 ease-in-out duration-300'>
+              ES
+            </Link>
+            <Link href={"/"} locale="en" className='rounded-full bg-slate-200 text-black text-sm px-2 py-1.5 shadow-sm hover:scale-110 ease-in-out duration-300'>
+              EN
+            </Link>
+          </div>
+          
+          
+       <div className={`${styles.body}  pl-14 pt-10 `}>
+                            
+            <div onMouseLeave={() => {setSelectedIndicator(pathname)}} className={' gap-y-3 pr-4 '}>
                     <div className={`${styles.header}`}>
-                       
+                       {/* Searchbar */}
+                        <SearchComponent/>    
                     </div>
                      {/** Logout Button */}
              { isLoggedIn && (
@@ -93,7 +106,7 @@ export default function Navi() {
                 </div>
                 )
               }
-                    <div className='text-xl font-playfair-display font-headerFont pt-10 flex flex-col gap-y-6'>
+                    <div className='text-xl font-playfair-display font-headerFont pt-5 flex flex-col gap-y-5'>
                     {
                       navItems.map( (data, index) => {
                         return <CustomLink key={index} data={{...data, index}} isActive={selectedIndicator == data.href} setSelectedIndicator={setSelectedIndicator}></CustomLink>
@@ -101,9 +114,9 @@ export default function Navi() {
                     }
 
                     </div>
-                  
+                    <Footer />
             </div>
-            <Footer />
+            
         </div>
         <Curve />
     </motion.div>

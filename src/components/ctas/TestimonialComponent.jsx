@@ -7,7 +7,7 @@ import { testimonials } from '@/constants/testimoniolsdata';
 import { IoIosStar } from "react-icons/io";
 import avatar from "@/images/testimonial-1-avatar.png"
 
-const TestimonialComponent = ({ item }) => {
+const TestimonialComponent = ({ item, testimonialst }) => {
    
   const starRating = (props) => {
     const starArray = Array.from({ length: props }, (_, index) => (
@@ -64,8 +64,7 @@ const TestimonialComponent = ({ item }) => {
     };
 return (
   <div className='my-40'>
-  <h2><SectionTitle className='mb-10 text-5xl md:text-3xl text-center' title='Trusted by Thousands of 
-Happy Customer' subtitle='Nothing fills us with more joy than hearing the stories of our satisfied customers. Here is what some of them have said about their experience at Eleganza Bridal:'/></h2>
+  <h2><SectionTitle className='mb-10 text-5xl md:text-3xl text-center' title={testimonialst.title} subtitle={testimonialst.subtitle} /></h2>
   <Slider {...settings} className=" m-auto">
     
     {

@@ -1,0 +1,210 @@
+{
+    "header" : {
+        "menu" : {
+            "searchbar" : "Enter you keyword",
+            "linkone" : "Bridal",
+            "linktwo" : "Quinceañera",
+            "linkthree" : "Tuxedos",
+            "linkfour" : "Contact",
+            "linkfive" : "About",
+            "linksix" : "Catalog"
+        },
+        "searchbar": "Enter you keyword"
+
+    },
+    "footer" : {
+        "widgetone" : {
+            "descrp" : "Our goasl is to provide convenience and help while you are looking for the perfect dress for any special occation."
+        },
+        "widgettwo" : {
+            "title" : "New Arrivals",
+            "linkone" : "New Wedding Dresses",
+            "linktwo" : "New Quinceañera Dresses",
+            "linkthree" : "Mens Tuxedos",
+            "linkfour" : "Wedding Accesories"
+        },
+        "widgetthree" : {
+            "title" : "Legal",
+            "linkone" : "Home",
+            "linktwo" : "Favorites",
+            "linkthree" : "Catalog",
+            "linkfour" : "About",
+            "linkfive" : "Contact"
+        },
+        "widgetfour" : {
+            "title" : "Site Map",
+            "linkone" : "Terms of Service",
+            "linktwo" : "Shipping Policy",
+            "linkthree" : "Privacy Policy"
+        }
+    },
+    "mainhero" : {
+        "bannerone": {
+            "title": "Quinceañera Dresses",
+            "subtitle": "At Eleganza Bridal, we believe that every special occasion deserves a dress that is equally special and unique."
+        },
+        "bannertwo": {
+            "title": "Wedding Dresses",
+            "subtitle": "We are a dedicated team of fashion experts ready to help you make your quinceañera or wedding dreams come true."
+        },
+        "bannerthree": {
+            "title": "Tuxedos For Men",
+            "subtitle": "Our passion is to help you find the perfect outfit that will make you feel radiant on one of the most important days of your life."
+        },
+        "herobtn": "Explore Catalog"
+    },
+    "aboutus": {
+        "hero": {
+            "title": "About Us",
+            "subtitle": "We are a passionate team dedicated to providing the best services."
+        },
+        "mission": {
+            "title": "Our Mission",
+            "parone": "We strive to become the #1, one stop shop: for wedding dresses, tuxedos, quinceañera dresses, supplies, prom dresses, evening gowns, baptismal, and much more. Need more? We also plan your entire wedding,",
+            "partwo": " quinceanera, special event, or banquets! We make your special day into an unforgettable event & transform the way you and your family celebrate special occasions.",
+            "btntext": "Contact Us"
+            
+        },
+        "makes": {
+             "title":  "What Makes Us Tick",
+             "parone": " Smiles inspire us to push through adversity, helping you achieve your dreams is our dream.",
+             "founder": "Founder",
+             "paronetwo": "We offer exceptionally unique designs, wide variety of sizes, Top notch partners - Discover how we can make you look amazing for your special day. But First and forempst were family, regular people just a dream, we pride ourselfs on being friendly, great listeners. Need to optimize your budget? We can make that stress go away and let you focus on smiling.",
+             "btntxt": "Get in touch"
+        },
+        "different": {
+            "title": "What Makes Us Different",
+            "subtitle": "exceptionally unique designs, wide variety of sizes, Top notch partners - Discover how we can make you look amazing for your special day. But First and forempst were family, regular people just a dream, we pride ourselfs on being friendly, great listeners. Need to optimize your budget? We can make that stress go away and let you focus on smiling.",
+            "btntxt": "Get in touch"
+    
+        },
+        "testimonials": {
+            "title": "What Our Customers Have To Say",
+            "parone": "Dont you believe us? Take a look at what some of the hundreds of satisfied customers say about us."
+        },
+        "quiz": {
+            "title": "Find The Perfect Wedding Dress",
+            "subtitle": "At Eleganza Bridal, we not only sell dresses, but we are also part of a community of people who value beauty, elegance, and celebrating special moments. Follow us on social media to stay up to date with the latest trends and to join our community.",
+            "boxone" : {
+                "title": "Take our Quiz",
+                "subtitle": "Take our quiz and find out how to choose the perfect dress for Your Quinceñera, Wedding or Special Occation."
+    
+            },
+            "boxtwo" : {
+                "title": "Talk to a Fashion Expert",
+                "subtitle": "After you take our quiz and explore our catalog, message or call  one of our fashion experts and get answers to all your questions and concerns."
+                
+            },
+            "boxthree" : {
+                "title": "Enjoy your Special Day",
+                "subtitle": "Once you are sure you found the perfect dress, you place an order for delivery or stop by and pick it up at Eleganza Bridals Las Vegas  location "
+                
+            },
+            "btntxt": "Take the Quiz"
+        }
+    },
+    "contact": {
+        "hero": {
+             "title": "Contact Us",
+             "subtitle": "We are here to help. Reach out to us anytime."
+        },
+        "list": {
+         "title": "Contact Information",
+         "boxone": {
+             "title": "Drop Us A Line",
+             "subtitle": "If you would like to speak to someone over the phone please give us a cal at: "
+         },
+         "boxtwo": {
+             "title": "Email us ",
+             "subtitle": "Like to write? so do you we! send us your questions and owe will be more than happy to help."
+         },
+         "boxthree": {
+             "title": "Visit Our Office",
+             "subtitle": "Always happy ti see you in person, please use updated COVID-19 social guidelines."
+         }
+        },
+        "workdays": {
+         "title": "Working Hours:",
+         "mon": "Monday: ",
+         "tue": "Tuesday: ",
+         "wed": "Wednsday: ",
+         "thu": "Thursday: ",
+         "fry": "Friday: ",
+         "sat": "Saturday: ",
+         "sun": "Suinday: ",
+         "closed": "Closed"
+        }
+    },
+    "contactform": {
+        "title": "Get in Touch we can help you find the perfect Dress for any occasion",
+        "subtitle": "'We are here to help you find the dress of your dreams. If you have any questions or would like to make an appointment, do not hesitate to contact us. Visit our store or call us today. We hope to see you soon at Eleganza Bridal!",
+        "inputname": "Your name",
+        "inputemail": "Your email",
+        "btntxt": "Send Email"
+    },
+    "quiz": {
+        "title": "Find The Perfect Wedding Dress",
+        "subtitle": "At Eleganza Bridal, we not only sell dresses, but we are also part of a community of people who value beauty, elegance, and celebrating special moments. Follow us on social media to stay up to date with the latest trends and to join our community.",
+        "boxone" : {
+            "title": "Take our Quiz",
+            "subtitle": "Take our quiz and find out how to choose the perfect dress for Your Quinceñera, Wedding or Special Occation."
+
+        },
+        "boxtwo" : {
+            "title": "Talk to a Fashion Expert",
+            "subtitle": "After you take our quiz and explore our catalog, message or call  one of our fashion experts and get answers to all your questions and concerns."
+            
+        },
+        "boxthree" : {
+            "title": "Enjoy your Special Day",
+            "subtitle": "Once you are sure you found the perfect dress, you place an order for delivery or stop by and pick it up at Eleganza Bridals Las Vegas  location "
+            
+        },
+        "btntxt": "Take the Quiz"
+    },
+    "trending": {
+        "title": "Our Collection of Fabulous Dresses",
+        "subtitle": "Take a look at our latest arrivals and keep up with all the new fashion trends.",
+        "btnone": "wedding",
+        "btntwo": "quinces",
+        "btnthree": "tuxedo",
+        "btnfour": "evening"
+    },
+    "fabulous": {
+        "title": "We have everything you might need for any occation",
+        "subtitle": "At Eleganza Bridal, we understand that each person is unique, and that is reflected in our varied collection of dresses. Whether you are looking for a traditional wedding dress, a modern and chic one, or the quinceanera dress of your dreams, we have something special for you.",
+        "boxone": {
+            "title": "Wedding dresses",
+            "subtitle": "From princess dresses with voluminous skirts to bohemian lace dresses, our collection of wedding dresses covers a wide range of styles and sizes. We work with renowned designers to offer you quality and elegance in every seam."
+        },
+        "boxtwo":  {
+            "title": "Quinceañera Dresses",
+            "subtitle": "Celebrating your fifteen years is an important event and you deserve the perfect dress. We have a beautiful variety of quinceanera dresses in every color and style imaginable. Our dresses are designed to make you feel like the princess you are."
+        },
+        "boxthree":  {
+            "title": "Tuxedos",
+            "subtitle": "You already have the perfect dress now find an equally amazing tuxedo to match your spouse."
+        }
+    },
+    "testimonialst": {
+        "title": "Trusted by Thousands of Happy Customer",
+        "subtitle": "Nothing fills us with more joy than hearing the stories of our satisfied customers. Here is what some of them have said about their experience at Eleganza Bridal:"
+    },
+    "notfound": {
+        "title": "Your page was not Found",
+        "subtitle": "Oops! The page you are looking for does not exist. It might have been moved or deleted.",
+        "btntxt": "Explore our Catalog"
+        
+    },
+    "singleprod": {
+        "brand": "Brand",
+        "category": "Category",
+        "tags": "Tags",
+        "btntext": "Add to Favorites",
+        "trendigtxt": "Trending Products"
+    }
+
+
+}
+
+

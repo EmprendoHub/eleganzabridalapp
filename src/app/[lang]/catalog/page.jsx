@@ -5,15 +5,16 @@ import PaginationControllerComponent from '@/components/pagination/PaginationCom
 import FilterProductsComponent from '@/components/filters/FilterProductsComponent'
 import { localproductsData } from '@/constants/localproducts'
 
-const getProducts = async (searchParams) => {
+const getProducts = async (searchParams ) => {
   const BASE_URL = "https://www.eleganzabridal-lv.com/api/products"
+  //const BASE_URL = "http://localhost:3000/api/products"
   const urlParams = {
     keyword: searchParams.keyword,
     category: searchParams.category
   }
 
   const searchQuery = queryString.stringify(urlParams)
-  const res = await fetch(`${BASE_URL}?${searchQuery}`)
+  const res = await fetch(`${BASE_URL}?${searchQuery}`, { cache: 'no-store' })
   const docs = await res.json()
 
   let data = docs
@@ -24,7 +25,7 @@ const getProducts = async (searchParams) => {
   return data
 }
 
-const CatalogPage = async ({ searchParams }) => {
+const CatalogPage = async ({ searchParams, params: {lang} }) => {
     const productsData = await getProducts(searchParams)
     const page = searchParams['page'] ?? '1'
     const per_page = searchParams['per_age'] ?? '8'
@@ -42,14 +43,16 @@ const CatalogPage = async ({ searchParams }) => {
         <FilterProductsComponent />
         <div className='mb-5'/>
         
-        <ProductCatalog data={entries}/>
+        <ProductCatalog data={entries} lang={lang} />
 
       </div>
       <div className='mt-5'/>
         <PaginationControllerComponent 
           hasNextPage={end < totalProductCount} 
           hasPrevPage={start > 0}
-          totalProductCount={totalProductCount}/>
+          totalProductCount={totalProductCount}
+          lang={lang}
+          />
            <div className='mb-5'/>
     </div>
   )

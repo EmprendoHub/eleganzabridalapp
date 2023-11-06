@@ -10,15 +10,15 @@ import ImageTestimonialComponent from '@/components/sliders/ImageTestimonialComp
 import InnerSectionTextComponent from '@/components/texts/InnerSectionTextComponent';
 import QuizComponent from '@/components/ctas/QuizComponent';
 
-const AboutPage = () => {
- 
+
+const AboutUsComponent = ({about, quiz, lang}) => {
   return (
     <div>
       
       <section className={`hero w-full h-[500px] bg-gray-100 text-center  bg-[url('/images/Eleganza-bridal-las-vegas.webp')]  bg-cover bg-no-repeat bg-center bg-fixed`} >
           <div className=' backdrop-brightness-50 w-full h-full  items-center  justify-center flex px-5'> 
             <div className="container mx-auto">
-              <HeroTextComponent title={"About Us"} subtitle={"We are a passionate team dedicated to providing the best services."} />
+              <HeroTextComponent title={about.hero.title} subtitle={about.hero.subtitle} />
             </div>
          </div>
         
@@ -26,7 +26,7 @@ const AboutPage = () => {
       <div className='flex flex-row w-[80%] md:w-full md:flex-col items-center mx-auto my-20 px-1'>
           <section className="text-center w-1/2 md:w-full">
             <div className="container mx-auto px-6 sm:px-3">
-            <SectionTextComponent title={"Our Mission"} paraOne={"We strive to become the #1, one stop shop: for wedding dresses, tuxedos, quinceañera dresses, supplies, prom dresses, evening gowns, baptismal, and much more. Need more? We also plan your entire wedding,"} paraTwo={" quinceanera, special event, or banquets! We make your special day into an unforgettable event & transform the way you and your family celebrate special occasions."} btnText={"Contact Us"} btnUrl={"/contact"}/>
+            <SectionTextComponent title={about.mission.title} paraOne={about.mission.parone} paraTwo={about.mission.partwo} btnText={about.mission.btntext} btnUrl={`/${lang}/contact`}/>
             
             </div>
           </section>
@@ -53,14 +53,14 @@ const AboutPage = () => {
      
       <section className="bg-gray-100 text-center py-12 w-[50%] md:w-[90%] p-5 mx-auto">
         <div className="container mx-auto">
-          <InnerSectionTextComponent title={"What Makes Us Tick"} paraOne={" Smiles inspire us to push through adversity, helping you achieve your dreams is our dream."}/>
+          <InnerSectionTextComponent title={about.makes.title} paraOne={about.makes.parone}/>
           
           <div className="grid grid-cols-1 gap-4">
             <div className="bg-white rounded-lg p-8 shadow-md">
               <Image src={`/images/bridal_ornament_eleganza_bridal.webp`} width={200} height={200}  alt="Team Member 1" className="mx-auto mb-4 w-32 h-32 rounded-full" />
               <h3 className="text-lg font-semibold font-poppins text-gray-800">Lupita Eleganza</h3>
-          <p className="text-gray-600">Founder</p>
-              <InnerSectionTextComponent paraOne={"We offer exceptionally unique designs, wide variety of sizes, Top notch partners - Discover how we can make you look amazing for your special day. But First and forempst were family, regular people just a dream, we pride ourselfs on being friendly, great listeners. Need to optimize your budget? We can make that stress go away and let you focus on smiling."} btnText={"Get in touch"} btnUrl={"/contact"}/>
+          <p className="text-gray-600">{about.makes.founder}</p>
+              <InnerSectionTextComponent paraOne={about.makes.paronetwo} btnText={about.makes.btntxt} btnUrl={`/${lang}/contact`}/>
               <div className='mt-10'/>
             </div>
           </div>
@@ -70,21 +70,21 @@ const AboutPage = () => {
         <div className=' backdrop-brightness-50 w-full h-full  items-center  justify-center flex px-40 md:px-10 my-20'> 
           <div className="container mx-auto">
               <div className="container mx-auto">
-                <HeroTextComponent title={"What Makes Us Different"} subtitle={"exceptionally unique designs, wide variety of sizes, Top notch partners - Discover how we can make you look amazing for your special day. But First and forempst were family, regular people just a dream, we pride ourselfs on being friendly, great listeners. Need to optimize your budget? We can make that stress go away and let you focus on smiling."} btnText={"Get in touch"} btnUrl={"/contact"} />
+                <HeroTextComponent title={about.different.title} subtitle={about.different.subtitle} btnText={about.different.btntxt} btnUrl={`/${lang}/contact`} />
               </div>
         </div>
         </div>
       </section>
 
       <div className='mt-20'>
-        <InnerSectionTextComponent title={'What Our Customers Have To Say'} paraOne={'Dont you believe us? Take a look at what some of the hundreds of satisfied customers say about us.'}/>
+        <InnerSectionTextComponent title={about.testimonials.title} paraOne={about.testimonials.parone}/>
         <ImageTestimonialComponent />
       </div>
 
-      <QuizComponent />
+      <QuizComponent quiz={quiz} />
      
     </div>
   )
 }
 
-export default AboutPage
+export default AboutUsComponent

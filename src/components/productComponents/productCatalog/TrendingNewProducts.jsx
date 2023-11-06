@@ -20,27 +20,32 @@ const myLoader = ({ src, width, quality }) => {
     return array;
   }
   
-  const cat_title = [
-    {"id":0, "category": "All"},
-    {"id":1, "category": "wedding"},
-    {"id":2, "category": "quinces"},
-    {"id":3, "category": "tuxedo"},
-    {"id":4, "category": "evening"},
-]
+  
 
-const TrendingNewProducts = () => {
+const TrendingNewProducts = ({trending, lang}) => {
+    const cat_title = [
+      {"id":1, "category": trending.btnone},
+      {"id":2, "category": trending.btntwo},
+      {"id":3, "category": trending.btnthree},
+      {"id":4, "category": trending.btnfour}
+    ]
     const [allProducts, setAllProducts] = useState([])
     const [trendingProducts, setTrendingProducts] = useState([])
     const [activeTab, setActiveTab] = useState("All")
 
     const activatedTab = (category) => {
         setActiveTab(category);
-        
+        if (category === "boda") {
+          category = "wedding"
+        }
+        if (category === "gala") {
+          category = "evening"
+        }
         const productsArray = Object.values(allProducts)
         const randommized = shuffleArray(productsArray)
         const filteredProductData = productsArray.filter((prod) => prod.category === category);
         if (category === "All") {
-            setTrendingProducts(allProducts);
+            setTrendingProducts(randommized);
         }else {
             setTrendingProducts(filteredProductData);
         }
@@ -50,7 +55,8 @@ const TrendingNewProducts = () => {
         const fetchDetails = async () => {
             try {
                 const URL_ALL = `https://www.eleganzabridal-lv.com/api/products`
-                const res_all = await fetch(URL_ALL);
+                // const URL_ALL = `http://localhost:3000/api/products`
+                const res_all = await fetch(URL_ALL, { cache: 'no-store' });
                 const data_trending = await res_all.json()
                 //let sliced_products = data_trending.products.slice(0, 50)
                 let sliced_products = data_trending.products.map(( product ) => {
@@ -58,6 +64,8 @@ const TrendingNewProducts = () => {
                     _id: product._id,
                     title: product.title,
                     description: product.description,
+                    titulo: product.titulo,
+                    descripcion: product.descripcion,
                     category: product.category,
                     subCat: product.subCat,
                     tags: product.tags,
@@ -75,8 +83,6 @@ const TrendingNewProducts = () => {
                 }
                 
                 })
-                // const productsArray = Object.values(data_trending.products)
-                // const randommized = shuffleArray(productsArray)
                 setAllProducts(sliced_products)
                 setTrendingProducts(sliced_products);
             } catch (error) {
@@ -87,10 +93,10 @@ const TrendingNewProducts = () => {
     }, [])
 
   return (
-    <div className='mx-auto flex flex-col justify-center items-center w-3/4'>
-        <SectionTitle className='pb-10 text-5xl md:text-3xl text-center' title='Our Collection of Fabulous Dresses' subtitle='Take alook at our latest arrivals and keep up with all the new fashion trends.'/>
+    <div className='mx-auto flex flex-col justify-center items-center'>
+        <SectionTitle className='pb-10 text-5xl md:text-3xl text-center' title={trending.title} subtitle={trending.subtitle}/>
 
-        <ul className='grid grid-cols-5 gap-4 my-10 px-10'>
+        <ul className='grid grid-cols-4 gap-4 my-2 px-10'>
             {
               cat_title.map((item, index) => {
                 return (
@@ -99,13 +105,13 @@ const TrendingNewProducts = () => {
               })
             }
           </ul>   
-            <motion.div className='grid grid-cols-4 xsm:grid-cols-1 md:grid-cols-2  gap-4 my-10 px-10' layout>
+            <motion.div className='w-full flex flex-row md:flex-col gap-4 my-10 px-10 mx-auto justify-center items-center' layout>
               {
                 trendingProducts.slice(0, 4).map((product, index)=>{
                   return(
                     <AnimatePresence key={index}>
                       <motion.div 
-                        className=''
+                        className='min-w-[280px] max-w-[280px] md:min-w-[300px] md:max-w-[300px] '
                         key={product._id}
                         layout
                         initial={{ opacity:0 }}
@@ -114,7 +120,7 @@ const TrendingNewProducts = () => {
                         transition={{ duration:0.5 }}  
                       >
                         
-                          <ProductCardComponet product={product} key={product._id} />
+                          <ProductCardComponet product={product} key={product._id} lang={lang}/>
                       </motion.div>
                     </AnimatePresence>
                   )

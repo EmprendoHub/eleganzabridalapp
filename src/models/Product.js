@@ -7,10 +7,16 @@ const ProductSchema = new mongoose.Schema({
         unique: true,
         min: 6
     },
+    titulo: {
+        type: String,
+    },
     description: {
         type: String,
         require: true,
         min: 10
+    },
+    descripcion: {
+        type: String,
     },
     category: {
         type: String,

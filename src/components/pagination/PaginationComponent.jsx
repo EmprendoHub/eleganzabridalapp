@@ -6,7 +6,8 @@ import { FiChevronLeft, FiChevronRight, FiChevronsRight,FiChevronsLeft } from "r
 const PaginationControllerComponent = ({
   totalProductCount,
   hasNextPage,
-  hasPrevPage
+  hasPrevPage,
+  lang
 }) => {
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -16,11 +17,11 @@ const PaginationControllerComponent = ({
     searchParamsCopy[key] = value;
   });
 
+  
   const removeFields = [ 'per_page', 'page']
         removeFields.forEach((el) => delete searchParamsCopy[el]);
 
-  const prevSearchParams = "/catalog?" + queryString.stringify(searchParamsCopy) 
-
+  const prevSearchParams = `/catalog?` + queryString.stringify(searchParamsCopy) 
   const page = searchParams.get('page') ?? '1'
   const per_page = searchParams.get('per_page') ?? '8'
   
@@ -41,7 +42,7 @@ const PaginationControllerComponent = ({
             <FiChevronLeft/>
           </button>
 
-          <div className="font-semibold text-lg sm:text-sm">
+          <div className="font-semibold text-lg sm:text-sm"> 
             {page} / {Math.ceil(totalProductCount / Number(per_page))}
           </div>
 

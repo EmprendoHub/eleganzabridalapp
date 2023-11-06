@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useState, useEffect } from 'react'
 import SearchComponent from '../search/SearchComponent'
 import MobileMenuComponent from './mobilenav/MobileMenuComponent'
+import LocaleSwitcher from '../localeSwitcher'
 
 const CustomLink = ({href, title, className=""}) => {
     const router = useRouter();
@@ -23,7 +24,8 @@ const CustomLink = ({href, title, className=""}) => {
     )
 }
 
-const MainMenuComponent = () => {
+const MainMenuComponent = ({header, lang}) => {
+
   // const dispatch = useDispatch()
   const { data: session } = useSession();
   const isLoggedIn = Boolean(session?.user)
@@ -46,17 +48,18 @@ const MainMenuComponent = () => {
     <header className="self-stretch flex flex-row items-center justify-start sticky mx-auto pl-5 sm:pl-1">
           {/* Logo  */}
           <div className='min-w-[120px] sm:w-[85px] object-contain justify-center'>
-        <LogoComponent/>
+        <LogoComponent lang={lang}/>
         </div>
+        <LocaleSwitcher/>
         {/* Search Bar */}
-        <SearchComponent />
+        <SearchComponent header={header} classname={"md:hidden   md:w-[50%] pl-2"}/>
         {/* Navigatio left */}
         <nav className='md:hidden m-0 flex-1  flex flex-row py-2.5 px-5 items-center justify-start gap-7 text-sm tracking-widest '>
-            <CustomLink href="/catalog?category=wedding" title={`BRIDAL`} className='text-white no-underline font-bold font-playfair-display'/>
-            <CustomLink href="/catalog?category=quinces" title={`QUINCEÑERA`} className='text-white no-underline font-playfair-display'/>
-            <CustomLink href="/catalog?category=tuxedo" title={`TUXEDOS`} className='text-white no-underline font-playfair-display' />
-            <CustomLink href="/contact" title={`CONTACT`} className='text-white no-underline font-playfair-display' />
-            <CustomLink href="/about" title={`ABOUT`} className='text-white no-underline font-playfair-display' />
+            <CustomLink href={`/${lang}/catalog?category=wedding`} title={header.menu.linkone} className='uppercase text-white no-underline font-bold font-playfair-display'/>
+            <CustomLink href={`/${lang}/catalog?category=quinces`} title={header.menu.linktwo} className='uppercase text-white no-underline font-playfair-display'/>
+            <CustomLink href={`/${lang}/catalog?category=tuxedo`} title={header.menu.linkthree} className= 'uppercase text-white no-underline font-playfair-display' />
+            <CustomLink href={`/${lang}/contact`} title={header.menu.linkfour} className='uppercase text-white no-underline font-playfair-display' />
+            <CustomLink href={`/${lang}/about`} title={header.menu.linkfive} className='uppercase text-white no-underline font-playfair-display' />
         </nav>
       
         
