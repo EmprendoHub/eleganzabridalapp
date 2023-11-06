@@ -5,8 +5,8 @@ import Navi from './MobilenavComponent';
 import { AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 
-export default function MobileMenuComponent() {
-
+export default function MobileMenuComponent({header, lang, productData}) {
+  console.log("MobileMenuComponent", header);
   const [isActive, SetIsActive] = useState(false);
   const pathname = usePathname();
 
@@ -28,7 +28,7 @@ export default function MobileMenuComponent() {
 
     </div>
     <AnimatePresence mode="wait">
-      {isActive && <Navi />}
+      {isActive && <Navi header={header} lang={lang} productData={productData} />}
     </AnimatePresence>
     </>
   )

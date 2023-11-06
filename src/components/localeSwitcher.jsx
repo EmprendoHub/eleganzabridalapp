@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname, useSearchParams } from 'next/navigation'
 import { i18n } from '@/i18n.config'
 
-export default function LocaleSwitcher() {
+export default function LocaleSwitcher({classname}) {
   const pathName = usePathname()
   const searchParams = useSearchParams()
 
@@ -24,13 +24,13 @@ export default function LocaleSwitcher() {
   }
 
   return (
-    <ul className='flex gap-x-2 pl-2'>
+    <ul className={`${classname} flex gap-x-2 pl-2`}>
       {i18n.locales.map(locale => {
         return (
           <li key={locale}>
             <Link
               href={redirectedPathName(locale)}
-              className='rounded-full border bg-black px-2 py-2 text-white text-base'
+              className='rounded-full bg-slate-200 text-black text-sm px-2 py-1.5 shadow-sm hover:scale-110 ease-in-out duration-300'
             >
               {locale}
             </Link>
@@ -40,3 +40,4 @@ export default function LocaleSwitcher() {
     </ul>
   )
 }
+

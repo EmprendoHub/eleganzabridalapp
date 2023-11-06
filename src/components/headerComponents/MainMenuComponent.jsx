@@ -50,7 +50,8 @@ const MainMenuComponent = ({header, lang}) => {
           <div className='min-w-[120px] sm:w-[85px] object-contain justify-center'>
         <LogoComponent lang={lang}/>
         </div>
-        <LocaleSwitcher/>
+        {/* Locale Switch */}
+        <LocaleSwitcher classname={"md:hidden"}/>
         {/* Search Bar */}
         <SearchComponent header={header} classname={"md:hidden   md:w-[50%] pl-2"}/>
         {/* Navigatio left */}
@@ -110,7 +111,7 @@ const MainMenuComponent = ({header, lang}) => {
         </nav>
         
        
-        <MobileMenuComponent/>
+        <MobileMenuComponent header={header} lang={lang} productData={productData} />
     </header>
   )
 }

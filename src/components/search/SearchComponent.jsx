@@ -6,6 +6,7 @@ import { IoMdSearch } from "react-icons/io";
 
 
 const SearchComponent = ({classname, header}) => {
+    console.log("searchComponet", header);
     const handleFocus = (event) => event.target.select();
 
     const [keyword, setKeyword] = useState("")

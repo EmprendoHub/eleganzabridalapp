@@ -14,40 +14,77 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { FiLogOut } from 'react-icons/fi';
 import SearchComponent from '@/components/search/SearchComponent';
+import LocaleSwitcher from '@/components/localeSwitcher';
 
-const navItems = [
-  {
-    title: "HOME",
-    href: "/",
-  },
-  {
-    title: "CATALOG",
-    href: "/catalog",
-  },
-  {
-    title: "BRIDAL",
-    href: "/catalog?category=wedding",
-  },
-  {
-    title: "QUINCEÑERA",
-    href: "/catalog?category=quinces",
-  },
-  {
-    title: "TUXEDOS",
-    href: "/catalog?category=tuxedo",
-  },
-  {
-    title: "CONTACT",
-    href: "/contact",
-  },
-  {
-    title: "ABOUT",
-    href: "/about",
-  },
-]
 
-export default function Navi() {
 
+export default function Navi({header,lang, productData}) {
+  let navItems = []
+  if (lang === "en" ) {
+    navItems = [
+      {
+        title: "HOME",
+        href: `/${lang}`,
+      },
+      {
+        title: "CATALOG",
+        href: `/catalog`,
+      },
+      {
+        title: "BRIDAL",
+        href: `/${lang}/catalog?category=wedding`,
+      },
+      {
+        title: "QUINCEÑERA",
+        href: `/${lang}/catalog?category=quinces`,
+      },
+      {
+        title: "TUXEDOS",
+        href: `/${lang}/catalog?category=tuxedo`,
+      },
+      {
+        title: "CONTACT",
+        href: `/${lang}/contact`,
+      },
+      {
+        title: "ABOUT",
+        href: `/${lang}/about`,
+      },
+    ]
+  }
+  if (lang === "es" ) {
+    navItems = [
+      {
+        title: "INICIO",
+        href: `/${lang}`,
+      },
+      {
+        title: "CATALOGO",
+        href: `/catalog`,
+      },
+      {
+        title: "BODAS",
+        href: `/${lang}/catalog?category=wedding`,
+      },
+      {
+        title: "QUINCEÑERA",
+        href: `/${lang}/catalog?category=quinces`,
+      },
+      {
+        title: "TUXEDOS",
+        href: `/${lang}/catalog?category=tuxedo`,
+      },
+      {
+        title: "CONTACTO",
+        href: `/${lang}/contact`,
+      },
+      {
+        title: "ABOUT",
+        href: `/${lang}/about`,
+      },
+    ]
+  }
+  
   const pathname = usePathname();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
 
@@ -76,18 +113,15 @@ export default function Navi() {
               {/* <p className='text-base font-semibold'><FormatedPrice amount={totalAmt ? totalAmt : 0}/></p> */}
 
               <span className='bg-white text-black text-center rounded-full font-extrabold text-sm relative -right-3 -top-4 flex items-center justify-center w-5 h-5 shadow-xl '>
-              {/* {productData ? productData?.length : 0} */}0
+              {productData ? productData?.length : 0}
               </span>
             </div>
           </Link>
            {/* Internalisation */}
           <div className='flex flex-row justify-start items-center gap-x-3 px-3 mt-8 ml-16'>
-            <Link href={"/"} locale="es" className='rounded-full bg-slate-200 text-black text-sm px-2 py-1.5 shadow-sm hover:scale-110 ease-in-out duration-300'>
-              ES
-            </Link>
-            <Link href={"/"} locale="en" className='rounded-full bg-slate-200 text-black text-sm px-2 py-1.5 shadow-sm hover:scale-110 ease-in-out duration-300'>
-              EN
-            </Link>
+            
+            {/* Locale Switch */}
+            <LocaleSwitcher/>
           </div>
           
           
@@ -96,7 +130,7 @@ export default function Navi() {
             <div onMouseLeave={() => {setSelectedIndicator(pathname)}} className={' gap-y-3 pr-4 '}>
                     <div className={`${styles.header}`}>
                        {/* Searchbar */}
-                        <SearchComponent/>    
+                       <SearchComponent header={header} />
                     </div>
                      {/** Logout Button */}
              { isLoggedIn && (
