@@ -6,7 +6,6 @@ import { AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 
 export default function MobileMenuComponent({header, lang, productData}) {
-  console.log("MobileMenuComponent", header);
   const [isActive, SetIsActive] = useState(false);
   const pathname = usePathname();
 
