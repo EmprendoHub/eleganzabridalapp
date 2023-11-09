@@ -1,74 +1,69 @@
-"use client";
+'use client';
 
-import React from "react";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
-
+import React from 'react';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 const FilterProductsComponent = () => {
-    const [minAmount, setMinAmount] = useState("")
-    const [maxAmount, setMaxAmount] = useState("")
-    const router = useRouter()
-    let queryParams;
-  
-    function hnadleCheckBocClick(checkbox) {
-      if (typeof window !== "undefined") {
-        queryParams = new URLSearchParams(window.location.search);
-      }
-  
-      const checkBoxes = document.getElementsByName(checkbox.name)
-  
-      checkBoxes.forEach((item) => {
-        if (item != checkbox ) item.checked = false
-        })
-  
-        if (checkbox.checked == false) {
-          // delete the filter query
-          queryParams.delete(checkbox.name)
-        
-        } else {
-          // set the filter query
-          if (queryParams.has(checkbox.name)) {
-            queryParams.set(checkbox.name, checkbox.value)
-        } else {
-            queryParams.append(checkbox.name, checkbox.value)
-        }
-  
-    
-        }
-      const path = window.location.pathname + "?" + queryParams.toString()
-      router.push(path)
-  
+  const [minAmount, setMinAmount] = useState('');
+  const [maxAmount, setMaxAmount] = useState('');
+  const router = useRouter();
+  let queryParams;
+
+  function hnadleCheckBocClick(checkbox) {
+    if (typeof window !== 'undefined') {
+      queryParams = new URLSearchParams(window.location.search);
     }
-  
-    function checkHandler(checkBoxType, checkBoxValue) {
-      if (typeof window !== "undefined") {
-        queryParams = new URLSearchParams(window.location.search);
-   
-        const value = queryParams.get(checkBoxType);
-        if (checkBoxValue === value) return true;
-        return false;
+
+    const checkBoxes = document.getElementsByName(checkbox.name);
+
+    checkBoxes.forEach((item) => {
+      if (item != checkbox) item.checked = false;
+    });
+
+    if (checkbox.checked == false) {
+      // delete the filter query
+      queryParams.delete(checkbox.name);
+    } else {
+      // set the filter query
+      if (queryParams.has(checkbox.name)) {
+        queryParams.set(checkbox.name, checkbox.value);
+      } else {
+        queryParams.append(checkbox.name, checkbox.value);
       }
     }
-  
-    // function handlePriceButtonClick() {
-    //   if (typeof window !== "undefined") {
-    //     queryParams = new URLSearchParams(window.location.search);
-  
-    //     queryParams = getPriceQueryParams(queryParams, "min", minAmount)
-    //     queryParams = getPriceQueryParams(queryParams, "max", maxAmount)
-  
-    //     const path = window.location.pathname + "?" + queryParams.toString()
-    //     router.push(path)
-  
-    //   }
-    // }
-  
-    return (
-      <aside className="mt-24 mx-auto">
-        {/* Price Filter */}
-        
-          {/* <div className="md:hidden px-6 py-4 border border-gray-200 bg-white rounded shadow-sm">
+    const path = window.location.pathname + '?' + queryParams.toString();
+    router.push(path);
+  }
+
+  function checkHandler(checkBoxType, checkBoxValue) {
+    if (typeof window !== 'undefined') {
+      queryParams = new URLSearchParams(window.location.search);
+
+      const value = queryParams.get(checkBoxType);
+      if (checkBoxValue === value) return true;
+      return false;
+    }
+  }
+
+  // function handlePriceButtonClick() {
+  //   if (typeof window !== "undefined") {
+  //     queryParams = new URLSearchParams(window.location.search);
+
+  //     queryParams = getPriceQueryParams(queryParams, "min", minAmount)
+  //     queryParams = getPriceQueryParams(queryParams, "max", maxAmount)
+
+  //     const path = window.location.pathname + "?" + queryParams.toString()
+  //     router.push(path)
+
+  //   }
+  // }
+
+  return (
+    <aside className="mt-24 mx-auto">
+      {/* Price Filter */}
+
+      {/* <div className="md:hidden px-6 py-4 border border-gray-200 bg-white rounded shadow-sm">
             <h3 className="font-semibold mb-2">Price ($)</h3>
           
           <div className="grid sm:grid-cols-3 gap-x-2">
@@ -104,69 +99,89 @@ const FilterProductsComponent = () => {
           </div>
   
           </div>  */}
-       
-  
-        <div className="p-5 pt-4 sm:p-1 border border-gray-200 bg-white rounded shadow-sm">
-          <ul className="space-y-1 flex flex-row gap-x-8 sm:gap-x-2 items-center">
-            <li >
-              <label className="flex items-center">
-                <input
-                  name="category"
-                  type="checkbox"
-                  value="wedding"
-                  className="peer hidden "
-                  defaultChecked={checkHandler("category", "wedding")}
-                  onClick={(e) => hnadleCheckBocClick(e.target)}
-                />
-                <span className="select-none bg-black cursor-pointer rounded-lg border-2 border-gray-200
-   py-3 px-6 font-bold text-gray-200 transition-colors duration-200 ease-in-out peer-checked:bg-gray-200 peer-checked:text-gray-900 peer-checked:border-gray-200 sm:text-xs sm:px-4"> Bridal </span>
-              </label>
-            </li>
-            <li>
-              <label className="flex items-center">
-                <input
-                  name="category"
-                  type="checkbox"
-                  value="quinces"
-                  className="peer hidden "
-                  defaultChecked={checkHandler("category", "quinces")}
-                  onClick={(e) => hnadleCheckBocClick(e.target)}
-                />
-                <span className="select-none  bg-black cursor-pointer rounded-lg border-2 border-gray-200
-   py-3 px-6 font-bold text-gray-200 transition-colors duration-200 ease-in-out peer-checked:bg-gray-200 peer-checked:text-gray-900 peer-checked:border-gray-200 sm:text-xs sm:px-4 "> Quinces </span>
-              </label>
-            </li>
-            <li>
-              <label className="flex items-center">
-                <input
-                  name="category"
-                  type="checkbox"
-                  value="tuxedo"
-                  className="peer hidden"
-                  defaultChecked={checkHandler("category", "tuxedo")}
-                  onClick={(e) => hnadleCheckBocClick(e.target)}
-                />
-                <span className="select-none  bg-black cursor-pointer rounded-lg border-2 border-gray-200
-   py-3 px-6 font-bold text-gray-200 transition-colors duration-200 ease-in-out peer-checked:bg-gray-200 peer-checked:text-gray-900 peer-checked:border-gray-200 sm:text-xs sm:px-4 "> Tuxedo </span>
-              </label>
-            </li>
-            <li>
-              <label className="flex items-center">
-                <input
-                  name="category"
-                  type="checkbox"
-                  value="evening"
-                  className="peer hidden"
-                  defaultChecked={checkHandler("category", "evening")}
-                  onClick={(e) => hnadleCheckBocClick(e.target)}
-                />
-                <span className="select-none bg-black cursor-pointer rounded-lg border-2 border-gray-200
-   py-3 px-6 font-bold text-gray-200 transition-colors duration-500 ease-in-out peer-checked:bg-gray-200 peer-checked:text-gray-900 peer-checked:border-gray-200 sm:text-xs sm:px-4 "> Evening </span>
-              </label>
-            </li>
-          </ul>
-  
-          {/* <h3 className="font-semibold mb-2">Ratings</h3>
+
+      <div className="p-5 pt-4 sm:p-1 border border-gray-200 bg-white rounded shadow-sm">
+        <ul className="flex flex-row gap-x-8 sm:gap-x-1 items-center">
+          <li>
+            <label className="flex items-center">
+              <input
+                name="category"
+                type="checkbox"
+                value="wedding"
+                className="peer hidden "
+                defaultChecked={checkHandler('category', 'wedding')}
+                onClick={(e) => hnadleCheckBocClick(e.target)}
+              />
+              <span
+                className="select-none  bg-black cursor-pointer rounded-lg border-2 border-gray-200
+   py-3 px-6 font-bold text-gray-200 transition-colors duration-200 ease-in-out peer-checked:bg-gray-200 peer-checked:text-gray-900 peer-checked:border-gray-200 sm:text-xs sm:px-2 "
+              >
+                {' '}
+                Bridal{' '}
+              </span>
+            </label>
+          </li>
+
+          <li>
+            <label className="flex items-center">
+              <input
+                name="category"
+                type="checkbox"
+                value="quinces"
+                className="peer hidden "
+                defaultChecked={checkHandler('category', 'quinces')}
+                onClick={(e) => hnadleCheckBocClick(e.target)}
+              />
+              <span
+                className="select-none  bg-black cursor-pointer rounded-lg border-2 border-gray-200
+   py-3 px-6 font-bold text-gray-200 transition-colors duration-200 ease-in-out peer-checked:bg-gray-200 peer-checked:text-gray-900 peer-checked:border-gray-200 sm:text-xs sm:px-2 "
+              >
+                {' '}
+                Quinces{' '}
+              </span>
+            </label>
+          </li>
+          <li>
+            <label className="flex items-center">
+              <input
+                name="category"
+                type="checkbox"
+                value="tuxedo"
+                className="peer hidden"
+                defaultChecked={checkHandler('category', 'tuxedo')}
+                onClick={(e) => hnadleCheckBocClick(e.target)}
+              />
+              <span
+                className="select-none  bg-black cursor-pointer rounded-lg border-2 border-gray-200
+   py-3 px-6 font-bold text-gray-200 transition-colors duration-200 ease-in-out peer-checked:bg-gray-200 peer-checked:text-gray-900 peer-checked:border-gray-200 sm:text-xs sm:px-2 "
+              >
+                {' '}
+                Tuxedo{' '}
+              </span>
+            </label>
+          </li>
+          <li>
+            <label className="flex items-center">
+              <input
+                name="category"
+                type="checkbox"
+                value="evening"
+                className="peer hidden"
+                defaultChecked={checkHandler('category', 'evening')}
+                onClick={(e) => hnadleCheckBocClick(e.target)}
+              />
+              <span
+                className="select-none bg-black cursor-pointer rounded-lg border-2 border-gray-200
+   py-3 px-6 font-bold text-gray-200 transition-colors duration-500 ease-in-out peer-checked:bg-gray-200 peer-checked:text-gray-900 peer-checked:border-gray-200 sm:text-xs sm:px-2"
+              >
+                {' '}
+                Evening{' '}
+              </span>
+            </label>
+          </li>
+        </ul>
+
+        {/* <h3 className="font-semibold mb-2">Ratings</h3>
           <ul className="space-y-1">
             <li>
               {[5, 4, 3, 2, 1].map((rating) => (
@@ -194,9 +209,9 @@ const FilterProductsComponent = () => {
               ))}
             </li>
           </ul> */}
-        </div>
-      </aside>
-    )
-}
+      </div>
+    </aside>
+  );
+};
 
-export default FilterProductsComponent
+export default FilterProductsComponent;
