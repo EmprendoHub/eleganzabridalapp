@@ -56,7 +56,7 @@ const TrendingNewProducts = ({ trending, lang }) => {
     const fetchDetails = async () => {
       try {
         const URL_ALL = `https://www.eleganzabridal-lv.com/api/products`;
-        // const URL_ALL = `http://localhost:3000/api/products`
+        //const URL_ALL = `http://localhost:3000/api/productstrend`;
         const res_all = await fetch(URL_ALL, { cache: 'no-store' });
         const data_trending = await res_all.json();
         //let sliced_products = data_trending.products.slice(0, 50)
@@ -116,14 +116,14 @@ const TrendingNewProducts = ({ trending, lang }) => {
         })}
       </ul>
       <motion.div
-        className="w-full flex flex-row md:flex-col gap-4 my-10 px-10 mx-auto justify-center items-center"
+        className="w-full  flex flex-row md:flex-col gap-4 my-10 px-10 mx-auto justify-center items-center object-fill"
         layout
       >
         {trendingProducts.slice(0, 4).map((product, index) => {
           return (
             <AnimatePresence key={index}>
               <motion.div
-                className="min-w-[280px] max-w-[280px] md:min-w-[300px] md:max-w-[300px] "
+                className="w-full max-w-[400px] min-h-[850px]"
                 key={product._id}
                 layout
                 initial={{ opacity: 0 }}

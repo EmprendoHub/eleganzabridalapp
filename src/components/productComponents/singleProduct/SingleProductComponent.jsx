@@ -4,9 +4,7 @@ import { MdFavoriteBorder } from 'react-icons/md';
 import { Bounce, ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import classes from '@/components/productComponents/loading.module.css';
 import { addToCart } from '@/redux/shoppingSlice';
 import { IoIosStar } from 'react-icons/io';
 // import Swiper core and required modules
@@ -27,23 +25,13 @@ const myLoader = ({ src, width, quality }) => {
   }`;
 };
 
-function shuffleArray(array, excludedId) {
-  // Optional: If you want to exclude a specific ID, you can remove it from the shuffled array
-  if (excludedId !== undefined) {
-    array = array.filter((item) => item._id !== excludedId);
-  }
-
-  let i = array.length - 1;
-  for (; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    const temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
-  return array;
-}
-
-const SingleProductComponent = ({ ctx, lang, singleprod }) => {
+const SingleProductComponent = ({
+  ctx,
+  lang,
+  singleprod,
+  product,
+  trendingProducts,
+}) => {
   const notify = () => {
     toast.success(`${product?.title.substring(0, 15)}... added successfully!`, {
       position: toast.POSITION.TOP_CENTER,
@@ -62,64 +50,7 @@ const SingleProductComponent = ({ ctx, lang, singleprod }) => {
     imageRef.current.srcset = new_image;
   };
 
-  const [isLoading, setIsLoading] = useState(false);
-  const [trendingProducts, setTrendingProducts] = useState([]);
-  //const BASE_URL = `/api/products`
-
-  const URL_ONE = `/api/product?${id}`;
-
   const dispatch = useDispatch();
-
-  const [product, setProduct] = useState({});
-  const [showModal, setShowModal] = useState(false);
-  // five dollars per 100 pages
-  const price = ((product?.pages / 100) * 5).toFixed(2);
-
-  useEffect(() => {
-    const fetchDetails = async () => {
-      try {
-        setIsLoading(true);
-        const res = await fetch(URL_ONE, { cache: 'no-store' });
-        const data = await res.json();
-
-        const URL_ALL = `https://www.eleganzabridal-lv.com/api/products?category=${data.product.category}`;
-        /// const URL_ALL = `http://localhost:3000/api/products?category=${data.product.category}`
-        const details = {
-          _id: data.product._id,
-          title: data.product.title,
-          description: data.product.description,
-          titulo: data.product.titulo,
-          descripcion: data.product.descripcion,
-          category: data.product.category,
-          subCat: data.product.subCat,
-          tags: data.product.tags,
-          brand: data.product.brand,
-          isNewest: data.product.isNewest,
-          isFeatured: data.product.isFeatured,
-          price: data.product.price,
-          salesPrice: data.product.salesPrice,
-          mainImageUrl: data.product.mainImageUrl,
-          imgsSrc: data.product.imgsSrc,
-          sizes: data.product.sizes,
-          rating: data.product.rating,
-          quantity: data.product.quantity,
-          sku: data.product.sku,
-        };
-        setProduct(details);
-        const res_all = await fetch(URL_ALL, { cache: 'no-store' });
-        const data_trending = await res_all.json();
-
-        const productsArray = Object.values(data_trending.products);
-        const randommized = shuffleArray(productsArray, product._id);
-        const trending = randommized.slice(0, 4);
-        setTrendingProducts(trending);
-      } catch (error) {
-        console.log(error);
-      }
-      setIsLoading(false);
-    };
-    fetchDetails();
-  }, [URL_ONE, product._id]);
 
   const starRating = (props) => {
     if (props) {
@@ -145,100 +76,82 @@ const SingleProductComponent = ({ ctx, lang, singleprod }) => {
     return <>{starArray}</>;
   };
 
-  const handleAddToFavorites = () => {
-    dispatch(
-      addToCart({
-        ...product,
-        quantity: 1,
-        price,
-      })
-    );
-  };
-
   return (
     <div className="container-class sm:w-full">
       <div className="w-[80%] sm:w-full mx-auto wrapper-class grid grid-cols-2 md:grid-cols-1 gap-5 bg-white p-4 rounded-lg">
         <div className="w-full flex justify-center">
           <div className="images-grouped-class flex flex-col max-w-full">
             <div className="flex justify-center items-center align-middle h-full ">
-              {isLoading ? (
-                <div className={`${classes.loader} absolute h-20 `} />
-              ) : (
-                <motion.div
-                  initial={{ x: -50, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.7 }}
-                  className="p-8 sm:p-2"
-                >
-                  <Image
-                    loader={myLoader}
-                    width={500}
-                    height={500}
-                    ref={imageRef}
-                    src={
-                      product?.mainImageUrl
-                        ? product.mainImageUrl
-                        : 'RB3163-195.webp'
-                    }
-                    alt="product image"
-                    className="rounded-lg object-cover w-auto h-auto"
-                  />
-                </motion.div>
-              )}
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.7 }}
+                className="p-8 sm:p-2"
+              >
+                <Image
+                  loader={myLoader}
+                  width={500}
+                  height={500}
+                  ref={imageRef}
+                  src={
+                    product?.mainImageUrl
+                      ? product.mainImageUrl
+                      : 'RB3163-195.webp'
+                  }
+                  alt="product image"
+                  className="rounded-lg object-cover w-auto h-auto"
+                />
+              </motion.div>
             </div>
 
             <div className="flex flex-row gap-4 mt-2 px-10 sm:px-2 image-slider-class h-full">
-              {isLoading ? (
-                <div className={`${classes.loader} absolute h-20 `} />
-              ) : (
-                <Swiper
-                  // install Swiper modules
-                  modules={[Pagination, A11y, Autoplay]}
-                  spaceBetween={10}
-                  slidesPerView={3}
-                  autoplay={true}
-                  onSwiper={(swiper) => ''}
-                  onSlideChange={() => ''}
-                  className="w-full cursor-pointer"
-                >
-                  {product?.imgsSrc &&
-                    product.imgsSrc.map((image, index) => (
-                      <SwiperSlide key={index}>
-                        <a className="slider-link cursor-pointer">
-                          <Image
-                            onClick={() => setImgPreview(image)}
-                            loader={myLoader}
-                            width={150}
-                            height={150}
-                            src={image ? image : ''}
-                            alt="product image"
-                            className="rounded-lg w-full h-150 p-1"
-                          />
-                        </a>
-                      </SwiperSlide>
-                    ))}
-                  <SwiperSlide>
-                    <a
-                      className="slider-link cursor-pointer"
-                      onClick={() => setImgPreview(product?.mainImageUrl)}
-                    >
-                      <Image
-                        loader={myLoader}
-                        width={150}
-                        height={150}
-                        src={
-                          product?.mainImageUrl
-                            ? product.mainImageUrl
-                            : 'RB3163-195.webp'
-                        }
-                        alt="product image"
-                        className="rounded-lg w-full h-150 p-1"
-                      />
-                    </a>
-                  </SwiperSlide>
-                  ...
-                </Swiper>
-              )}
+              <Swiper
+                // install Swiper modules
+                modules={[Pagination, A11y, Autoplay]}
+                spaceBetween={10}
+                slidesPerView={3}
+                autoplay={true}
+                onSwiper={(swiper) => ''}
+                onSlideChange={() => ''}
+                className="w-full cursor-pointer"
+              >
+                {product?.imgsSrc &&
+                  product.imgsSrc.map((image, index) => (
+                    <SwiperSlide key={index}>
+                      <a className="slider-link cursor-pointer">
+                        <Image
+                          onClick={() => setImgPreview(image)}
+                          loader={myLoader}
+                          width={150}
+                          height={150}
+                          src={image ? image : ''}
+                          alt="product image"
+                          className="rounded-lg w-full h-150 p-1"
+                        />
+                      </a>
+                    </SwiperSlide>
+                  ))}
+                <SwiperSlide>
+                  <a
+                    className="slider-link cursor-pointer"
+                    onClick={() => setImgPreview(product?.mainImageUrl)}
+                  >
+                    <Image
+                      loader={myLoader}
+                      width={150}
+                      height={150}
+                      src={
+                        product?.mainImageUrl
+                          ? product.mainImageUrl
+                          : 'RB3163-195.webp'
+                      }
+                      alt="product image"
+                      className="rounded-lg w-full h-150 p-1"
+                    />
+                  </a>
+                </SwiperSlide>
+                ...
+              </Swiper>
             </div>
           </div>
         </div>
@@ -261,9 +174,6 @@ const SingleProductComponent = ({ ctx, lang, singleprod }) => {
                 {starRating(product?.rating)}
                 <span className="font-medium text-xl">{product?.rating}</span>
               </div>
-              {/* <div className='price-class text-3xl'>
-                    <FormatedPrice amount={product?.price}/>
-                    </div> */}
             </div>
           </motion.div>
           <motion.div
@@ -286,7 +196,7 @@ const SingleProductComponent = ({ ctx, lang, singleprod }) => {
             className="text-sm text-lightText flex flex-col"
           >
             <span>
-              SKU: <span className="text-darkText">{product?._id}</span>
+              SKU: <span className="text-darkText">{product?.sku}</span>
             </span>
             <span>
               {singleprod.brand}:{' '}

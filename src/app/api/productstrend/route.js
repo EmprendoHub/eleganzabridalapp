@@ -13,17 +13,21 @@ export const GET = async (req, res) => {
   const productsCount = await Product.countDocuments();
 
   try {
-    // Extract all possible categories
-    const allCategories = await Product.distinct('category');
-    // Extract all possible categories
-    const allBrands = await Product.distinct('brand');
-    // Apply search Filters
+    // Extract 4 related products in category
 
-    const apiFilters = new APIFilters(Product.find(), req.nextUrl.searchParams)
-      .searchAllFields()
-      .filter();
-
-    const products = await apiFilters.query;
+    const products = await Product.aggregate([
+      {
+        $match: {
+          $or: [
+            { category: 'wedding' },
+            { category: 'quinces' },
+            { category: 'tuxedo' },
+            { category: 'evening' },
+          ],
+        },
+      },
+      { $sample: { size: 200 } },
+    ]);
     const filteredProductsCount = products.length;
 
     const response = NextResponse.json({
@@ -32,8 +36,6 @@ export const GET = async (req, res) => {
       success: true,
       productsCount,
       filteredProductsCount,
-      allCategories,
-      allBrands,
     });
 
     return response;
