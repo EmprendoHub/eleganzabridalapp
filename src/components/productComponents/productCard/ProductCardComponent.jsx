@@ -35,7 +35,7 @@ const ProductCardComponet = ({ product, lang }) => {
     <div key={product.id}>
       <div className="rounded-sm overflow-hidden">
         <Link href={`/product/${product._id}`} className="">
-          <div className="">
+          <div className="relative">
             <Image
               priority
               loader={myLoader}
@@ -43,16 +43,27 @@ const ProductCardComponet = ({ product, lang }) => {
               alt="product image"
               width={1000}
               height={1000}
-              className="min-w-full min-h-[500px] max-h-[500px] object-cover group-hover:scale-110 duration-200 rounded-t-lg "
+              className="min-w-full min-h-[500px] max-h-[500px] object-cover hover:scale-110 duration-300 ease-in-out rounded-t-lg "
             />
             {product?.isNewest && (
-              <span className="absolute top-2 right-2 font-medium text-xs py-1 px-3 rounded-full bg-white group-hover:bg-pink-700 group-hover:text-white duration-200">
-                {lang === 'en'
-                  ? 'New Arrival'
-                  : '' || lang === 'es'
-                  ? 'Nueva llegada'
-                  : ''}
-              </span>
+              <>
+                <span className="absolute top-2 right-2 font-medium text-xs py-1 px-3 rounded-full bg-white group-hover:bg-pink-700 group-hover:text-white duration-200">
+                  {lang === 'en'
+                    ? 'New Arrival'
+                    : '' || lang === 'es'
+                    ? 'Nueva llegada'
+                    : ''}
+                </span>
+                {/* add to cart button */}
+                <motion.button
+                  whileHover={{ scale: 1.07 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="bg-black absolute top-2 left-3 px-2 py-2 text-sm tracking-wide rounded-full text-slate-100 hover:bg-pink-600 hover:text-white duration-500"
+                  onClick={() => dispatch(addToCart(product)) && notify()}
+                >
+                  <IoMdHeart className="text-xl" />
+                </motion.button>
+              </>
             )}
           </div>
         </Link>
@@ -76,15 +87,6 @@ const ProductCardComponet = ({ product, lang }) => {
             </div>
           </div>
           <div className="flex items-center justify-between">
-            {/* add to cart button */}
-            <motion.button
-              whileHover={{ scale: 1.07 }}
-              whileTap={{ scale: 0.9 }}
-              className="bg-pink-600 px-4 py-2 text-sm tracking-wide rounded-full text-slate-100 hover:bg-darkText hover:text-white duration-500"
-              onClick={() => dispatch(addToCart(product)) && notify()}
-            >
-              <IoMdHeart className="text-xl" />
-            </motion.button>
             {/* star icons */}
             <div className="flex items-center gap-x-1">{startArray}</div>
           </div>

@@ -1,11 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const InnerSectionContainer = ({children}) => {
+const InnerSectionContainer = ({ children }) => {
   return (
-    <div className={` mx-auto px-5 md:px-1 py-10`}>
-        {children}
-    </div>
-  )
-}
+    <div className={` mx-auto px-40 md:px-2 py-40 md:py-10`}>{children}</div>
+  );
+};
 
-export default InnerSectionContainer
+export default InnerSectionContainer;

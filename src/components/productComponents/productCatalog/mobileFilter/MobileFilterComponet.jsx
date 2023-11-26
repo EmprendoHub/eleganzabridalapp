@@ -23,9 +23,9 @@ const MobileFilterComponet = ({ allBrands, allCategories, lang }) => {
   }, [pathname]);
 
   return (
-    <>
+    <div className="px-40 md:px-2">
       <div
-        className={`mt-5 p-3 border border-gray-200 text-center w-[70%] md:w-[90%] justify-end flex mx-auto`}
+        className={`mt-5 p-3 border border-gray-200 text-center w-full justify-end flex mx-auto `}
       >
         <div
           className={`${styles.header} burger-class flex flex-row justify-between text-gray-600 items-center w-full`}
@@ -63,7 +63,7 @@ const MobileFilterComponet = ({ allBrands, allCategories, lang }) => {
           />
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 };
 

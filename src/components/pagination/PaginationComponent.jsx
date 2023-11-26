@@ -33,7 +33,7 @@ const PaginationControllerComponent = ({
   return (
     <div className="py-8 paginate-container flex mx-auto item text-center flex-row justify-center gap-x-5 sm:gap-x-2 items-center">
       <button
-        className="bg-pink-600 disabled:bg-slate-300 text-white p-2 rounded-full text-xl"
+        className="bg-black disabled:bg-slate-300 text-white p-2 rounded-full text-xl"
         onClick={() => {
           router.push(`${prevSearchParams}&page=1&per_page=${per_page}`);
         }}
@@ -42,7 +42,7 @@ const PaginationControllerComponent = ({
         <FiChevronsLeft />
       </button>
       <button
-        className="bg-pink-600 disabled:bg-slate-300 text-white p-2 rounded-full text-xl"
+        className="bg-black disabled:bg-slate-300 text-white p-2 rounded-full text-xl"
         onClick={() => {
           router.push(
             `${prevSearchParams}&page=${Number(page) - 1}&per_page=${per_page}`
@@ -58,7 +58,7 @@ const PaginationControllerComponent = ({
       </div>
 
       <button
-        className="bg-pink-600 text-xl text-white p-2 rounded-full disabled:bg-slate-300"
+        className="bg-black text-xl text-white p-2 rounded-full disabled:bg-slate-300"
         onClick={() => {
           router.push(
             `${prevSearchParams}&page=${Number(page) + 1}&per_page=${per_page}`
@@ -69,7 +69,7 @@ const PaginationControllerComponent = ({
         <FiChevronRight />
       </button>
       <button
-        className="bg-pink-600 disabled:bg-slate-300 text-white p-2  rounded-full text-xl"
+        className="bg-black disabled:bg-slate-300 text-white p-2  rounded-full text-xl"
         onClick={() => {
           router.push(
             `${prevSearchParams}&page=${Math.ceil(

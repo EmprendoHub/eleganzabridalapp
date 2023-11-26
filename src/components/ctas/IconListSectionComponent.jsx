@@ -1,17 +1,8 @@
 import React from 'react';
-import SectionTitle from '../texts/SectionTitle';
-import Image from 'next/image';
-import fabdress from '@/images/fabulous_dresss.webp';
-import wedicon from '@/images/wed_icon.webp';
-import quinceicon from '@/images/quince_icon.webp';
-import tuxicon from '@/images/tuxe_icon.webp';
 import { IoMdPhonePortrait, IoMdAt, IoMdLocate } from 'react-icons/io';
 
 const IconListSectionComponent = ({
   mainTitle,
-  iconOne,
-  iconTwo,
-  iconThree,
   textTitleOne,
   textTitleTwo,
   textTitleThree,
@@ -33,8 +24,8 @@ const IconListSectionComponent = ({
             {mainTitle}
           </h2>
           <div className="flex flex-row gap-x-5 my-3">
-            <div className="flex justify-center items-center w-[60px] h-[60px] bg-pink-700 p-2 rounded-full">
-              <IoMdPhonePortrait className="w-[30px] h-[30px] text-white" />
+            <div className="flex justify-center items-center w-[60px] h-[60px] p-2 rounded-full">
+              <IoMdPhonePortrait className="w-[30px] h-[30px] text-pink-700" />
             </div>
             <div className="flex-col w-3/4">
               <div className="font-playfair-display text-2xl">
@@ -47,8 +38,8 @@ const IconListSectionComponent = ({
             </div>
           </div>
           <div className="flex flex-row gap-x-5 my-3">
-            <div className="flex justify-center items-center w-[60px] h-[60px] bg-pink-700 p-2 rounded-full">
-              <IoMdAt className="w-[30px] h-[30px] text-white" />
+            <div className="flex justify-center items-center w-[60px] h-[60px]  p-2 rounded-full">
+              <IoMdAt className="w-[30px] h-[30px] text-pink-700" />
             </div>
             <div className="flex-col w-3/4">
               <div className="font-playfair-display text-2xl">
@@ -61,8 +52,8 @@ const IconListSectionComponent = ({
             </div>
           </div>
           <div className="flex flex-row gap-x-5 my-3">
-            <div className="flex justify-center items-center w-[60px] h-[60px] bg-pink-700 p-2 rounded-full">
-              <IoMdLocate className="w-[30px] h-[30px] text-white" />
+            <div className="flex justify-center items-center w-[60px] h-[60px]  p-2 rounded-full">
+              <IoMdLocate className="w-[30px] h-[30px] text-pink-700" />
             </div>
             <div className="flex-col w-3/4">
               <div className="font-playfair-display text-2xl">

@@ -7,11 +7,9 @@ import CustomLink from './Mobilelink';
 import Link from 'next/link';
 import Curve from '@/components/headerComponents/mobilenav/MobileCurve';
 import Footer from '@/components/headerComponents/mobilenav/Mobilefooter';
-import { IoMdCart, IoMdHeart } from 'react-icons/io';
-import { useDispatch, useSelector } from 'react-redux';
+import { IoMdHeart } from 'react-icons/io';
 import { signOut, useSession } from 'next-auth/react';
 import { useState } from 'react';
-import { useEffect } from 'react';
 import { FiLogOut } from 'react-icons/fi';
 import SearchComponent from '@/components/search/SearchComponent';
 import LocaleSwitcher from '@/components/localeSwitcher';
@@ -27,6 +25,26 @@ export default function Navi({ header, lang, productData }) {
       {
         title: 'CATALOG',
         href: `/catalog`,
+      },
+      {
+        title: 'BRIDAL',
+        href: `/${lang}/catalog?category=wedding`,
+      },
+      {
+        title: 'EVENING',
+        href: `/${lang}/catalog?category=evening`,
+      },
+      {
+        title: 'QUINCEÑERA',
+        href: `/${lang}/catalog?category=quinces`,
+      },
+      {
+        title: 'Ball Gowns',
+        href: `/${lang}/catalog?category=ballgown`,
+      },
+      {
+        title: 'TUXEDOS',
+        href: `/${lang}/catalog?category=tuxedo`,
       },
       {
         title: 'CONTACT',
@@ -73,22 +91,8 @@ export default function Navi({ header, lang, productData }) {
 
   const pathname = usePathname();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
-
   const { data: session } = useSession();
   const isLoggedIn = Boolean(session?.user);
-
-  //const {productData, orderData} = useSelector((state) => state.shopping);
-
-  const [totalAmt, setTotalAmt] = useState(0);
-
-  // useEffect(() => {
-  //   let amt = 0;
-  //   productData.map((item) => {
-  //     amt += item.price * item.quantity;
-  //     return;
-  //   });
-  //   setTotalAmt(amt);
-  // }, [productData]);
 
   return (
     <motion.div
@@ -96,7 +100,7 @@ export default function Navi({ header, lang, productData }) {
       initial="initial"
       animate="enter"
       exit="exit"
-      className={`${styles.menu} bg-transparent `}
+      className={`${styles.menu} bg-transparent z-[99]`}
     >
       {/* Favorites Button */}
       <Link href={'/favorites'} className=" absolute left-5 top-9">
@@ -104,7 +108,6 @@ export default function Navi({ header, lang, productData }) {
           <p className="absolute">
             <IoMdHeart className="text-lg" />
           </p>
-          {/* <p className='text-base font-semibold'><FormatedPrice amount={totalAmt ? totalAmt : 0}/></p> */}
 
           <span className="bg-white text-black text-center rounded-full font-extrabold text-sm relative -right-3 -top-4 flex items-center justify-center w-5 h-5 shadow-xl ">
             {productData ? productData?.length : 0}
@@ -117,16 +120,16 @@ export default function Navi({ header, lang, productData }) {
         <LocaleSwitcher />
       </div>
 
-      <div className={`${styles.body}  pl-14 pt-10 `}>
+      <div className={`${styles.body}  pl-14 pt-10 overflow-y-auto`}>
         <div
           onMouseLeave={() => {
             setSelectedIndicator(pathname);
           }}
           className={' gap-y-3 pr-4 '}
         >
-          <div className={`${styles.header}`}>
-            {/* Searchbar */}
-            <SearchComponent header={header} />
+          <div className={`${styles.header} w-[200px]`}>
+            {/* Searchbar
+            <SearchComponent header={header} /> */}
           </div>
           {/** Logout Button */}
           {isLoggedIn && (
@@ -138,7 +141,7 @@ export default function Navi({ header, lang, productData }) {
               <p className="text-sm font-base">Logout</p>
             </div>
           )}
-          <div className="text-xl font-playfair-display font-headerFont pt-10 flex flex-col gap-y-7">
+          <div className="text-xl uppercase tracking-wider font-playfair-display font-headerFont pt-5 flex flex-col gap-y-5">
             {navItems.map((data, index) => {
               return (
                 <CustomLink

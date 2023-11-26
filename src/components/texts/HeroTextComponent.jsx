@@ -5,7 +5,7 @@ import Link from 'next/link';
 const HeroTextComponent = ({ title, subtitle, btnText, btnUrl }) => {
   return (
     <div className="relativew-full h-full">
-      <div className="flex h-full flex-col gap-y-6 justify-center">
+      <div className="flex h-full flex-col items-center justify-center gap-y-6 justify-center">
         <motion.h2
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -18,7 +18,7 @@ const HeroTextComponent = ({ title, subtitle, btnText, btnUrl }) => {
           initial={{ y: 40, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
-          className="text-base text-slate-100 font-poppins"
+          className="text-base text-slate-100 font-poppins w-[70%]"
         >
           {subtitle}
         </motion.p>

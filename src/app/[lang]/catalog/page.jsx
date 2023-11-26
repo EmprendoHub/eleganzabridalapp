@@ -3,10 +3,11 @@ import ProductCatalog from '@/components/productComponents/productCatalog/Produc
 import queryString from 'query-string';
 import PaginationControllerComponent from '@/components/pagination/PaginationComponent';
 import MobileFilterComponet from '@/components/productComponents/productCatalog/mobileFilter/MobileFilterComponet';
+import InnerSectionTextComponent from '@/components/texts/InnerSectionTextComponent';
 
 const getProducts = async (searchParams) => {
-  const BASE_URL = 'https://www.eleganzabridal-lv.com/api/products';
-  //const BASE_URL = 'http://localhost:3000/api/products';
+  //const BASE_URL = 'https://www.eleganzabridal-lv.com/api/products';
+  const BASE_URL = 'http://localhost:3000/api/products';
   const urlParams = {
     keyword: searchParams.keyword,
     category: searchParams.category,
@@ -26,6 +27,7 @@ const CatalogPage = async ({ searchParams, params: { lang } }) => {
   const productsData = await getProducts(searchParams);
   const page = searchParams['page'] ?? '1';
   const per_page = searchParams['per_age'] ?? '8';
+  const current_category = searchParams['category'] ?? '& stylish';
   const start = (Number(page) - 1) * Number(per_page); // 0, 5, 10 ...
   const end = start + Number(per_page); // 5, 10, 15 ...
 
@@ -38,6 +40,11 @@ const CatalogPage = async ({ searchParams, params: { lang } }) => {
   entries = entries.slice(start, end);
   return (
     <div className="flex flex-col">
+      <div className="py-7" />
+      <InnerSectionTextComponent
+        title={`Amazing ${current_category} dresses for a special occasion.`}
+        paraOne={`Explore our wide variety of designers and styles, find the perfect dress for any occasion`}
+      />
       <div className="flex flex-col">
         <MobileFilterComponet
           allBrands={allBrands}

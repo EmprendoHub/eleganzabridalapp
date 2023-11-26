@@ -1,202 +1,230 @@
 {
-    "header": {
-        "menu": {
-            "searchbar" : "Ingresa tu palabra clave",
-            "linkone": "Novias",
-            "linktwo": "Quinceañera",
-            "linkthree": "Tuxedos",
-            "linkfour": "Contacto",
-            "linkfive": "Acerca",
-            "linksix": "Catálogo"
-        },
-        "searchbar": "Ingresa tu palabra clave"
+  "imageoverlay": {
+    "title": "Obtén las últimas tendencias",
+    "subtitle": "Encuentra el vestido perfecto para cualquier ocasión tenemos una gran variedad de diseñadores, estilos y colores, explora y descubre el sinfín de looks que te esperan.",
+    "btnText": "Explorar catálogo"
+  },
+  "brandsection": {
+    "sectionone": {
+      "pretitle": "Vestidos de graduación & noche",
+      "title": "La Divine",
+      "subtitle": "Una impresionante colección de vestidos de fiesta y de noche.",
+      "btnText": "Explorar colección"
     },
-    "footer": {
-        "widgetone": {
-            "descrp": "Nuestro objetivo es brindar comodidad y ayuda mientras buscas el vestido perfecto para cualquier ocasión especial."
-        },
-        "widgettwo": {
-            "title": "Nuevas Llegadas",
-            "linkone": "Nuevos Vestidos de Novia",
-            "linktwo": "Nuevos Vestidos de Quinceañera",
-            "linkthree": "Tuxedos para Hombres",
-            "linkfour": "Accesorios de Boda"
-        },
-        "widgetthree": {
-            "title": "Legal",
-            "linkone": "Inicio",
-            "linktwo": "Favoritos",
-            "linkthree": "Catálogo",
-            "linkfour": "Acerca de",
-            "linkfive": "Contacto"
-        },
-        "widgetfour": {
-            "title": "Mapa del Sitio",
-            "linkone": "Términos de Servicio",
-            "linktwo": "Política de Envío",
-            "linkthree": "Política de Privacidad"
-        }
+    "sectiontwo": {
+      "pretitle": "Colección de bodas",
+      "title": "Rachel Allan",
+      "subtitle": "Una increíble colección de vestidos de novia.",
+      "btnText": "Explorar colección"
     },
-    "mainhero": {
-        "bannerone": {
-            "title": "Vestidos de Quinceañera",
-            "subtitle": "En Eleganza Bridal, creemos que cada ocasión especial merece un vestido igualmente especial y único."
-        },
-        "bannertwo": {
-            "title": "Vestidos de Novia",
-            "subtitle": "Somos un dedicado equipo de expertos en moda listos para ayudarte a hacer realidad tus sueños de quinceañera o boda."
-        },
-        "bannerthree": {
-            "title": "Tuxedos Para Hombres",
-            "subtitle": "Nuestra pasión es ayudarte a encontrar el atuendo perfecto que te hará sentir radiante en uno de los días más importantes de tu vida."
-        },
-        "herobtn": "Explora el Catálogo"
+    "sectionthree": {
+      "pretitle": "Colección Quinceañera",
+      "title": "Love 21",
+      "subtitle": "Una hermosa colección de vestidos de quinceañera.",
+      "btnText": "Explorar colección"
+    }
+  },
+  "explorecats": {
+    "title": "Buscar por categoría",
+    "subtitle": "Explore las últimas novedades en Eleganza Bridal para descubrir su vestido de fiesta ideal para 2024, que presenta una variedad de estilos y largos. Desde vestidos de fiesta elegantes y sobrios hasta los diseños de vestidos de cóctel más modernos, ofrecemos una impresionante variedad de looks que capturarán tu corazón. Ya sea que esté buscando un espectacular vestido de fiesta estilo sirena, un elegante conjunto de cóctel hasta la rodilla, un encantador vestido de fiesta, un vestido de novia distintivo o un elegante vestido de fiesta hasta el suelo, Eleganza Bridal es su destino para encontrar los estilos de vestidos más codiciados. por diseñadores de renombre, ¡todo a una fracción del costo!",
+    "catone": "Vestidos de Novia",
+    "cattwo": "Vestidos Formales",
+    "catthree": "Vestidos de Graduación",
+    "catfour": "Vestidos de Gala"
+  },
+  "header": {
+    "menu": {
+      "searchbar": "Ingresa tu palabra clave",
+      "linkone": "Novias",
+      "linkoneB": "Noche",
+      "linktwo": "Quinceañera",
+      "linkthree": "Tuxedos",
+      "linkfour": "Contacto",
+      "linkfive": "Acerca",
+      "linksix": "Catálogo"
     },
-    "aboutus": {
-             "hero": {
-                "title": "Acerca de Nosotros",
-                "subtitle": "Somos un equipo apasionado dedicado a ofrecer los mejores servicios."
-            },
-            "mission": {
-                "title": "Nuestra Misión",
-                "parone": "Nos esforzamos por convertirnos en el número 1, el lugar de referencia para vestidos de novia, trajes de gala, vestidos de quinceañera, suministros, vestidos de graduación, vestidos de noche, vestidos bautismales y mucho más. ¿Necesitas más? ¡También planificamos toda tu boda,",
-                "partwo": " quinceañera, evento especial o banquetes! Convertimos tu día especial en un evento inolvidable y transformamos la forma en que tú y tu familia celebran ocasiones especiales.",
-                "btntext": "Contáctanos"
-            },
-            "makes": {
-                "title": "Lo Que Nos Impulsa",
-                "parone": "Las sonrisas nos inspiran a superar la adversidad, ayudarte a alcanzar tus sueños es nuestro sueño.",
-                "founder": "Fundador",
-                "paronetwo": "Ofrecemos diseños excepcionalmente únicos, una amplia variedad de tallas, socios de primera categoría. Descubre cómo podemos hacer que luzcas increíble en tu día especial. Pero ante todo, somos una familia, personas comunes con un sueño. Nos enorgullecemos de ser amigables y grandes oyentes. ¿Necesitas optimizar tu presupuesto? Podemos hacer que ese estrés desaparezca y te concentres en sonreír.",
-                "btntxt": "Ponte en contacto"
-            },
-            "different": {
-                "title": "Lo Que Nos Hace Diferentes",
-                "subtitle": "Diseños excepcionalmente únicos, una amplia variedad de tallas, socios de primera categoría. Descubre cómo podemos hacer que luzcas increíble en tu día especial. Pero ante todo, somos una familia, personas comunes con un sueño. Nos enorgullecemos de ser amigables y grandes oyentes. ¿Necesitas optimizar tu presupuesto? Podemos hacer que ese estrés desaparezca y te concentres en sonreír.",
-                "btntxt": "Ponte en contacto"
-            },
-            "testimonials": {
-                "title": "Lo Que Nuestros Clientes Tienen Que Decir",
-                "parone": "¿No nos crees? Echa un vistazo a lo que dicen algunos de los cientos de clientes satisfechos acerca de nosotros."
-            },
-            "quiz": {
-                "title": "Encuentra el Vestido de Novia Perfecto",
-                "subtitle": "En Eleganza Bridal, no solo vendemos vestidos, sino que también formamos parte de una comunidad de personas que valoran la belleza, la elegancia y la celebración de momentos especiales. Síguenos en las redes sociales para mantenerte al tanto de las últimas tendencias y unirte a nuestra comunidad.",
-                "boxone": {
-                    "title": "Realiza Nuestro Cuestionario",
-                    "subtitle": "Realiza nuestro cuestionario y descubre cómo elegir el vestido perfecto para tu Quinceañera, boda u ocasión especial."
-                },
-                "boxtwo": {
-                    "title": "Habla con un Experto en Moda",
-                    "subtitle": "Después de realizar nuestro cuestionario y explorar nuestro catálogo, envía un mensaje o llama a uno de nuestros expertos en moda y obtén respuestas a todas tus preguntas e inquietudes."
-                },
-                "boxthree": {
-                    "title": "Disfruta de tu Día Especial",
-                    "subtitle": "Una vez que estés seguro de haber encontrado el vestido perfecto, realiza un pedido para la entrega o pasa a recogerlo en la ubicación de Eleganza Bridals Las Vegas."
-                },
-                "btntxt": "Realiza el Cuestionario"
-            }
-        },
-    "contact": {
-        "hero": {
-            "title": "Contáctanos",
-            "subtitle": "Estamos aquí para ayudarte. Comunícate con nosotros en cualquier momento."
-        },
-        "list": {
-            "title": "Información de Contacto",
-            "boxone": {
-                "title": "Déjanos un Mensaje",
-                "subtitle": "Si deseas hablar con alguien por teléfono, llámanos al: "
-            },
-            "boxtwo": {
-                "title": "Envíanos un Correo Electrónico",
-                "subtitle": "¿Prefieres escribir? ¡Nosotros también! Envíanos tus preguntas y estaremos encantados de ayudarte."
-            },
-            "boxthree": {
-                "title": "Visita Nuestra Oficina",
-                "subtitle": "Siempre nos alegra verte en persona. Por favor, sigue las pautas sociales actualizadas de COVID-19."
-            }
-        },
-        "workdays": {
-            "title": "Horario de Atención:",
-            "mon": "Lunes: ",
-            "tue": "Martes: ",
-            "wed": "Miércoles: ",
-            "thu": "Jueves: ",
-            "fry": "Viernes: ",
-            "sat": "Sábado: ",
-            "sun": "Domingo: ",
-            "closed": "Cerrado"
-        }
+    "searchbar": "Ingresa tu palabra clave"
+  },
+  "footer": {
+    "widgetone": {
+      "descrp": "Nuestro objetivo es brindar comodidad y ayuda mientras buscas el vestido perfecto para cualquier ocasión especial."
     },
-    "contactform": {
-        "title": "Ponte en contacto, podemos ayudarte a encontrar el vestido perfecto para cualquier ocasión",
-        "subtitle": "Estamos aquí para ayudarte a encontrar el vestido de tus sueños. Si tienes alguna pregunta o deseas hacer una cita, no dudes en contactarnos. Visita nuestra tienda o llámanos hoy. ¡Esperamos verte pronto en Eleganza Bridal!",
-        "inputname": "Tu nombre",
-        "inputemail": "Tu correo electrónico",
-        "btntxt": "Enviar correo electrónico"
-        },
+    "widgettwo": {
+      "title": "Nuevas Llegadas",
+      "linkone": "Nuevos Vestidos de Novia",
+      "linktwo": "Nuevos Vestidos de Quinceañera",
+      "linkthree": "Tuxedos para Hombres",
+      "linkfour": "Accesorios de Boda"
+    },
+    "widgetthree": {
+      "title": "Legal",
+      "linkone": "Inicio",
+      "linktwo": "Favoritos",
+      "linkthree": "Catálogo",
+      "linkfour": "Acerca de",
+      "linkfive": "Contacto"
+    },
+    "widgetfour": {
+      "title": "Mapa del Sitio",
+      "linkone": "Términos de Servicio",
+      "linktwo": "Política de Envío",
+      "linkthree": "Política de Privacidad"
+    }
+  },
+  "mainhero": {
+    "bannerone": {
+      "title": "Vestidos de Quinceañera",
+      "subtitle": "En Eleganza Bridal, creemos que cada ocasión especial merece un vestido igualmente especial y único."
+    },
+    "bannertwo": {
+      "title": "Vestidos de Novia",
+      "subtitle": "Somos un dedicado equipo de expertos en moda listos para ayudarte a hacer realidad tus sueños de quinceañera o boda."
+    },
+    "bannerthree": {
+      "title": "Tuxedos Para Hombres",
+      "subtitle": "Nuestra pasión es ayudarte a encontrar el atuendo perfecto que te hará sentir radiante en uno de los días más importantes de tu vida."
+    },
+    "herobtn": "Explora el Catálogo"
+  },
+  "aboutus": {
+    "hero": {
+      "title": "Acerca de Nosotros",
+      "subtitle": "Somos un equipo apasionado dedicado a ofrecer los mejores servicios."
+    },
+    "mission": {
+      "title": "Nuestra Misión",
+      "parone": "Nos esforzamos por convertirnos en el número 1, el lugar de referencia para vestidos de novia, trajes de gala, vestidos de quinceañera, suministros, vestidos de graduación, vestidos de noche, vestidos bautismales y mucho más. ¿Necesitas más? ¡También planificamos toda tu boda,",
+      "partwo": " quinceañera, evento especial o banquetes! Convertimos tu día especial en un evento inolvidable y transformamos la forma en que tú y tu familia celebran ocasiones especiales.",
+      "btntext": "Contáctenos"
+    },
+    "makes": {
+      "title": "Lo Que Nos Impulsa",
+      "parone": "Las sonrisas nos inspiran a superar la adversidad, ayudarte a alcanzar tus sueños es nuestro sueño.",
+      "founder": "Fundador",
+      "paronetwo": "Ofrecemos diseños excepcionalmente únicos, una amplia variedad de tallas, socios de primera categoría. Descubre cómo podemos hacer que luzcas increíble en tu día especial. Pero ante todo, somos una familia, personas comunes con un sueño. Nos enorgullecemos de ser amigables y grandes oyentes. ¿Necesitas optimizar tu presupuesto? Podemos hacer que ese estrés desaparezca y te concentres en sonreír.",
+      "btntxt": "Ponte en contacto"
+    },
+    "different": {
+      "title": "Lo Que Nos Hace Diferentes",
+      "subtitle": "Diseños excepcionalmente únicos, una amplia variedad de tallas, socios de primera categoría. Descubre cómo podemos hacer que luzcas increíble en tu día especial. Pero ante todo, somos una familia, personas comunes con un sueño. Nos enorgullecemos de ser amigables y grandes oyentes. ¿Necesitas optimizar tu presupuesto? Podemos hacer que ese estrés desaparezca y te concentres en sonreír.",
+      "btntxt": "Ponte en contacto"
+    },
+    "testimonials": {
+      "title": "Lo Que Nuestros Clientes Tienen Que Decir",
+      "parone": "¿No nos crees? Echa un vistazo a lo que dicen algunos de los cientos de clientes satisfechos acerca de nosotros."
+    },
     "quiz": {
-        "title": "Encuentra el Vestido de Novia Perfecto",
-        "subtitle": "En Eleganza Bridal, no solo vendemos vestidos, sino que también formamos parte de una comunidad de personas que valoran la belleza, la elegancia y la celebración de momentos especiales. Síguenos en las redes sociales para mantenerte al tanto de las últimas tendencias y unirte a nuestra comunidad.",
-        "boxone": {
-        "title": "Realiza nuestro Cuestionario",
+      "title": "Encuentra el Vestido de Novia Perfecto",
+      "subtitle": "En Eleganza Bridal, no solo vendemos vestidos, sino que también formamos parte de una comunidad de personas que valoran la belleza, la elegancia y la celebración de momentos especiales. Síguenos en las redes sociales para mantenerte al tanto de las últimas tendencias y unirte a nuestra comunidad.",
+      "boxone": {
+        "title": "Realiza Nuestro Cuestionario",
         "subtitle": "Realiza nuestro cuestionario y descubre cómo elegir el vestido perfecto para tu Quinceañera, boda u ocasión especial."
-        },
-        "boxtwo": {
+      },
+      "boxtwo": {
         "title": "Habla con un Experto en Moda",
         "subtitle": "Después de realizar nuestro cuestionario y explorar nuestro catálogo, envía un mensaje o llama a uno de nuestros expertos en moda y obtén respuestas a todas tus preguntas e inquietudes."
-        },
-        "boxthree": {
+      },
+      "boxthree": {
         "title": "Disfruta de tu Día Especial",
         "subtitle": "Una vez que estés seguro de haber encontrado el vestido perfecto, realiza un pedido para la entrega o pasa a recogerlo en la ubicación de Eleganza Bridals Las Vegas."
-       
-        },
-        "btntxt": "Realiza el Cuestionario"
-    },
-    "trending": {
-        "title": "Nuestra colección de vestidos fabulosos",
-        "subtitle": "Echa un vistazo a nuestras últimas novedades y mantente al día con todas las nuevas tendencias de moda",
-        "btnone": "boda",
-        "btntwo": "quinces",
-        "btnthree": "tuxedo",
-        "btnfour": "gala"
-    },
-    "fabulous": {
-        "title": "Tenemos todo lo que puedas necesitar para cualquier ocasión.",
-        "subtitle": "En Eleganza Bridal entendemos que cada persona es única, y eso se refleja en nuestra variada colección de vestidos. Ya sea que estés buscando un vestido de novia tradicional, uno moderno y chic o el vestido de quinceañera de tus sueños, tenemos algo especial para ti.",
-        "boxone": {
-            "title": "Vestidos de novia",
-            "subtitle": "Desde vestidos de princesa con faldas voluminosas hasta vestidos bohemios de encaje, nuestra colección de vestidos de novia cubre una amplia gama de estilos y tallas. Trabajamos con diseñadores de renombre para ofrecerte calidad y elegancia en cada costura."
-        },
-        "boxtwo":  {
-            "title": "Vestidos de Quinceañera",
-            "subtitle": "Celebrar tus quince años es un evento importante y te mereces el vestido perfecto. Tenemos una hermosa variedad de vestidos de quinceañera en todos los colores y estilos imaginables. Nuestros vestidos están diseñados para hacerte sentir como la princesa que eres."
-        },
-        "boxthree":  {
-            "title": "Tuxedos",
-            "subtitle": "Ya tienes el vestido perfecto, ahora encuentra un esmoquin igualmente increíble que combine con tu cónyuge."
-        }
-    },
-    "testimonialst": {
-        "title": "Con la confianza de miles de clientes satisfechos",
-        "subtitle": "Nada nos llena más de alegría que escuchar las historias de nuestros clientes satisfechos. Esto es lo que algunos de ellos han dicho sobre su experiencia en Eleganza Bridal:"
-    },
-    "notfound": {
-        "title": "Tu página no fue encontrada",
-        "subtitle": "¡Ups! La página que buscas no existe. Es posible que se haya movido o eliminado.",
-        "btntxt": "Explora nuestro catálogo"
-        
-    },
-    "singleprod": {
-        "brand": "Marca",
-        "category": "Categoria",
-        "tags": "Etiquetas",
-        "btntext": "Añadir a Favoritos",
-        "trendigtxt": "Productos en Tendencia"
+      },
+      "btntxt": "Realiza el Cuestionario"
     }
-
-
+  },
+  "contact": {
+    "hero": {
+      "title": "Contáctenos",
+      "subtitle": "Estamos aquí para ayudarte. Comunícate con nosotros en cualquier momento."
+    },
+    "list": {
+      "title": "Información de Contacto",
+      "boxone": {
+        "title": "Déjanos un Mensaje",
+        "subtitle": "Si deseas hablar con alguien por teléfono, llámanos al: "
+      },
+      "boxtwo": {
+        "title": "Envíanos un Correo Electrónico",
+        "subtitle": "¿Prefieres escribir? ¡Nosotros también! Envíanos tus preguntas y estaremos encantados de ayudarte."
+      },
+      "boxthree": {
+        "title": "Visita Nuestra Oficina",
+        "subtitle": "Siempre nos alegra verte en persona. Por favor, sigue las pautas sociales actualizadas de COVID-19."
+      }
+    },
+    "workdays": {
+      "title": "Horario de Atención:",
+      "mon": "Lunes: ",
+      "tue": "Martes: ",
+      "wed": "Miércoles: ",
+      "thu": "Jueves: ",
+      "fry": "Viernes: ",
+      "sat": "Sábado: ",
+      "sun": "Domingo: ",
+      "closed": "Cerrado"
+    }
+  },
+  "contactform": {
+    "title": "Ponte en contacto, podemos ayudarte a encontrar el vestido perfecto para cualquier ocasión",
+    "subtitle": "Estamos aquí para ayudarte a encontrar el vestido de tus sueños. Si tienes alguna pregunta o deseas hacer una cita, no dudes en contactarnos. Visita nuestra tienda o llámanos hoy. ¡Esperamos verte pronto en Eleganza Bridal!",
+    "inputname": "Tu nombre",
+    "inputemail": "Tu correo electrónico",
+    "btntxt": "Enviar correo electrónico"
+  },
+  "quiz": {
+    "title": "Encuentra el Vestido de Novia Perfecto",
+    "subtitle": "En Eleganza Bridal, no solo vendemos vestidos, sino que también formamos parte de una comunidad de personas que valoran la belleza, la elegancia y la celebración de momentos especiales. Síguenos en las redes sociales para mantenerte al tanto de las últimas tendencias y unirte a nuestra comunidad.",
+    "boxone": {
+      "title": "Realiza nuestro Cuestionario",
+      "subtitle": "Realiza nuestro cuestionario y descubre cómo elegir el vestido perfecto para tu Quinceañera, boda u ocasión especial."
+    },
+    "boxtwo": {
+      "title": "Habla con un Experto en Moda",
+      "subtitle": "Después de realizar nuestro cuestionario y explorar nuestro catálogo, envía un mensaje o llama a uno de nuestros expertos en moda y obtén respuestas a todas tus preguntas e inquietudes."
+    },
+    "boxthree": {
+      "title": "Disfruta de tu Día Especial",
+      "subtitle": "Una vez que estés seguro de haber encontrado el vestido perfecto, realiza un pedido para la entrega o pasa a recogerlo en la ubicación de Eleganza Bridals Las Vegas."
+    },
+    "btntxt": "Realiza el Cuestionario"
+  },
+  "trending": {
+    "title": "Nuestra colección de vestidos fabulosos",
+    "subtitle": "Echa un vistazo a nuestras últimas novedades y mantente al día con todas las nuevas tendencias de moda",
+    "btnone": "boda",
+    "btntwo": "quinces",
+    "btnthree": "tuxedo",
+    "btnfour": "gala"
+  },
+  "fabulous": {
+    "title": "Tenemos todo lo que puedas necesitar para cualquier ocasión.",
+    "subtitle": "En Eleganza Bridal entendemos que cada persona es única, y eso se refleja en nuestra variada colección de vestidos. Ya sea que estés buscando un vestido de novia tradicional, uno moderno y chic o el vestido de quinceañera de tus sueños, tenemos algo especial para ti.",
+    "boxone": {
+      "title": "Vestidos de novia",
+      "subtitle": "Desde vestidos de princesa con faldas voluminosas hasta vestidos bohemios de encaje, nuestra colección de vestidos de novia cubre una amplia gama de estilos y tallas. Trabajamos con diseñadores de renombre para ofrecerte calidad y elegancia en cada costura."
+    },
+    "boxtwo": {
+      "title": "Vestidos de Quinceañera",
+      "subtitle": "Celebrar tus quince años es un evento importante y te mereces el vestido perfecto. Tenemos una hermosa variedad de vestidos de quinceañera en todos los colores y estilos imaginables. Nuestros vestidos están diseñados para hacerte sentir como la princesa que eres."
+    },
+    "boxthree": {
+      "title": "Tuxedos",
+      "subtitle": "Ya tienes el vestido perfecto, ahora encuentra un esmoquin igualmente increíble que combine con tu cónyuge."
+    }
+  },
+  "testimonialst": {
+    "title": "Con la confianza de miles de clientes satisfechos",
+    "subtitle": "Nada nos llena más de alegría que escuchar las historias de nuestros clientes satisfechos. Esto es lo que algunos de ellos han dicho sobre su experiencia en Eleganza Bridal:"
+  },
+  "notfound": {
+    "title": "Tu página no fue encontrada",
+    "subtitle": "¡Ups! La página que buscas no existe. Es posible que se haya movido o eliminado.",
+    "btntxt": "Explora nuestro catálogo"
+  },
+  "singleprod": {
+    "brand": "Marca",
+    "category": "Categoría",
+    "tags": "Etiquetas",
+    "btntext": "Añadir a Favoritos",
+    "trendigtxt": "Productos en Tendencia"
+  }
 }
-
-

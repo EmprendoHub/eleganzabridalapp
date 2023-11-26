@@ -39,7 +39,6 @@ class APIFilters {
 
     const removeFields = ['keyword', 'page', 'per_page'];
     removeFields.forEach((el) => delete queryCopy[el]);
-    console.log(queryCopy);
     let prop = '';
     // Price Fitler for gt> gte>= lt< lte<= in PRICE
     let output = {};
@@ -58,7 +57,6 @@ class APIFilters {
         output[prop][`$${operator}`] = queryCopy[key];
       }
     }
-    console.log(output);
     this.query = this.query.find(output);
 
     return this;

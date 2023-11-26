@@ -9,7 +9,7 @@ import FooterContainer from '../container/FooterContainer';
 
 const FooterMenu = ({ footer, lang }) => {
   return (
-    <div className="w-full bg-gradient-to-b from-pink-600 to-pink-700 text-slate-100 px-40 sm:px-4 py-24">
+    <div className="w-full bg-gradient-to-b from-white to-white text-gray-900 px-20 md:px-5 py-24">
       <FooterContainer className="grid xsm:grid-cols-1 md:grid-cols-2 grid-cols-4 gap-10">
         <div className=" gap-y-4">
           <LogoComponent />

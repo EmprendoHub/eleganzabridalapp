@@ -25,9 +25,11 @@ const FilterMenuComponent = ({
       initial="initial"
       animate="enter"
       exit="exit"
-      className={`${styles.menu} bg-transparent  overflow-auto overflow-y-scroll`}
+      className={`${styles.menu} bg-transparent`}
     >
-      <div className={`${styles.body} max-w-[400px]  px-5 pt-10`}>
+      <div
+        className={`${styles.body} max-w-[400px]  overflow-y-auto px-5 py-10`}
+      >
         <AllFiltersComponrnt
           allBrands={allBrands}
           allCategories={allCategories}

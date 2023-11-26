@@ -55,8 +55,8 @@ const TrendingNewProducts = ({ trending, lang }) => {
   useEffect(() => {
     const fetchDetails = async () => {
       try {
-        const URL_ALL = `https://www.eleganzabridal-lv.com/api/products`;
-        //const URL_ALL = `http://localhost:3000/api/productstrend`;
+        //const URL_ALL = `https://www.eleganzabridal-lv.com/api/products`;
+        const URL_ALL = `http://localhost:3000/api/productstrend`;
         const res_all = await fetch(URL_ALL, { cache: 'no-store' });
         const data_trending = await res_all.json();
         //let sliced_products = data_trending.products.slice(0, 50)
@@ -93,7 +93,7 @@ const TrendingNewProducts = ({ trending, lang }) => {
   }, []);
 
   return (
-    <div className="mx-auto flex flex-col justify-center items-center">
+    <div className="mx-auto flex flex-col justify-center items-center pt-20">
       <SectionTitle
         className="pb-10 text-5xl md:text-3xl text-center"
         title={trending.title}
@@ -106,8 +106,10 @@ const TrendingNewProducts = ({ trending, lang }) => {
             <li
               key={index}
               className={`${
-                activeTab == item.category ? 'active' : 'bg-gray-500'
-              } cursor-pointer text-center bg-black py-2 px-6 sm:px-2 rounded-sm text-white sm:text-xs`}
+                activeTab == item.category
+                  ? 'active'
+                  : 'border-b border-gray-500'
+              } cursor-pointer text-center  py-2 px-6 sm:px-2 text-sm text-black sm:text-xs uppercase font-playfair-display`}
               onClick={() => activatedTab(item.category)}
             >
               {item.category}
@@ -116,14 +118,14 @@ const TrendingNewProducts = ({ trending, lang }) => {
         })}
       </ul>
       <motion.div
-        className="w-full  flex flex-row md:flex-col gap-4 my-10 px-10 mx-auto justify-center items-center object-fill"
+        className="w-full  flex flex-row md:flex-col gap-4 my-10 px-10 sm:px-2 mx-auto justify-center items-center object-fill"
         layout
       >
         {trendingProducts.slice(0, 4).map((product, index) => {
           return (
             <AnimatePresence key={index}>
               <motion.div
-                className="w-full max-w-[400px] min-h-[850px]"
+                className="w-full"
                 key={product._id}
                 layout
                 initial={{ opacity: 0 }}
