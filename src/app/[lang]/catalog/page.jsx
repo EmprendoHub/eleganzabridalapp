@@ -6,8 +6,8 @@ import MobileFilterComponet from '@/components/productComponents/productCatalog/
 import InnerSectionTextComponent from '@/components/texts/InnerSectionTextComponent';
 
 const getProducts = async (searchParams) => {
-  //const BASE_URL = 'https://www.eleganzabridal-lv.com/api/products';
-  const BASE_URL = 'http://localhost:3000/api/products';
+  const BASE_URL = 'https://www.eleganzabridal-lv.com/api/products';
+  //const BASE_URL = 'http://localhost:3000/api/products';
   const urlParams = {
     keyword: searchParams.keyword,
     category: searchParams.category,

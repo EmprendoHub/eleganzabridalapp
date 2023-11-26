@@ -55,8 +55,8 @@ const TrendingNewProducts = ({ trending, lang }) => {
   useEffect(() => {
     const fetchDetails = async () => {
       try {
-        //const URL_ALL = `https://www.eleganzabridal-lv.com/api/products`;
-        const URL_ALL = `http://localhost:3000/api/productstrend`;
+        const URL_ALL = `https://www.eleganzabridal-lv.com/api/products`;
+        //const URL_ALL = `http://localhost:3000/api/productstrend`;
         const res_all = await fetch(URL_ALL, { cache: 'no-store' });
         const data_trending = await res_all.json();
         //let sliced_products = data_trending.products.slice(0, 50)
