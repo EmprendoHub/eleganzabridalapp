@@ -6,8 +6,7 @@ import MobileFilterComponet from '@/components/productComponents/productCatalog/
 import InnerSectionTextComponent from '@/components/texts/InnerSectionTextComponent';
 
 const getProducts = async (searchParams) => {
-  const BASE_URL = `${process.env.NEXTAUTH_URL}/api/products`;
-  //const BASE_URL = 'http://localhost:3000/api/products';
+  const BASE_URL = `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/products`;
   const urlParams = {
     keyword: searchParams.keyword,
     category: searchParams.category,

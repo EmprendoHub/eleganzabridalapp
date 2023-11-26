@@ -2,8 +2,7 @@ import SingleProductComponent from '@/components/productComponents/singleProduct
 import { getDictionary } from '@/lib/dictionary';
 
 const getOneAndFourRelated = async (id) => {
-  const URL_ONE = `${process.env.NEXTAUTH_URL}/api/product?${id}`;
-  //const URL_ONE = `http://localhost:3000/api/product?${id}`;
+  const URL_ONE = `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/product?${id}`;
   const res = await fetch(URL_ONE, { cache: 'no-store' });
   const data = res.json();
   return data;
