@@ -27,6 +27,7 @@ const QuoteForm = ({
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
   const [activeButton, setActiveButton] = useState(false);
+  const [delivered, setDelivered] = useState(false);
   //email js service Ids
   const templateId = templateID;
   const serviceId = serviceID;
@@ -63,6 +64,7 @@ const QuoteForm = ({
     emailjs
       .send(serviceId, templateId, params, publicKey)
       .then((response) => {
+        setDelivered(true);
         setName('');
         setEmail('');
         setPhone('');
@@ -81,78 +83,86 @@ const QuoteForm = ({
         async
         defer
       ></script>
-      <form onSubmit={handleSubmit} className="">
-        <h2 className="pb-4">Productos</h2>
-        <div className="flex flex-row items-center justify-start gap-3 pb-10">
-          {productData?.map((product, index) => {
-            return (
-              <div
-                key={index}
-                className="flex flex-col items-center justify-center gap-2 text-center"
-              >
-                <Image
-                  loader={myLoader}
-                  src={product?.mainImageUrl}
-                  width={100}
-                  height={100}
-                  alt="product image"
-                  className="w-16 h-16 object-fit"
-                />
 
-                <input
-                  type="text"
-                  placeholder={product.title}
-                  defaultValue={product.title}
-                  className="text-center text-xs"
-                />
-              </div>
-            );
-          })}
+      {delivered ? (
+        <div>
+          Your quote was delivered successfully one of our representatives will
+          be in contact shortly
         </div>
-        <div className="flex flex-col w-full gap-y-4">
-          <input
-            type="text"
-            placeholder={contactform.inputname}
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="p-2 border-black border-b font-playfair-display"
-          />
-          <div className="grid grid-cols-2  pt-2 ">
+      ) : (
+        <form onSubmit={handleSubmit} className="">
+          <h2 className="pb-4">Productos</h2>
+          <div className="flex flex-row items-center justify-start gap-3 pb-10">
+            {productData?.map((product, index) => {
+              return (
+                <div
+                  key={index}
+                  className="flex flex-col items-center justify-center gap-2 text-center"
+                >
+                  <Image
+                    loader={myLoader}
+                    src={product?.mainImageUrl}
+                    width={100}
+                    height={100}
+                    alt="product image"
+                    className="w-16 h-16 object-fit"
+                  />
+
+                  <input
+                    type="text"
+                    placeholder={product.title}
+                    defaultValue={product.title}
+                    className="text-center text-xs"
+                  />
+                </div>
+              );
+            })}
+          </div>
+          <div className="flex flex-col w-full gap-y-4">
             <input
-              type="email"
-              placeholder={contactform.inputemail}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="p-2 mr-4 border-black border-b font-playfair-display"
-            />
-            <input
-              type="tel"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-              required
-              placeholder={contactform.inputphone}
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
+              type="text"
+              placeholder={contactform.inputname}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="p-2 border-black border-b font-playfair-display"
             />
+            <div className="grid grid-cols-2  pt-2 ">
+              <input
+                type="email"
+                placeholder={contactform.inputemail}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="p-2 mr-4 border-black border-b font-playfair-display"
+              />
+              <input
+                type="tel"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                required
+                placeholder={contactform.inputphone}
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className="p-2 border-black border-b font-playfair-display"
+              />
+            </div>
+            <textarea
+              cols="30"
+              rows="5"
+              placeholder="Your Message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              className="p-2 border-black border-b font-playfair-display"
+            ></textarea>
+            <ReCAPTCHA
+              ref={refCaptcha}
+              sitekey={'6LcWFCMpAAAAAJW3GoSOVAV1MgEpXNZI4-maDWHf'}
+            />
+            <br />
+            <button type="submit" className="mt-5" disabled={activeButton}>
+              <p className="bg-black  text-white py-3">Get Quote</p>
+            </button>
           </div>
-          <textarea
-            cols="30"
-            rows="5"
-            placeholder="Your Message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            className="p-2 border-black border-b font-playfair-display"
-          ></textarea>
-          <ReCAPTCHA
-            ref={refCaptcha}
-            sitekey={'6LcWFCMpAAAAAJW3GoSOVAV1MgEpXNZI4-maDWHf'}
-          />
-          <br />
-          <button type="submit" className="mt-5" disabled={activeButton}>
-            <p className="bg-black  text-white py-3">Get Quote</p>
-          </button>
-        </div>
-      </form>
+        </form>
+      )}
     </div>
   );
 };
