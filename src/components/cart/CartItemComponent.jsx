@@ -50,7 +50,7 @@ const CartItemComponent = () => {
                 width={500}
                 height={500}
                 alt="product image"
-                className="w-[50%] sm:w-full mdsm:w-2/3 h-30 object-cover"
+                className="w-[50%] sm:w-full md:w-2/3 h-30 object-cover"
               />
             </div>
             {/* Model Value */}

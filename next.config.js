@@ -1,12 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        domains:[
+  reactStrictMode: false,
+  images: {
+    domains: ['minio.salvawebpro.com', 'lh3.googleusercontent.com'],
+  },
+};
 
-            "minio.salvawebpro.com",
-            "lh3.googleusercontent.com",
-        ],
-    },
-}
-
-module.exports = nextConfig
+module.exports = nextConfig;

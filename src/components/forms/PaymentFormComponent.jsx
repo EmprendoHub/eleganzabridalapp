@@ -5,6 +5,7 @@ useSelector;
 import { useEffect, useState } from 'react';
 import { AiOutlineUser } from 'react-icons/ai';
 import { useSession, signIn } from 'next-auth/react';
+import Link from 'next/link';
 
 const PaymentFormComponent = () => {
   const { data: session } = useSession();
@@ -69,9 +70,12 @@ const PaymentFormComponent = () => {
             </div>
           )}
           {session && (
-            <button className="bg-black text-slate-100 mt-4 py-3 px-6 hover:bg-pink-600 cursor-pointer duration-50">
+            <Link
+              href={'/quote'}
+              className="bg-black text-slate-100 mt-4 py-3 px-6 hover:bg-pink-600 cursor-pointer duration-50"
+            >
               Proceed to Quote
-            </button>
+            </Link>
           )}
         </div>
       )}
