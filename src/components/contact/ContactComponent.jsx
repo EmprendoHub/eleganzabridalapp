@@ -1,8 +1,6 @@
 import React from 'react';
-import QuizComponent from '../ctas/QuizComponent';
 import ContactUsComponent from '../ctas/ContactUsComponent';
 import IconListSectionComponent from '../ctas/IconListSectionComponent';
-import HeroTextComponent from '../texts/HeroTextComponent';
 import HeroColTextComponent from '../texts/HeroColTextComponent';
 
 const ContactComponent = ({ contact, quiz, contactform }) => {

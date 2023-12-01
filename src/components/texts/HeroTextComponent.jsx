@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 const HeroTextComponent = ({ title, subtitle, btnText, btnUrl }) => {
   return (
-    <div className="relativew-full h-full">
-      <div className="flex h-full flex-col items-center justify-center gap-y-6 justify-center">
+    <div className="relative w-full h-full">
+      <div className="flex h-full flex-col items-center gap-y-6 justify-center">
         <motion.h2
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}

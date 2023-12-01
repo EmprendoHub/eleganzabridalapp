@@ -1,10 +1,5 @@
 import React from 'react';
-import InnerSectionContainer from '../container/InnerSectionContainer';
-import Image from 'next/image';
-import Link from 'next/link';
 import ColTextComponent from '../texts/ColTextComponent';
-import ImageUpMotion from '../images/ImageUpMotion';
-import ImageDownMotion from '../images/ImageDownMotion';
 import ImageRightMotion from '../images/ImageRightMotion';
 import ImageLeftMotion from '../images/ImageLeftMotion';
 

@@ -7,7 +7,7 @@ import MobileMenuComponent from './mobilenav/MobileMenuComponent';
 
 const MotionHeaderComponent = ({ lang, header }) => {
   const { productData, orderData } = useSelector((state) => state.shopping);
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(true);
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, 'change', (latest) => {

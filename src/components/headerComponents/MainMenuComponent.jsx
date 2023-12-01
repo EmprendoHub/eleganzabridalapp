@@ -15,14 +15,11 @@ import LocaleSwitcher from '../localeSwitcher';
 
 const CustomLink = ({ href, title, className = '' }) => {
   const router = useRouter();
-
   return (
     <Link href={href} className={`${className} relative group`}>
       <span className="pb-1">{title}</span>
       <span
-        className={`h-[1px] inline-block bg-gradient-to-r from-gray-200 to-zinc-900 group-hover:w-full transition-[width] ease duration-300 absolute left-0 bottom-0 ${
-          router.asPath === href ? 'w-full' : 'w-0'
-        }`}
+        className={`h-[1px] inline-block bg-gradient-to-r from-gray-200 to-zinc-900 group-hover:w-full transition-[width] ease duration-300 absolute left-0 bottom-0 w-0`}
       >
         &nbsp;
       </span>
