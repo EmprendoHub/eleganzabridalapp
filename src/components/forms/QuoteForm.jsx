@@ -1,9 +1,10 @@
 'use client';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const myLoader = ({ src, width, quality }) => {
   return `https://minio.salvawebpro.com:9000/eleganza-products/new/${src}?w=${width}&q=${
@@ -20,7 +21,7 @@ const QuoteForm = ({
   lang,
 }) => {
   const router = useRouter();
-
+  const refCaptcha = useRef();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -42,6 +43,7 @@ const QuoteForm = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     setActiveButton(true);
+    const token = refCaptcha.current.getValue();
 
     // create a new object that contains dynamic params
     const templateParams = {
@@ -52,10 +54,14 @@ const QuoteForm = ({
       message: message,
       from_products: products,
     };
+    const params = {
+      ...templateParams,
+      'g-recaptcha-response': token,
+    }; // <- Create this object spreading your state and adding the retrieved token as a value of 'g-recaptcha-response'
 
     //send email using email js
     emailjs
-      .send(serviceId, templateId, templateParams, publicKey)
+      .send(serviceId, templateId, params, publicKey)
       .then((response) => {
         setName('');
         setEmail('');
@@ -137,11 +143,10 @@ const QuoteForm = ({
             onChange={(e) => setMessage(e.target.value)}
             className="p-2 border-black border-b font-playfair-display"
           ></textarea>
-          <div
-            className="g-recaptcha"
-            data-sitekey="6LcWFCMpAAAAAJW3GoSOVAV1MgEpXNZI4-maDWHf
-"
-          ></div>
+          <ReCAPTCHA
+            ref={refCaptcha}
+            sitekey={'6LcWFCMpAAAAAJW3GoSOVAV1MgEpXNZI4-maDWHf'}
+          />
           <br />
           <button type="submit" className="mt-5" disabled={activeButton}>
             <p className="bg-black  text-white py-3">Get Quote</p>
