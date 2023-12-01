@@ -42,7 +42,7 @@ const MainHeroComponent = ({ mainhero, lang }) => {
                 alt="bannerone"
                 width={1000}
                 height={1000}
-                className=" object-cover w-full h-full  bottom-[-50px] md:bottom-[0px]"
+                className=" object-cover object-center w-full h-full  bottom-[-50px] md:bottom-[0px]"
                 priority
               />
             </div>
@@ -57,7 +57,7 @@ const MainHeroComponent = ({ mainhero, lang }) => {
                 width={1000}
                 height={1000}
                 alt="bannertwo"
-                className=" object-cover w-full h-full  bottom-[-50px] md:bottom-[0px]"
+                className=" object-cover object-top w-full h-full  bottom-[-50px] md:bottom-[0px]"
               />
             </div>
           </div>
@@ -71,7 +71,7 @@ const MainHeroComponent = ({ mainhero, lang }) => {
                 width={1000}
                 height={1000}
                 alt="bannerthree"
-                className=" object-cover w-full h-full  bottom-[-50px] md:bottom-[0px]"
+                className=" object-cover object-top w-full h-full  bottom-[-50px] md:bottom-[0px]"
               />
             </div>
           </div>
