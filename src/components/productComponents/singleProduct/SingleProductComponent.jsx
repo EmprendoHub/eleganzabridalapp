@@ -113,7 +113,7 @@ const SingleProductComponent = ({
                 autoplay={true}
                 onSwiper={(swiper) => ''}
                 onSlideChange={() => ''}
-                className="w-full cursor-pointer"
+                className="w-full "
               >
                 {product?.imgsSrc &&
                   product.imgsSrc.map((image, index) => (
