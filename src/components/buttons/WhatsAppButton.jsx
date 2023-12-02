@@ -29,7 +29,7 @@ const WhatsAppButton = ({ lang }) => {
             whileHover={{ scale: 1.2 }}
             src="/images/Eleganza_whattsapp.webp"
             alt="WhatsApp"
-            className="h-12 sm:h-10 w-12 sm:w-10"
+            className="h-12 sm:h-10 w-12 sm:w-10 "
           />
         </Link>
       )}
