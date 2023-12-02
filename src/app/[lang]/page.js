@@ -17,7 +17,7 @@ export default async function Home({ params: { lang } }) {
     brandsection,
   } = await getDictionary(lang);
   return (
-    <main className="main-page-class">
+    <main className="main-page-class overflow-x-hidden">
       <MainHeroComponent mainhero={mainhero} lang={lang} />
       <HeroComponent mainhero={mainhero} lang={lang} />
       <BrandComponent brandsection={brandsection} lang={lang} />

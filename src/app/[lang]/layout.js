@@ -3,6 +3,8 @@ import HeaderComponent from '@/components/headerComponents/HeaderComponent';
 import FooterComponent from '@/components/footer/FooterComponent';
 import CustomSesionProvider from './SessionProvider';
 import Script from 'next/script';
+import BackToTopButton from '@/components/buttons/BackToTopButton';
+import WhatsAppButton from '@/components/buttons/WhatsAppButton';
 
 export const metadata = {
   metadataBase: new URL('https://www.eleganzabridal-lv.com/'),
@@ -35,6 +37,8 @@ export default async function RootLayout({ children, params }) {
           {children}
           {/* Footer */}
           <FooterComponent lang={params.lang} />
+          <BackToTopButton />
+          <WhatsAppButton lang={params.lang} />
         </CustomSesionProvider>
         <noscript
           dangerouslySetInnerHTML={{
