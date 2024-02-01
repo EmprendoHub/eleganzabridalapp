@@ -35,9 +35,7 @@ const ContactComponent = ({ contact, quiz, contactform }) => {
                 linkTwoText={'eleganzabridalandbanquet@gmail.com'}
                 textTitleThree={contact.list.boxthree.title}
                 textThree={contact.list.boxthree.subtitle}
-                linkThree={
-                  'https://www.google.com/maps/dir//36.1584611,-115.140488/@36.158461,-115.140488,15z?hl=en-MX'
-                }
+                linkThree={'https://maps.app.goo.gl/P2UAEBs5nb2pHyvd7'}
                 linkThreeText={
                   '1000 E Charleston Blvd #105, Las Vegas, NV 89104'
                 }
