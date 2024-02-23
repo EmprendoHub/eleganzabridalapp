@@ -48,6 +48,33 @@ export async function getOneProduct(slug, id) {
   }
 }
 
+export async function getTrendingProducts() {
+  //const session = await getServerSession(options);
+  try {
+    await dbConnect();
+
+    const productsCount = await Product.countDocuments();
+    let trendingProducts = await Product.aggregate([
+      {
+        $match: {
+          $or: [
+            { category: 'wedding' },
+            { category: 'quinces' },
+            { category: 'tuxedo' },
+            { category: 'evening' },
+          ],
+        },
+      },
+      { $sample: { size: 200 } },
+    ]);
+    trendingProducts = JSON.stringify(trendingProducts);
+    return { trendingProducts: trendingProducts, productsCount: productsCount };
+  } catch (error) {
+    console.log(error);
+    throw Error(error);
+  }
+}
+
 export async function getAllProduct(searchQuery) {
   try {
     await dbConnect();

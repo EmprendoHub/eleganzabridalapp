@@ -3,12 +3,7 @@ import SectionTitle from '@/components/texts/SectionTitle';
 import { motion, AnimatePresence } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import ProductCardComponet from '../productCard/ProductCardComponent';
-
-const myLoader = ({ src, width, quality }) => {
-  return `https://minio.salvawebpro.com:9000/eleganza-products/new/${src}?w=${width}&q=${
-    quality || 75
-  }`;
-};
+import { getTrendingProducts } from '@/app/[lang]/_actions';
 
 function shuffleArray(array) {
   let i = array.length - 1;
@@ -55,11 +50,9 @@ const TrendingNewProducts = ({ trending, lang }) => {
   useEffect(() => {
     const fetchDetails = async () => {
       try {
-        const URL_ALL = `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/productstrend`;
-        const res_all = await fetch(URL_ALL, { cache: 'no-store' });
-        const data_trending = await res_all.json();
-        //let sliced_products = data_trending.products.slice(0, 50)
-        let sliced_products = data_trending.products.map((product) => {
+        const data = await getTrendingProducts();
+        let trendingProducts = JSON.parse(data.trendingProducts);
+        let sliced_products = trendingProducts.map((product) => {
           return {
             _id: product._id,
             title: product.title,

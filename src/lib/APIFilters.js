@@ -5,7 +5,6 @@ class APIFilters {
   }
 
   searchAllFields() {
-    console.log(this.queryStr);
     const keyword = this.queryStr.get('keyword');
     // Define the conditions to search for the keyword in title, description, and category
     const searchConditions = {

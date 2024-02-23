@@ -12,11 +12,9 @@ const CatalogPage = async ({ searchParams, params: { lang } }) => {
     category: searchParams.category,
     brand: searchParams.brand,
   };
-  console.log(urlParams);
   const filteredUrlParams = Object.fromEntries(
     Object.entries(urlParams).filter(([key, value]) => value !== undefined)
   );
-  console.log(filteredUrlParams);
   const searchQuery = new URLSearchParams(filteredUrlParams).toString();
   const data = await getAllProduct(searchQuery);
   let entries = JSON.parse(data.products);
