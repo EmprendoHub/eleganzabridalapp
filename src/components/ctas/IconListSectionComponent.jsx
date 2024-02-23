@@ -60,7 +60,11 @@ const IconListSectionComponent = ({
                 {textTitleThree}
               </div>
               <div className="text-xs">{textThree}</div>
-              <a href={linkThree} className="sm:text-sm font-bold">
+              <a
+                href={linkThree}
+                className="sm:text-sm font-bold"
+                target="_blank"
+              >
                 {linkThreeText}
               </a>
             </div>

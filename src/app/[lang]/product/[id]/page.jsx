@@ -1,19 +1,19 @@
 import SingleProductComponent from '@/components/productComponents/singleProduct/SingleProductComponent';
 import { getDictionary } from '@/lib/dictionary';
+import { getOneProduct } from '../../_actions';
 
 const getOneAndFourRelated = async (id) => {
-  const URL_ONE = `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/product?${id}`;
-  const res = await fetch(URL_ONE, { cache: 'no-store' });
-  const data = res.json();
+  const data = await getOneProduct(null, id);
+  const product = JSON.parse(data.product);
   return data;
 };
 
 const ProductDetailsPage = async (ctx) => {
   const { singleprod } = await getDictionary(ctx.params.lang);
   const id = ctx.params.id;
-  const productData = await getOneAndFourRelated(id);
-  const relatedProducts = productData.fourRelated;
-  const oneProduct = productData.product;
+  const data = await getOneProduct(null, id);
+  const product = JSON.parse(data.product);
+  const trendingProducts = JSON.parse(data.trendingProducts);
 
   return (
     <div className="">
@@ -21,8 +21,8 @@ const ProductDetailsPage = async (ctx) => {
         ctx={ctx}
         lang={ctx.params.lang}
         singleprod={singleprod}
-        product={oneProduct}
-        trendingProducts={relatedProducts}
+        product={product}
+        trendingProducts={trendingProducts}
       />
     </div>
   );
