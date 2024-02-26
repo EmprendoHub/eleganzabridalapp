@@ -1,4 +1,7 @@
+'use client';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
+import queryString from 'query-string';
 import React from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
@@ -10,6 +13,17 @@ const ServerPagination = ({
   nextPage,
   totalPages,
 }) => {
+  const searchParams = useSearchParams();
+  const searchParamsCopy = {};
+  searchParams.forEach((value, key) => {
+    searchParamsCopy[key] = value;
+  });
+  const removeFields = ['per_page', 'page'];
+  removeFields.forEach((el) => delete searchParamsCopy[el]);
+  console.log(searchParamsCopy);
+  const prevSearchParams =
+    `/catalog?` + queryString.stringify(searchParamsCopy);
+
   return (
     <>
       {isPageOutOfRange ? (
@@ -26,7 +40,7 @@ const ServerPagination = ({
               </div>
             ) : (
               <Link
-                href={`?page=${prevPage}`}
+                href={`${prevSearchParams}&page=${prevPage}`}
                 aria-label="Previous Page"
                 className="bg-black w-10 h-10 flex justify-center items-center disabled:bg-slate-300 text-white p-2  rounded-full text-xl"
               >
@@ -42,7 +56,7 @@ const ServerPagination = ({
                     ? 'bg-black fw-bold px-2 w-10 h-10 flex justify-center items-center text-white rounded-full'
                     : 'hover:bg-black px-1 rounded-full w-10 h-10 flex justify-center items-center hover:text-white'
                 }
-                href={`?page=${pageNumber}`}
+                href={`${prevSearchParams}&page=${pageNumber}`}
               >
                 {pageNumber}
               </Link>
@@ -57,7 +71,7 @@ const ServerPagination = ({
               </div>
             ) : (
               <Link
-                href={`?page=${nextPage}`}
+                href={`${prevSearchParams}&page=${nextPage}`}
                 aria-label="Next Page"
                 className="bg-black w-10 h-10 flex justify-center items-center disabled:bg-slate-300 text-white p-2  rounded-full text-xl"
               >
