@@ -1,12 +1,12 @@
-'use client';
-import { useRouter, useSearchParams } from 'next/navigation';
-import queryString from 'query-string';
+"use client";
+import { useRouter, useSearchParams } from "next/navigation";
+import queryString from "query-string";
 import {
   FiChevronLeft,
   FiChevronRight,
   FiChevronsRight,
   FiChevronsLeft,
-} from 'react-icons/fi';
+} from "react-icons/fi";
 
 const PaginationControllerComponent = ({
   totalProductCount,
@@ -22,16 +22,16 @@ const PaginationControllerComponent = ({
     searchParamsCopy[key] = value;
   });
 
-  const removeFields = ['per_page', 'page'];
+  const removeFields = ["per_page", "page"];
   removeFields.forEach((el) => delete searchParamsCopy[el]);
 
   const prevSearchParams =
     `/catalog?` + queryString.stringify(searchParamsCopy);
-  const page = searchParams.get('page') ?? '1';
-  const per_page = searchParams.get('per_page') ?? '8';
+  const page = searchParams.get("page") ?? "1";
+  const per_page = searchParams.get("per_page") ?? "8";
 
   return (
-    <div className="py-8 paginate-container flex mx-auto item text-center flex-row justify-center gap-x-5 sm:gap-x-2 items-center">
+    <div className="py-8 paginate-container flex mx-auto item text-center flex-row justify-center gap-x-5 maxsm:gap-x-2 items-center">
       <button
         className="bg-black disabled:bg-slate-300 text-white p-2 rounded-full text-xl"
         onClick={() => {
@@ -53,7 +53,7 @@ const PaginationControllerComponent = ({
         <FiChevronLeft />
       </button>
 
-      <div className="font-semibold text-lg sm:text-sm">
+      <div className="font-semibold text-lg maxsm:text-sm">
         {page} / {Math.ceil(totalProductCount / Number(per_page))}
       </div>
 

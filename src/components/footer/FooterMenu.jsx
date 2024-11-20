@@ -1,16 +1,16 @@
-'use client';
-import { BsFacebook, BsInstagram, BsTiktok } from 'react-icons/bs';
-import payment from '@/images/payment.png';
-import LogoComponent from '../logos/LogoComponent';
-import Link from 'next/link';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import FooterContainer from '../container/FooterContainer';
+"use client";
+import { BsFacebook, BsInstagram, BsTiktok } from "react-icons/bs";
+import payment from "@/images/payment.png";
+import LogoComponent from "../logos/LogoComponent";
+import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import FooterContainer from "../container/FooterContainer";
 
 const FooterMenu = ({ footer, lang }) => {
   return (
-    <div className="w-full bg-gradient-to-b from-white to-white text-gray-900 px-20 md:px-5 py-24">
-      <FooterContainer className="grid xsm:grid-cols-1 md:grid-cols-2 grid-cols-4 gap-10">
+    <div className="w-full bg-gradient-to-b from-white to-white text-gray-900 px-20 maxmd:px-5 py-24">
+      <FooterContainer className="grid xsm:grid-cols-1 maxmd:grid-cols-2 grid-cols-4 gap-10">
         <div className=" gap-y-4">
           <LogoComponent />
           <p className="text-sm mb-10 mt-2">{footer.widgetone.descrp}</p>

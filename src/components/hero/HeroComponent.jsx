@@ -1,23 +1,23 @@
-'use client';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import bannerone from '@/images/Quinces_Dresses_banner_image.webp';
-import weddingbannertwo from '@/images/Wedding_Dresses_banner_mage.webp';
-import bannerthree from '@/images/Groom_Tuxedos_banner_image.webp';
-import logobanner1 from '@/images/Ladivine_logo.webp';
-import logobanner2 from '@/images/Love21_logo.webp';
-import logobanner3 from '@/images/Morilee_logo.webp';
-import logobanner4 from '@/images/princesa_logo.webp';
-import logobanner5 from '@/images/rachel-allen.webp';
-import logobanner6 from '@/images/dancing_queen_logo.webp';
-import logobanner7 from '@/images/May_queen_logo.webp';
+"use client";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import bannerone from "@/images/Quinces_Dresses_banner_image.webp";
+import weddingbannertwo from "@/images/Wedding_Dresses_banner_mage.webp";
+import bannerthree from "@/images/Groom_Tuxedos_banner_image.webp";
+import logobanner1 from "@/images/Ladivine_logo.webp";
+import logobanner2 from "@/images/Love21_logo.webp";
+import logobanner3 from "@/images/Morilee_logo.webp";
+import logobanner4 from "@/images/princesa_logo.webp";
+import logobanner5 from "@/images/rachel-allen.webp";
+import logobanner6 from "@/images/dancing_queen_logo.webp";
+import logobanner7 from "@/images/May_queen_logo.webp";
 
-import dividerline from '@/images/diver_line.webp';
-import { PiCaretLeftLight, PiCaretRightLight } from 'react-icons/pi';
-import Image from 'next/image';
-import BannerTextComponent from '../texts/BannerTextComponent';
-import SectionContainer from '../container/SectionContainer';
+import dividerline from "@/images/diver_line.webp";
+import { PiCaretLeftLight, PiCaretRightLight } from "react-icons/pi";
+import Image from "next/image";
+import BannerTextComponent from "../texts/BannerTextComponent";
+import SectionContainer from "../container/SectionContainer";
 
 const HeroComponent = ({ mainhero, lang }) => {
   const NextArrow = (props) => {
@@ -70,7 +70,7 @@ const HeroComponent = ({ mainhero, lang }) => {
     autoplay: true,
     speed: 2000,
     autoplaySpeed: 2000,
-    cssEase: 'linear',
+    cssEase: "linear",
     slidesToShow: 5,
     slidesToScroll: 1,
     arrows: false,
@@ -102,8 +102,8 @@ const HeroComponent = ({ mainhero, lang }) => {
   return (
     <SectionContainer className="relative second-hero bg-gradient-to-t from-slate-100 to-white pt-40">
       <Slider {...settings}>
-        <div className="w-full h-full relative" id={'hero'}>
-          <div className="flex flex-row md:flex-col relative">
+        <div className="w-full h-full relative" id={"hero"}>
+          <div className="flex flex-row maxmd:flex-col relative">
             <div className="flex ">
               <BannerTextComponent
                 title={mainhero.bannerone.title}
@@ -116,7 +116,7 @@ const HeroComponent = ({ mainhero, lang }) => {
               <Image
                 src={bannerone}
                 alt="bannerone"
-                className="w-full h-full relative bottom-[-50px] md:bottom-[0px]"
+                className="w-full h-full relative bottom-[-50px] maxmd:bottom-[0px]"
                 priority
               />
             </div>
@@ -124,7 +124,7 @@ const HeroComponent = ({ mainhero, lang }) => {
         </div>
 
         <div className="w-full h-full relative">
-          <div className="flex flex-row md:flex-col w-full h-full relative">
+          <div className="flex flex-row maxmd:flex-col w-full h-full relative">
             <div className="flex">
               <BannerTextComponent
                 title={mainhero.bannertwo.title}
@@ -137,14 +137,14 @@ const HeroComponent = ({ mainhero, lang }) => {
               <Image
                 src={weddingbannertwo}
                 alt="bannertwo"
-                className="w-full h-full relative  bottom-[-50px] md:bottom-[0px]"
+                className="w-full h-full relative  bottom-[-50px] maxmd:bottom-[0px]"
               />
             </div>
           </div>
         </div>
 
         <div className="w-full h-full relative">
-          <div className="flex flex-row md:flex-col relative">
+          <div className="flex flex-row maxmd:flex-col relative">
             <div className="flex ">
               <BannerTextComponent
                 title={mainhero.bannerthree.title}
@@ -157,7 +157,7 @@ const HeroComponent = ({ mainhero, lang }) => {
               <Image
                 src={bannerthree}
                 alt="bannerthree"
-                className="w-full h-full relative bottom-[-50px] md:bottom-[0px]"
+                className="w-full h-full relative bottom-[-50px] maxmd:bottom-[0px]"
               />
             </div>
           </div>
@@ -165,7 +165,7 @@ const HeroComponent = ({ mainhero, lang }) => {
       </Slider>
 
       <div className="absolute w-full h-28 bg-gradient-to-t from-gray-100 to-transparent bottom-0 left-0 z-10" />
-      <div className="absolute text-white justify-center items-center p-4 w-[80%] md:w-[90%] mx-auto h-24  sm:h-16 md:h-20 lg:h-20 bg-black -bottom-10 right-0 left-0 z-10 rounded-xl">
+      <div className="absolute text-white justify-center items-center p-4 w-[80%] maxmd:w-[90%] mx-auto h-24  maxsm:h-16 maxmd:h-20 maxlg:h-20 bg-black -bottom-10 right-0 left-0 z-10 rounded-xl">
         <Slider {...settings_slidertwo} className="align-middle h-full">
           <div className="h-full flex flex-row align-middle">
             <Image
@@ -195,7 +195,7 @@ const HeroComponent = ({ mainhero, lang }) => {
             <Image
               src={logobanner3}
               alt="logobannerone"
-              className="w-[50%] m-auto pt-5 md:pt-2 relative "
+              className="w-[50%] m-auto pt-5 maxmd:pt-2 relative "
             />
             <Image
               src={dividerline}
@@ -207,7 +207,7 @@ const HeroComponent = ({ mainhero, lang }) => {
             <Image
               src={logobanner4}
               alt="logobannerone"
-              className="w-[50%] m-auto pt-3 md:pt-2 relative"
+              className="w-[50%] m-auto pt-3 maxmd:pt-2 relative"
             />
             <Image
               src={dividerline}
@@ -219,7 +219,7 @@ const HeroComponent = ({ mainhero, lang }) => {
             <Image
               src={logobanner5}
               alt="logobannerone"
-              className="w-[50%] h-full m-auto pt-5 md:pt-3 relative"
+              className="w-[50%] h-full m-auto pt-5 maxmd:pt-3 relative"
             />
             <Image
               src={dividerline}
@@ -231,7 +231,7 @@ const HeroComponent = ({ mainhero, lang }) => {
             <Image
               src={logobanner6}
               alt="logobannerone"
-              className="w-[50%] h-full m-auto pt-2 md:pt-3 relative"
+              className="w-[50%] h-full m-auto pt-2 maxmd:pt-3 relative"
             />
             <Image
               src={dividerline}
@@ -243,7 +243,7 @@ const HeroComponent = ({ mainhero, lang }) => {
             <Image
               src={logobanner7}
               alt="logobannerone"
-              className="w-[50%] h-full m-auto pt-3 md:pt-3 relative"
+              className="w-[50%] h-full m-auto pt-3 maxmd:pt-3 relative"
             />
             <Image
               src={dividerline}
@@ -255,7 +255,7 @@ const HeroComponent = ({ mainhero, lang }) => {
             <Image
               src={logobanner3}
               alt="logobannerone"
-              className="w-[50%] h-full m-auto pt-5 md:pt-3 relative"
+              className="w-[50%] h-full m-auto pt-5 maxmd:pt-3 relative"
             />
             <Image
               src={dividerline}

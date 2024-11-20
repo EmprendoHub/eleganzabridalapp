@@ -1,23 +1,23 @@
-'use client';
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import SectionTextComponent from '@/components/texts/SectionTextComponent';
-import HeroTextComponent from '@/components/texts/HeroTextComponent';
+"use client";
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import SectionTextComponent from "@/components/texts/SectionTextComponent";
+import HeroTextComponent from "@/components/texts/HeroTextComponent";
 // Placeholder images
-import ImageTestimonialComponent from '@/components/sliders/ImageTestimonialComponent';
-import InnerSectionTextComponent from '@/components/texts/InnerSectionTextComponent';
-import QuizComponent from '@/components/ctas/QuizComponent';
-import HeroColTextComponent from '../texts/HeroColTextComponent';
+import ImageTestimonialComponent from "@/components/sliders/ImageTestimonialComponent";
+import InnerSectionTextComponent from "@/components/texts/InnerSectionTextComponent";
+import QuizComponent from "@/components/ctas/QuizComponent";
+import HeroColTextComponent from "../texts/HeroColTextComponent";
 
 const AboutUsComponent = ({ about, quiz, lang }) => {
   return (
     <div>
-      <section className="flex flex-row sm:flex-col justify-center items-center">
-        <div className="container mx-auto flex justify-center items-center text-center p-5 sm:py-20">
+      <section className="flex flex-row maxsm:flex-col justify-center items-center">
+        <div className="container mx-auto flex justify-center items-center text-center p-5 maxsm:py-20">
           <HeroColTextComponent
-            pretitle={'Eleganza Bridal Las Vegas'}
+            pretitle={"Eleganza Bridal Las Vegas"}
             title={about.hero.title}
             subtitle={about.hero.subtitle}
           />
@@ -26,7 +26,7 @@ const AboutUsComponent = ({ about, quiz, lang }) => {
           className={`hero w-full h-[500px] bg-gray-100 text-center  bg-[url('/images/Eleganza-bridal-storefront-las-vegas.webp')]  bg-cover bg-no-repeat bg-center bg-fixed`}
         />
       </section>
-      <section className="bg-gray-100 text-center py-12 my-20 w-[50%] md:w-[90%] p-5 mx-auto">
+      <section className="bg-gray-100 text-center py-12 my-20 w-[50%] maxmd:w-[90%] p-5 mx-auto">
         <div className="container mx-auto">
           <InnerSectionTextComponent
             title={about.makes.title}
@@ -56,9 +56,9 @@ const AboutUsComponent = ({ about, quiz, lang }) => {
           </div>
         </div>
       </section>
-      <div className="flex flex-row w-[80%] md:w-full md:flex-col items-center mx-auto my-20 px-1">
-        <section className="text-center w-1/2 md:w-full">
-          <div className="container mx-auto px-6 sm:px-3">
+      <div className="flex flex-row w-[80%] maxmd:w-full maxmd:flex-col items-center mx-auto my-20 px-1">
+        <section className="text-center w-1/2 maxmd:w-full">
+          <div className="container mx-auto px-6 maxsm:px-3">
             <SectionTextComponent
               title={about.mission.title}
               paraOne={about.mission.parone}
@@ -69,7 +69,7 @@ const AboutUsComponent = ({ about, quiz, lang }) => {
           </div>
         </section>
 
-        <section className=" text-center w-1/2 md:w-full md:mt-5">
+        <section className=" text-center w-1/2 maxmd:w-full maxmd:mt-5">
           {/* Image */}
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -93,7 +93,7 @@ const AboutUsComponent = ({ about, quiz, lang }) => {
       <section
         className={`hero w-full h-[600px] bg-gray-100 text-center  bg-[url('/images/Eleganza-bridal-banner-contact.webp')]  bg-cover bg-no-repeat bg-center bg-fixed`}
       >
-        <div className=" backdrop-brightness-50 w-full h-full items-center  justify-center flex px-40 md:px-10 my-20">
+        <div className=" backdrop-brightness-50 w-full h-full items-center  justify-center flex px-40 maxmd:px-10 my-20">
           <div className="container mx-auto">
             <div className="container mx-auto">
               <HeroTextComponent

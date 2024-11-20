@@ -1,14 +1,14 @@
-'use client';
-import Link from 'next/link';
-import React from 'react';
-import { motion } from 'framer-motion';
+"use client";
+import Link from "next/link";
+import React from "react";
+import { motion } from "framer-motion";
 
 const ColTextComponent = ({
   pretitle,
   title,
   subtitle,
   btnText,
-  btnUrl = '/catalog',
+  btnUrl = "/catalog",
 }) => {
   return (
     <div>
@@ -24,9 +24,9 @@ const ColTextComponent = ({
         initial={{ y: 30, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7 }}
-        className="text-6xl sm:text-4xl font-playfair-display tracking-normal"
+        className="text-6xl maxsm:text-4xl font-playfair-display tracking-normal"
       >
-        {title}{' '}
+        {title}{" "}
       </motion.h2>
       <motion.p
         initial={{ y: 30, opacity: 0 }}

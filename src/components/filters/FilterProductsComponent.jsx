@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import React from "react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 const FilterProductsComponent = () => {
-  const [minAmount, setMinAmount] = useState('');
-  const [maxAmount, setMaxAmount] = useState('');
+  const [minAmount, setMinAmount] = useState("");
+  const [maxAmount, setMaxAmount] = useState("");
   const router = useRouter();
   let queryParams;
 
   function hnadleCheckBocClick(checkbox) {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       queryParams = new URLSearchParams(window.location.search);
     }
 
@@ -32,12 +32,12 @@ const FilterProductsComponent = () => {
         queryParams.append(checkbox.name, checkbox.value);
       }
     }
-    const path = window.location.pathname + '?' + queryParams.toString();
+    const path = window.location.pathname + "?" + queryParams.toString();
     router.push(path);
   }
 
   function checkHandler(checkBoxType, checkBoxValue) {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       queryParams = new URLSearchParams(window.location.search);
 
       const value = queryParams.get(checkBoxType);
@@ -63,10 +63,10 @@ const FilterProductsComponent = () => {
     <aside className="mt-24 mx-auto">
       {/* Price Filter */}
 
-      {/* <div className="md:hidden px-6 py-4 border border-gray-200 bg-white rounded shadow-sm">
+      {/* <div className="maxmd:hidden px-6 py-4 border border-gray-200 bg-white rounded shadow-sm">
             <h3 className="font-semibold mb-2">Price ($)</h3>
           
-          <div className="grid sm:grid-cols-3 gap-x-2">
+          <div className="grid maxsm:grid-cols-3 gap-x-2">
             <div className="mb-4">
               <input
                 name="min"
@@ -100,8 +100,8 @@ const FilterProductsComponent = () => {
   
           </div>  */}
 
-      <div className="p-5 pt-4 sm:p-1 border border-gray-200 bg-white rounded shadow-sm">
-        <ul className="flex flex-row gap-x-8 sm:gap-x-1 items-center">
+      <div className="p-5 pt-4 maxsm:p-1 border border-gray-200 bg-white rounded shadow-sm">
+        <ul className="flex flex-row gap-x-8 maxsm:gap-x-1 items-center">
           <li>
             <label className="flex items-center">
               <input
@@ -109,15 +109,15 @@ const FilterProductsComponent = () => {
                 type="checkbox"
                 value="wedding"
                 className="peer hidden "
-                defaultChecked={checkHandler('category', 'wedding')}
+                defaultChecked={checkHandler("category", "wedding")}
                 onClick={(e) => hnadleCheckBocClick(e.target)}
               />
               <span
                 className="select-none  bg-black cursor-pointer rounded-lg border-2 border-gray-200
-   py-3 px-6 font-bold text-gray-200 transition-colors duration-200 ease-in-out peer-checked:bg-gray-200 peer-checked:text-gray-900 peer-checked:border-gray-200 sm:text-xs sm:px-2 "
+   py-3 px-6 font-bold text-gray-200 transition-colors duration-200 ease-in-out peer-checked:bg-gray-200 peer-checked:text-gray-900 peer-checked:border-gray-200 maxsm:text-xs maxsm:px-2 "
               >
-                {' '}
-                Bridal{' '}
+                {" "}
+                Bridal{" "}
               </span>
             </label>
           </li>
@@ -129,15 +129,15 @@ const FilterProductsComponent = () => {
                 type="checkbox"
                 value="quinces"
                 className="peer hidden "
-                defaultChecked={checkHandler('category', 'quinces')}
+                defaultChecked={checkHandler("category", "quinces")}
                 onClick={(e) => hnadleCheckBocClick(e.target)}
               />
               <span
                 className="select-none  bg-black cursor-pointer rounded-lg border-2 border-gray-200
-   py-3 px-6 font-bold text-gray-200 transition-colors duration-200 ease-in-out peer-checked:bg-gray-200 peer-checked:text-gray-900 peer-checked:border-gray-200 sm:text-xs sm:px-2 "
+   py-3 px-6 font-bold text-gray-200 transition-colors duration-200 ease-in-out peer-checked:bg-gray-200 peer-checked:text-gray-900 peer-checked:border-gray-200 maxsm:text-xs maxsm:px-2 "
               >
-                {' '}
-                Quinces{' '}
+                {" "}
+                Quinces{" "}
               </span>
             </label>
           </li>
@@ -148,15 +148,15 @@ const FilterProductsComponent = () => {
                 type="checkbox"
                 value="tuxedo"
                 className="peer hidden"
-                defaultChecked={checkHandler('category', 'tuxedo')}
+                defaultChecked={checkHandler("category", "tuxedo")}
                 onClick={(e) => hnadleCheckBocClick(e.target)}
               />
               <span
                 className="select-none  bg-black cursor-pointer rounded-lg border-2 border-gray-200
-   py-3 px-6 font-bold text-gray-200 transition-colors duration-200 ease-in-out peer-checked:bg-gray-200 peer-checked:text-gray-900 peer-checked:border-gray-200 sm:text-xs sm:px-2 "
+   py-3 px-6 font-bold text-gray-200 transition-colors duration-200 ease-in-out peer-checked:bg-gray-200 peer-checked:text-gray-900 peer-checked:border-gray-200 maxsm:text-xs maxsm:px-2 "
               >
-                {' '}
-                Tuxedo{' '}
+                {" "}
+                Tuxedo{" "}
               </span>
             </label>
           </li>
@@ -167,15 +167,15 @@ const FilterProductsComponent = () => {
                 type="checkbox"
                 value="evening"
                 className="peer hidden"
-                defaultChecked={checkHandler('category', 'evening')}
+                defaultChecked={checkHandler("category", "evening")}
                 onClick={(e) => hnadleCheckBocClick(e.target)}
               />
               <span
                 className="select-none bg-black cursor-pointer rounded-lg border-2 border-gray-200
-   py-3 px-6 font-bold text-gray-200 transition-colors duration-500 ease-in-out peer-checked:bg-gray-200 peer-checked:text-gray-900 peer-checked:border-gray-200 sm:text-xs sm:px-2"
+   py-3 px-6 font-bold text-gray-200 transition-colors duration-500 ease-in-out peer-checked:bg-gray-200 peer-checked:text-gray-900 peer-checked:border-gray-200 maxsm:text-xs maxsm:px-2"
               >
-                {' '}
-                Evening{' '}
+                {" "}
+                Evening{" "}
               </span>
             </label>
           </li>

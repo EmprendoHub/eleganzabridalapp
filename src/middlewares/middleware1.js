@@ -1,48 +1,56 @@
-import { NextResponse } from 'next/server'
-import { getToken } from 'next-auth/jwt'
-import {  i18n } from '@/i18n.config'
+import { NextResponse } from "next/server";
+import { getToken } from "next-auth/jwt";
+import { i18n } from "@/i18n.config";
 
-const protectedPaths = ['/dashboard']
+const protectedPaths = ["/dashboard", "/scrapper"];
 
 function getProtectedRoutes(protectedPaths, locales) {
-  let protectedPathsWithLocale = [...protectedPaths]
+  let protectedPathsWithLocale = [...protectedPaths];
 
-  protectedPaths.forEach(route => {
+  protectedPaths.forEach((route) => {
     locales.forEach(
-      locale =>
+      (locale) =>
         (protectedPathsWithLocale = [
           ...protectedPathsWithLocale,
-          `/${locale}${route}`
+          `/${locale}${route}`,
         ])
-    )
-  })
+    );
+  });
 
-  return protectedPathsWithLocale
+  return protectedPathsWithLocale;
 }
 
 export function withAuthMiddleware(middleware) {
   return async (request, event) => {
     // Create a response object to pass down the chain
-    const response = NextResponse.next()
+    const response = NextResponse.next();
 
-    const token = await getToken({ req: request })
-
+    const token = await getToken({ req: request });
     // @ts-ignore
-    request.nextauth = request.nextauth || {}
+    request.nextauth = request.nextauth || {};
     // @ts-ignore
-    request.nextauth.token = token
-    const pathname = request.nextUrl.pathname
+    request.nextauth.token = token;
+    const pathname = request.nextUrl.pathname;
 
     const protectedPathsWithLocale = getProtectedRoutes(protectedPaths, [
-      ...i18n.locales
-    ])
+      ...i18n.locales,
+    ]);
 
     if (!token && protectedPathsWithLocale.includes(pathname)) {
-      const signInUrl = new URL('/api/auth/signin', request.url)
-      signInUrl.searchParams.set('callbackUrl', pathname)
-      return NextResponse.redirect(signInUrl)
+      const signInUrl = new URL("/api/auth/signin", request.url);
+      signInUrl.searchParams.set("callbackUrl", pathname);
+      return NextResponse.redirect(signInUrl);
     }
 
-    return middleware(request, event, response)
-  }
+    if (
+      token &&
+      token?.email !== "emprendomex@gmail.com" &&
+      protectedPathsWithLocale.includes(pathname)
+    ) {
+      const signInUrl = new URL("/no-autorizado", request.url);
+      return NextResponse.redirect(signInUrl);
+    }
+
+    return middleware(request, event, response);
+  };
 }

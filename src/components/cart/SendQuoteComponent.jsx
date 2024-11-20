@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import React, { useState } from 'react';
-import { toast } from 'react-toastify';
-import { useSelector } from 'react-redux';
-import QuoteForm from '../forms/QuoteForm';
+import Link from "next/link";
+import React, { useState } from "react";
+import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
+import QuoteForm from "../forms/QuoteForm";
 
 const SendQuoteComponent = ({
   templateid,
@@ -19,14 +19,14 @@ const SendQuoteComponent = ({
     <div>
       <section className="py-10 bg-gray-50">
         <div className="container max-w-screen-xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row gap-4 lg:gap-8">
-            <main className="md:w-2/3">
-              <article className="border border-gray-200 bg-white shadow-sm rounded p-4 lg:p-6 mb-5">
+          <div className="flex flex-col maxmd:flex-row gap-4 maxlg:gap-8">
+            <main className="maxmd:w-2/3">
+              <article className="border border-gray-200 bg-white shadow-sm rounded p-4 maxlg:p-6 mb-5">
                 <h2 className="text-xl font-semibold mb-5">
                   Quote information
                 </h2>
 
-                <div className="grid sm:grid-cols-2 gap-4 mb-6"></div>
+                <div className="grid maxsm:grid-cols-2 gap-4 mb-6"></div>
                 <QuoteForm
                   templateID={templateid}
                   serviceID={serviceid}

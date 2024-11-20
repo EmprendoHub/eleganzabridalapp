@@ -1,7 +1,7 @@
-import React from 'react';
-import { useRouter } from 'next/navigation';
-import { AiOutlineClose } from 'react-icons/ai';
-import styles from './filterstyle.module.scss';
+import React from "react";
+import { useRouter } from "next/navigation";
+import { AiOutlineClose } from "react-icons/ai";
+import styles from "./filterstyle.module.scss";
 
 const AllFiltersComponrnt = ({
   allBrands,
@@ -14,7 +14,7 @@ const AllFiltersComponrnt = ({
   let queryParams;
 
   function handleClick(checkbox) {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       queryParams = new URLSearchParams(window.location.search);
     }
 
@@ -36,12 +36,12 @@ const AllFiltersComponrnt = ({
         SetIsActive(!isActive);
       }
     }
-    const path = window.location.pathname + '?' + queryParams.toString();
+    const path = window.location.pathname + "?" + queryParams.toString();
     router.push(path);
   }
 
   function checkHandler(checkBoxType, checkBoxValue) {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       queryParams = new URLSearchParams(window.location.search);
 
       const value = queryParams.get(checkBoxType);
@@ -62,7 +62,7 @@ const AllFiltersComponrnt = ({
             onClick={() => {
               SetIsActive(!isActive);
             }}
-            className={'button-class'}
+            className={"button-class"}
           >
             <AiOutlineClose />
           </div>
@@ -71,7 +71,7 @@ const AllFiltersComponrnt = ({
           Filter by
         </div>
         {/* Category Filter */}
-        <div className="p-5 pt-4  mb-2 sm:p-1 border border-gray-200 bg-white rounded shadow-sm">
+        <div className="p-5 pt-4  mb-2 maxsm:p-1 border border-gray-200 bg-white rounded shadow-sm">
           <h3 className="font-semibold mb-2 text-gray-700">Category</h3>
           <ul className="space-y-1">
             {allCategories?.map((category, index) => (
@@ -81,7 +81,7 @@ const AllFiltersComponrnt = ({
                     name="category"
                     type="checkbox"
                     value={category}
-                    defaultChecked={checkHandler('category', `${category}`)}
+                    defaultChecked={checkHandler("category", `${category}`)}
                     onClick={(e) => handleClick(e.target)}
                     className={`checkboxBipolarInput ${styles.checkboxBipolarInput}`}
                     id={category}
@@ -97,8 +97,8 @@ const AllFiltersComponrnt = ({
                       <span className={`off ${styles.off}`}>O</span>
                     </span>
                     <span className="brandName ml-2 text-gray-500 capitalize">
-                      {' '}
-                      {category}{' '}
+                      {" "}
+                      {category}{" "}
                     </span>
                   </label>
                 </div>
@@ -107,7 +107,7 @@ const AllFiltersComponrnt = ({
           </ul>
         </div>
         {/* Brand Filter */}
-        <div className="p-5 pt-4 sm:p-1 border border-gray-200 bg-white rounded shadow-sm">
+        <div className="p-5 pt-4 maxsm:p-1 border border-gray-200 bg-white rounded shadow-sm">
           <h3 className="font-semibold mb-2 text-gray-700">Brand</h3>
           <ul className="space-y-1">
             {allBrands?.map((brand, index) => (
@@ -117,7 +117,7 @@ const AllFiltersComponrnt = ({
                     name="brand"
                     type="checkbox"
                     value={brand}
-                    defaultChecked={checkHandler('brand', `${brand}`)}
+                    defaultChecked={checkHandler("brand", `${brand}`)}
                     onClick={(e) => handleClick(e.target)}
                     className={`checkboxBipolarInput ${styles.checkboxBipolarInput}`}
                     id={brand}
@@ -133,8 +133,8 @@ const AllFiltersComponrnt = ({
                       <span className={`off ${styles.off}`}>O</span>
                     </span>
                     <span className="brandName ml-2 text-gray-500 capitalize">
-                      {' '}
-                      {brand}{' '}
+                      {" "}
+                      {brand}{" "}
                     </span>
                   </label>
                 </div>

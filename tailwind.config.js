@@ -1,19 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       backgroundColor: {
-        'main-bg': "#f6f6f6"
+        "main-bg": "#f6f6f6",
       },
       fontFamily: {
         "playfair-display": "'Playfair Display'",
-        "poppins": ['Poppins', 'sans-serif'],
-        
+        poppins: ["Poppins", "sans-serif"],
       },
 
       colors: {
@@ -23,31 +22,50 @@ module.exports = {
         lightText: "#a5a5a5",
       },
       screens: {
-        xlg: {
+        maxxlg: {
           max: "1400px",
         },
-        lg: {
+        maxlg: {
           max: "1200px",
         },
-        md: {
+        maxmd: {
           max: "960px",
-          
         },
-        mdsm: {
+        maxmdsm: {
           max: "700px",
-          
         },
-        sm: {
+        maxsm: {
           max: "521px",
         },
-        xsm: {
+        maxxsm: {
           max: "420px",
         },
-        xxs: {
+        maxxxs: {
           max: "374px",
+        },
+        minxlg: {
+          min: "1400px",
+        },
+        minlg: {
+          min: "1200px",
+        },
+        minmd: {
+          min: "960px",
+        },
+        minmdsm: {
+          min: "700px",
+        },
+        minsm: {
+          min: "521px",
+        },
+        minxsm: {
+          min: "420px",
+        },
+        minxxs: {
+          min: "374px",
         },
       },
     },
   },
   plugins: [],
-}
+};

@@ -1,10 +1,10 @@
-'use client';
-import { motion } from 'framer-motion';
+"use client";
+import { motion } from "framer-motion";
 
-const SectionTitle = ({ title, subtitle, className = '' }) => {
+const SectionTitle = ({ title, subtitle, className = "" }) => {
   return (
     <div
-      className={`section-title-class w-[70%] md:w-[90%] flex flex-col items-center justify-center  mx-auto ${className} `}
+      className={`section-title-class w-[70%] maxmd:w-[90%] flex flex-col items-center justify-center  mx-auto ${className} `}
     >
       <motion.h2
         initial={{ y: 50, opacity: 0 }}
@@ -24,7 +24,7 @@ const SectionTitle = ({ title, subtitle, className = '' }) => {
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7 }}
-        className="text-base sm:text-sm"
+        className="text-base maxsm:text-sm"
       >
         {subtitle}
       </motion.p>

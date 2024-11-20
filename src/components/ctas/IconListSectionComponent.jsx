@@ -1,5 +1,5 @@
-import React from 'react';
-import { IoMdPhonePortrait, IoMdAt, IoMdLocate } from 'react-icons/io';
+import React from "react";
+import { IoMdPhonePortrait, IoMdAt, IoMdLocate } from "react-icons/io";
 
 const IconListSectionComponent = ({
   mainTitle,
@@ -18,7 +18,7 @@ const IconListSectionComponent = ({
 }) => {
   return (
     <div className="relative h-full">
-      <div className="mt-34 flex flex-row md:flex-col-reverse mx-auto my-14 w-[80%] md:w-[95%] relative items-center">
+      <div className="mt-34 flex flex-row maxmd:flex-col-reverse mx-auto my-14 w-[80%] maxmd:w-[95%] relative items-center">
         <div className="flex flex-col w-full">
           <h2 className="text-3xl font-semibold text-gray-800 font-playfair-display mb-6">
             {mainTitle}
@@ -32,7 +32,7 @@ const IconListSectionComponent = ({
                 {textTitleOne}
               </div>
               <div className="text-xs">{textOne}</div>
-              <a href={linkOne} className="sm:text-sm font-bold">
+              <a href={linkOne} className="maxsm:text-sm font-bold">
                 {linkOneText}
               </a>
             </div>
@@ -46,7 +46,7 @@ const IconListSectionComponent = ({
                 {textTitleTwo}
               </div>
               <div className="text-xs">{textTwo}</div>
-              <a href={linkTwo} className="sm:text-sm font-bold">
+              <a href={linkTwo} className="maxsm:text-sm font-bold">
                 {linkTwoText}
               </a>
             </div>
@@ -62,7 +62,7 @@ const IconListSectionComponent = ({
               <div className="text-xs">{textThree}</div>
               <a
                 href={linkThree}
-                className="sm:text-sm font-bold"
+                className="maxsm:text-sm font-bold"
                 target="_blank"
               >
                 {linkThreeText}

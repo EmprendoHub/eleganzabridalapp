@@ -1,23 +1,23 @@
-'use client';
-import React, { useRef } from 'react';
-import { MdFavoriteBorder } from 'react-icons/md';
-import { Bounce, ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { motion } from 'framer-motion';
-import { useDispatch } from 'react-redux';
-import { addToCart } from '@/redux/shoppingSlice';
-import { IoIosStar } from 'react-icons/io';
+"use client";
+import React, { useRef } from "react";
+import { MdFavoriteBorder } from "react-icons/md";
+import { Bounce, ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { motion } from "framer-motion";
+import { useDispatch } from "react-redux";
+import { addToCart } from "@/redux/shoppingSlice";
+import { IoIosStar } from "react-icons/io";
 // import Swiper core and required modules
-import { Pagination, A11y, Autoplay } from 'swiper/modules';
+import { Pagination, A11y, Autoplay } from "swiper/modules";
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import Image from 'next/image';
-import ProductCardComponet from '@/components/productComponents/productCard/ProductCardComponent';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import Image from "next/image";
+import ProductCardComponet from "@/components/productComponents/productCard/ProductCardComponent";
 
 const myLoader = ({ src, width, quality }) => {
   return `https://minio.salvawebpro.com:9000/eleganza-products/new/${src}?w=${width}&q=${
@@ -35,8 +35,8 @@ const SingleProductComponent = ({
   const notify = () => {
     toast.success(`${product?.title.substring(0, 15)}... added successfully!`, {
       position: toast.POSITION.TOP_CENTER,
-      className: 'foo-bar',
-      theme: 'dark',
+      className: "foo-bar",
+      theme: "dark",
       transition: Bounce,
     });
   };
@@ -46,7 +46,7 @@ const SingleProductComponent = ({
 
   const setImgPreview = (image) => {
     let new_image =
-      'https://minio.salvawebpro.com:9000/eleganza-products/new/' + image;
+      "https://minio.salvawebpro.com:9000/eleganza-products/new/" + image;
     imageRef.current.srcset = new_image;
   };
 
@@ -77,8 +77,8 @@ const SingleProductComponent = ({
   };
 
   return (
-    <div className="container-class sm:w-full">
-      <div className="w-[80%] sm:w-full mx-auto wrapper-class grid grid-cols-2 md:grid-cols-1 gap-5 bg-white p-4 rounded-lg">
+    <div className="container-class maxsm:w-full">
+      <div className="w-[80%] maxsm:w-full mx-auto wrapper-class grid grid-cols-2 maxmd:grid-cols-1 gap-5 bg-white p-4 rounded-lg">
         <div className="w-full flex justify-center">
           <div className="images-grouped-class flex flex-col max-w-full">
             <div className="flex justify-center items-center align-middle h-full ">
@@ -86,7 +86,7 @@ const SingleProductComponent = ({
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.7 }}
-                className="p-8 sm:p-2"
+                className="p-8 maxsm:p-2"
               >
                 <Image
                   loader={myLoader}
@@ -96,7 +96,7 @@ const SingleProductComponent = ({
                   src={
                     product?.mainImageUrl
                       ? product.mainImageUrl
-                      : 'RB3163-195.webp'
+                      : "RB3163-195.webp"
                   }
                   alt="product image"
                   className="rounded-lg object-cover w-auto h-auto"
@@ -104,15 +104,15 @@ const SingleProductComponent = ({
               </motion.div>
             </div>
 
-            <div className="flex flex-row gap-4 mt-2 px-10 sm:px-2 image-slider-class h-full">
+            <div className="flex flex-row gap-4 mt-2 px-10 maxsm:px-2 image-slider-class h-full">
               <Swiper
                 // install Swiper modules
                 modules={[Pagination, A11y, Autoplay]}
                 spaceBetween={10}
                 slidesPerView={3}
                 autoplay={true}
-                onSwiper={(swiper) => ''}
-                onSlideChange={() => ''}
+                onSwiper={(swiper) => ""}
+                onSlideChange={() => ""}
                 className="w-full "
               >
                 {product?.imgsSrc &&
@@ -124,7 +124,7 @@ const SingleProductComponent = ({
                           loader={myLoader}
                           width={150}
                           height={150}
-                          src={image ? image : ''}
+                          src={image ? image : ""}
                           alt="product image"
                           className="rounded-lg w-full h-150 p-1"
                         />
@@ -143,7 +143,7 @@ const SingleProductComponent = ({
                       src={
                         product?.mainImageUrl
                           ? product.mainImageUrl
-                          : 'RB3163-195.webp'
+                          : "RB3163-195.webp"
                       }
                       alt="product image"
                       className="rounded-lg w-full h-150 p-1"
@@ -162,12 +162,12 @@ const SingleProductComponent = ({
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-5xl md:text-3xl font-semibold">
-              {lang === 'en' && product?.title
+            <p className="text-5xl maxmd:text-3xl font-semibold">
+              {lang === "en" && product?.title
                 ? product?.title
-                : '' || (lang === 'es' && product?.titulo)
+                : "" || (lang === "es" && product?.titulo)
                 ? product?.titulo
-                : ''}
+                : ""}
             </p>
             <div className="text-xl font-semibold">
               <div className="stars flex items-center gap-x-1">
@@ -182,12 +182,12 @@ const SingleProductComponent = ({
             transition={{ duration: 0.6 }}
             className="text-gray-700 description-class"
           >
-            {lang === 'en' && product?.description
+            {lang === "en" && product?.description
               ? product?.description
-              : 'Our dresses are more than garments; they are statements of style, elegance, and individuality. Make your unforgettable moments even more special with our stunning collection. Choose timeless elegance and modern charm to elevate your style for weddings, proms, and sweet sixteens.' ||
-                (lang === 'es' && product?.descripcion)
+              : "Our dresses are more than garments; they are statements of style, elegance, and individuality. Make your unforgettable moments even more special with our stunning collection. Choose timeless elegance and modern charm to elevate your style for weddings, proms, and sweet sixteens." ||
+                (lang === "es" && product?.descripcion)
               ? product?.descripcion
-              : 'Nuestros vestidos son más que prendas; son declaraciones de estilo, elegancia e individualidad. Haz que tus momentos inolvidables sean aún más especiales con nuestra impresionante colección. Elija elegancia atemporal y encanto moderno para elevar su estilo para bodas, graduaciones y quinceañeras.'}
+              : "Nuestros vestidos son más que prendas; son declaraciones de estilo, elegancia e individualidad. Haz que tus momentos inolvidables sean aún más especiales con nuestra impresionante colección. Elija elegancia atemporal y encanto moderno para elevar su estilo para bodas, graduaciones y quinceañeras."}
           </motion.div>
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -199,15 +199,15 @@ const SingleProductComponent = ({
               SKU: <span className="text-darkText">{product?.sku}</span>
             </span>
             <span>
-              {singleprod.brand}:{' '}
+              {singleprod.brand}:{" "}
               <span className="text-darkText">{product?.brand}</span>
             </span>
             <span>
-              {singleprod.category}:{' '}
+              {singleprod.category}:{" "}
               <span className="text-darkText">{product?.category}</span>
             </span>
             <span>
-              {singleprod.tags}:{' '}
+              {singleprod.tags}:{" "}
               <span className="text-darkText">{product?.tags}</span>
             </span>
           </motion.div>
@@ -232,9 +232,9 @@ const SingleProductComponent = ({
           </motion.div>
         </div>
       </div>
-      <div className="px-8 sm:px-4 my-8 w-[80%] lg:w-full mx-auto">
+      <div className="px-8 maxsm:px-4 my-8 w-[80%] maxlg:w-full mx-auto">
         <p className="text-xl py-1 font-semibold">{singleprod.trendigtxt}</p>
-        <div className="grid xsm:grid-cols-1 md:grid-cols-2 grid-cols-4 gap-4 mt-2">
+        <div className="grid xsm:grid-cols-1 maxmd:grid-cols-2 grid-cols-4 gap-4 mt-2">
           {trendingProducts?.map((product) => (
             <ProductCardComponet
               key={product._id}

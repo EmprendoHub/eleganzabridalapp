@@ -1,7 +1,7 @@
-import React from 'react';
-import FavoritesContainer from '@/components/container/FavoritesContainer';
-import SendQuoteComponent from '@/components/cart/SendQuoteComponent';
-import { getDictionary } from '@/lib/dictionary';
+import React from "react";
+import FavoritesContainer from "@/components/container/FavoritesContainer";
+import SendQuoteComponent from "@/components/cart/SendQuoteComponent";
+import { getDictionary } from "@/lib/dictionary";
 
 const QuotePage = async ({ params: { lang } }) => {
   const { contactform } = await getDictionary(lang);
@@ -10,7 +10,7 @@ const QuotePage = async ({ params: { lang } }) => {
   const serviceid = process.env.REACT_APP_EMAILJS_SERVICE_ID;
   const publickey = process.env.REACT_APP_EMAILJS_PUB_KEY;
   return (
-    <FavoritesContainer className="p-12 md:p-4 sm:p-2 w-[80%] md:w-[95%]">
+    <FavoritesContainer className="p-12 maxmd:p-4 maxsm:p-2 w-[80%] maxmd:w-[95%]">
       <h2 className="text-2xl font-semibold mb-2 pl-4">Wishlist</h2>
       <div className="flex flex-col gap-5">
         <SendQuoteComponent

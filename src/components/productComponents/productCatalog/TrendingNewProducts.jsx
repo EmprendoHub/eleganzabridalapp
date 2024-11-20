@@ -1,9 +1,9 @@
-'use client';
-import SectionTitle from '@/components/texts/SectionTitle';
-import { motion, AnimatePresence } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
-import ProductCardComponet from '../productCard/ProductCardComponent';
-import { getTrendingProducts } from '@/app/[lang]/_actions';
+"use client";
+import SectionTitle from "@/components/texts/SectionTitle";
+import { motion, AnimatePresence } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import ProductCardComponet from "../productCard/ProductCardComponent";
+import { getTrendingProducts } from "@/app/[lang]/_actions";
 
 function shuffleArray(array) {
   let i = array.length - 1;
@@ -25,22 +25,22 @@ const TrendingNewProducts = ({ trending, lang }) => {
   ];
   const [allProducts, setAllProducts] = useState([]);
   const [trendingProducts, setTrendingProducts] = useState([]);
-  const [activeTab, setActiveTab] = useState('All');
+  const [activeTab, setActiveTab] = useState("All");
 
   const activatedTab = (category) => {
     setActiveTab(category);
-    if (category === 'boda') {
-      category = 'wedding';
+    if (category === "boda") {
+      category = "wedding";
     }
-    if (category === 'gala') {
-      category = 'evening';
+    if (category === "gala") {
+      category = "evening";
     }
     const productsArray = Object.values(allProducts);
     const randommized = shuffleArray(productsArray);
     const filteredProductData = productsArray.filter(
       (prod) => prod.category === category
     );
-    if (category === 'All') {
+    if (category === "All") {
       setTrendingProducts(randommized);
     } else {
       setTrendingProducts(filteredProductData);
@@ -87,21 +87,21 @@ const TrendingNewProducts = ({ trending, lang }) => {
   return (
     <div className="mx-auto flex flex-col justify-center items-center pt-20">
       <SectionTitle
-        className="pb-10 text-5xl md:text-3xl text-center"
+        className="pb-10 text-5xl maxmd:text-3xl text-center"
         title={trending.title}
         subtitle={trending.subtitle}
       />
 
-      <ul className="grid grid-cols-4 gap-4 my-2 px-10 md:gap-2 md:px-2">
+      <ul className="grid grid-cols-4 gap-4 my-2 px-10 maxmd:gap-2 maxmd:px-2">
         {cat_title.map((item, index) => {
           return (
             <li
               key={index}
               className={`${
                 activeTab == item.category
-                  ? 'active'
-                  : 'border-b border-gray-500'
-              } cursor-pointer text-center  py-2 px-6 sm:px-2 text-sm text-black sm:text-xs uppercase font-playfair-display`}
+                  ? "active"
+                  : "border-b border-gray-500"
+              } cursor-pointer text-center  py-2 px-6 maxsm:px-2 text-sm text-black maxsm:text-xs uppercase font-playfair-display`}
               onClick={() => activatedTab(item.category)}
             >
               {item.category}
@@ -110,7 +110,7 @@ const TrendingNewProducts = ({ trending, lang }) => {
         })}
       </ul>
       <motion.div
-        className="w-full  flex flex-row md:flex-col gap-4 my-10 px-10 sm:px-2 mx-auto justify-center items-center object-fill"
+        className="w-full  flex flex-row maxmd:flex-col gap-4 my-10 px-10 maxsm:px-2 mx-auto justify-center items-center object-fill"
         layout
       >
         {trendingProducts.slice(0, 4).map((product, index) => {

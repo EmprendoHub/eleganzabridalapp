@@ -1,8 +1,8 @@
-import React from 'react';
-import BoxesSectionTitle from '../texts/BoxesSectionTitle';
-import Image from 'next/image';
-import contactbride from '@/images/Eleganza_bridal_contact_bride.webp';
-import EmailForm from '../forms/EmailForm';
+import React from "react";
+import BoxesSectionTitle from "../texts/BoxesSectionTitle";
+import Image from "next/image";
+import contactbride from "@/images/Eleganza_bridal_contact_bride.webp";
+import EmailForm from "../forms/EmailForm";
 
 //email js service Ids
 const templateid = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
@@ -11,8 +11,8 @@ const publickey = process.env.REACT_APP_EMAILJS_PUB_KEY;
 
 const ContactUsComponent = ({ contactform }) => {
   return (
-    <div className="flex flex-row md:flex-col py-20">
-      <div className="w-1/2 md:w-full z-10 pl-40 md:px-5 sm:px-1">
+    <div className="flex flex-row maxmd:flex-col py-20">
+      <div className="w-1/2 maxmd:w-full z-10 pl-40 maxmd:px-5 maxsm:px-1">
         <div className=" pb-20">
           <h2>
             <BoxesSectionTitle
@@ -29,7 +29,7 @@ const ContactUsComponent = ({ contactform }) => {
           />
         </div>
       </div>
-      <div className="w-1/2 md:w-full z-10 justify-center mx-auto items-center flex">
+      <div className="w-1/2 maxmd:w-full z-10 justify-center mx-auto items-center flex">
         <Image
           src={contactbride}
           width={550}

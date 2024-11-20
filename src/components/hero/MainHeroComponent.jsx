@@ -1,13 +1,13 @@
-'use client';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import bannerone from '@/images/Eleganza-bridal-banner-one.webp';
-import weddingbannertwo from '@/images/Hero-banner-quinces-dresses-1920x1080.webp';
-import bannerthree from '@/images/Hero-banner-cocktail-dresses-1920x1080.webp';
-import { PiCaretDoubleDown } from 'react-icons/pi';
-import Image from 'next/image';
-import Link from 'next/link';
+"use client";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import bannerone from "@/images/Eleganza-bridal-banner-one.webp";
+import weddingbannertwo from "@/images/Hero-banner-quinces-dresses-1920x1080.webp";
+import bannerthree from "@/images/Hero-banner-cocktail-dresses-1920x1080.webp";
+import { PiCaretDoubleDown } from "react-icons/pi";
+import Image from "next/image";
+import Link from "next/link";
 
 const MainHeroComponent = ({ mainhero, lang }) => {
   const settings = {
@@ -40,9 +40,9 @@ const MainHeroComponent = ({ mainhero, lang }) => {
               <Image
                 src={bannerone}
                 alt="bannerone"
-                width={1000}
-                height={1000}
-                className=" object-cover object-center w-full h-full  bottom-[-50px] md:bottom-[0px]"
+                width={1920}
+                height={1080}
+                className=" object-cover object-center w-full h-full  bottom-[-50px] maxmd:bottom-[0px]"
                 priority
               />
             </div>
@@ -57,7 +57,7 @@ const MainHeroComponent = ({ mainhero, lang }) => {
                 width={1000}
                 height={1000}
                 alt="bannertwo"
-                className=" object-cover object-top w-full h-full  bottom-[-50px] md:bottom-[0px]"
+                className=" object-cover object-top w-full h-full  bottom-[-50px] maxmd:bottom-[0px]"
               />
             </div>
           </div>
@@ -71,13 +71,13 @@ const MainHeroComponent = ({ mainhero, lang }) => {
                 width={1000}
                 height={1000}
                 alt="bannerthree"
-                className=" object-cover object-top w-full h-full  bottom-[-50px] md:bottom-[0px]"
+                className=" object-cover object-top w-full h-full  bottom-[-50px] maxmd:bottom-[0px]"
               />
             </div>
           </div>
         </div>
       </Slider>
-      <Link href={'/#hero'}>
+      <Link href={"/#hero"}>
         <div className="w-full flex justify-center items-center ">
           <PiCaretDoubleDown className="text-5xl absolute -bottom-5 z-40 cursor-pointer hover:scale-110 duration-300 ease-in-out" />
         </div>

@@ -1,12 +1,12 @@
-'use client';
-import styles from './filterstyle.module.scss';
-import { useEffect, useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
-import { usePathname } from 'next/navigation';
-import FilterMenuComponent from './FilterMenuComponent';
-import { CiShare2 } from 'react-icons/ci';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+"use client";
+import styles from "./filterstyle.module.scss";
+import { useEffect, useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
+import FilterMenuComponent from "./FilterMenuComponent";
+import { CiShare2 } from "react-icons/ci";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const MobileFilterComponet = ({ allBrands, allCategories, lang }) => {
   const [isActive, SetIsActive] = useState(false);
@@ -23,7 +23,7 @@ const MobileFilterComponet = ({ allBrands, allCategories, lang }) => {
   }, [pathname]);
 
   return (
-    <div className="px-40 md:px-2">
+    <div className="px-40 maxmd:px-2">
       <div
         className={`mt-5 p-3 border border-gray-200 text-center w-full justify-end flex mx-auto `}
       >
@@ -46,7 +46,7 @@ const MobileFilterComponet = ({ allBrands, allCategories, lang }) => {
             Filter
             <div
               className={`${styles.burger} ${
-                isActive ? styles.burgerActive : ''
+                isActive ? styles.burgerActive : ""
               }`}
             ></div>
           </div>

@@ -1,19 +1,19 @@
-'use client';
-import React from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { IoMdHeart } from 'react-icons/io';
-import { FiLogOut } from 'react-icons/fi';
-import Image from 'next/image';
-import LogoComponent from '../logos/LogoComponent';
-import { useSession, signIn, signOut } from 'next-auth/react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useState, useEffect } from 'react';
-import SearchComponent from '../search/SearchComponent';
-import MobileMenuComponent from './mobilenav/MobileMenuComponent';
-import LocaleSwitcher from '../localeSwitcher';
+"use client";
+import React from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { IoMdHeart } from "react-icons/io";
+import { FiLogOut } from "react-icons/fi";
+import Image from "next/image";
+import LogoComponent from "../logos/LogoComponent";
+import { useSession, signIn, signOut } from "next-auth/react";
+import { useDispatch, useSelector } from "react-redux";
+import { useState, useEffect } from "react";
+import SearchComponent from "../search/SearchComponent";
+import MobileMenuComponent from "./mobilenav/MobileMenuComponent";
+import LocaleSwitcher from "../localeSwitcher";
 
-const CustomLink = ({ href, title, className = '' }) => {
+const CustomLink = ({ href, title, className = "" }) => {
   const router = useRouter();
   return (
     <Link href={href} className={`${className} relative group`}>
@@ -35,18 +35,18 @@ const MainMenuComponent = ({ header, lang, className }) => {
   return (
     <div className={`${className} menu-class`}>
       {/* Logo  */}
-      <div className="min-w-[120px] sm:w-[85px] object-contain justify-center">
+      <div className="min-w-[120px] maxsm:w-[85px] object-contain justify-center">
         <LogoComponent lang={lang} />
       </div>
       {/* Locale Switch */}
-      <LocaleSwitcher classname={'md:hidden'} />
+      <LocaleSwitcher classname={"maxmd:hidden"} />
       {/* Search Bar */}
       {/* <SearchComponent
         header={header}
-        classname={'md:hidden   md:w-[50%] pl-2'}
+        classname={'maxmd:hidden   maxmd:w-[50%] pl-2'}
       /> */}
       {/* Navigatio left */}
-      <nav className="md:hidden m-0 flex-1  flex flex-row py-2.5 px-5 items-center justify-end gap-7 text-sm tracking-widest ">
+      <nav className="maxmd:hidden m-0 flex-1  flex flex-row py-2.5 px-5 items-center justify-end gap-7 text-sm tracking-widest ">
         <CustomLink
           href={`/${lang}/catalog?category=wedding`}
           title={header.menu.linkone}
@@ -79,7 +79,7 @@ const MainMenuComponent = ({ header, lang, className }) => {
         />
       </nav>
 
-      <nav className="md:hidden ml-4 flex flex-row py-2.5 px-5 items-center  justify-end gap-4 font-poppins text-sm tracking-widest">
+      <nav className="maxmd:hidden ml-4 flex flex-row py-2.5 px-5 items-center  justify-end gap-4 font-poppins text-sm tracking-widest">
         {/* Login/Register */}
         {/* {
                   !session &&  ( <div onClick={ () => signIn() } className='cursor-pointer flex justify-center items-center gap-x-1'>
@@ -88,7 +88,7 @@ const MainMenuComponent = ({ header, lang, className }) => {
                 </div> )
               } */}
         {/* Cart Button */}
-        <Link href={'/favorites'}>
+        <Link href={"/favorites"}>
           <div className="bg-black rounded-full text-slate-100 hover:text-pink-600 hover:bg-slate-100 flex items-center justify-center text-center mx-auto h-[30px] w-[30px] border-[1px]  border-black hover:border-yellow-600 cursor-pointer">
             <p className="absolute">
               <IoMdHeart className="text-lg" />
@@ -133,7 +133,7 @@ const MainMenuComponent = ({ header, lang, className }) => {
         {isLoggedIn && (
           <div
             onClick={() => signOut()}
-            className="md:hidden cursor-pointer flex justify-center items-center gap-x-1 "
+            className="maxmd:hidden cursor-pointer flex justify-center items-center gap-x-1 "
           >
             <FiLogOut className="text-2xl flex" />
             {/* <p className='text-sm font-semibold'>Logout</p> */}

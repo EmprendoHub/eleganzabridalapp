@@ -1,11 +1,11 @@
-'use client';
-import React from 'react';
-import Slider from 'react-slick';
-import Image from 'next/image';
-import SectionTitle from '../texts/SectionTitle';
-import { testimonials } from '@/constants/testimoniolsdata';
-import { IoIosStar } from 'react-icons/io';
-import avatar from '@/images/testimonial-1-avatar.png';
+"use client";
+import React from "react";
+import Slider from "react-slick";
+import Image from "next/image";
+import SectionTitle from "../texts/SectionTitle";
+import { testimonials } from "@/constants/testimoniolsdata";
+import { IoIosStar } from "react-icons/io";
+import avatar from "@/images/testimonial-1-avatar.png";
 
 const TestimonialComponent = ({ item, testimonialst }) => {
   const starRating = (props) => {
@@ -18,11 +18,11 @@ const TestimonialComponent = ({ item, testimonialst }) => {
   };
 
   const settings = {
-    className: 'center mx-auto flex ',
+    className: "center mx-auto flex ",
     dots: false,
     centerMode: true,
     infinite: true,
-    centerPadding: '1px',
+    centerPadding: "1px",
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
@@ -47,7 +47,7 @@ const TestimonialComponent = ({ item, testimonialst }) => {
       {
         breakpoint: 480,
         settings: {
-          centerPadding: '10px',
+          centerPadding: "10px",
           slidesToShow: 1,
           slidesToScroll: 1,
         },
@@ -58,7 +58,7 @@ const TestimonialComponent = ({ item, testimonialst }) => {
     <div className="my-40">
       <h2>
         <SectionTitle
-          className="mb-10 text-5xl md:text-3xl text-center"
+          className="mb-10 text-5xl maxmd:text-3xl text-center"
           title={testimonialst.title}
           subtitle={testimonialst.subtitle}
         />
@@ -67,7 +67,7 @@ const TestimonialComponent = ({ item, testimonialst }) => {
         {testimonials.map((testimonial, index) => {
           return (
             <div key={index} className="px-2">
-              <div className="p-5 flex flex-col relative top-[30.34px] rounded-lgi bg-blue-100 w-[90%] md:w-[100%]  h-[400px] md:h-[350px] sm:h-[380px] text-dimgray-200">
+              <div className="p-5 flex flex-col relative top-[30.34px] rounded-lgi bg-blue-100 w-[90%] maxmd:w-[100%]  h-[400px] maxmd:h-[350px] maxsm:h-[380px] text-dimgray-200">
                 <div className="rate flex-row">
                   <div className="stars flex items-center gap-x-1">
                     {starRating(testimonial.rating)}
@@ -77,7 +77,7 @@ const TestimonialComponent = ({ item, testimonialst }) => {
                   </div>
                 </div>
                 <div className="max-w-full">
-                  <p className="m-0 p-3 text-lg sm:text-sm leading-[118%] font-normal text-silver-100  flex">
+                  <p className="m-0 p-3 text-lg maxsm:text-sm leading-[118%] font-normal text-silver-100  flex">
                     {testimonial.message}
                   </p>
                 </div>
@@ -92,10 +92,10 @@ const TestimonialComponent = ({ item, testimonialst }) => {
                     src={avatar}
                   />
                   <div className="flex flex-col">
-                    <div className="leading-[146%] sm:text-xs md:text-xs font-medium text-darkgray-100 inline-block">
+                    <div className="leading-[146%] maxsm:text-xs maxmd:text-xs font-medium text-darkgray-100 inline-block">
                       {testimonial.position}
                     </div>
-                    <div className="leading-[123%] sm:text-xs md:text-xs font-medium font-barlow-condensed text-gainsboro-300 inline-block ">
+                    <div className="leading-[123%] maxsm:text-xs maxmd:text-xs font-medium font-barlow-condensed text-gainsboro-300 inline-block ">
                       {testimonial.name}
                     </div>
                   </div>

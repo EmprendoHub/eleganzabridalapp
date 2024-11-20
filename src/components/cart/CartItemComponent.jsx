@@ -1,16 +1,16 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { AiOutlineClose } from 'react-icons/ai';
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { AiOutlineClose } from "react-icons/ai";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import {
   decreaseQuantity,
   deleteProduct,
   increaseQuantity,
-} from '@/redux/shoppingSlice';
-import { Bounce, toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+} from "@/redux/shoppingSlice";
+import { Bounce, toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-import Image from 'next/image';
+import Image from "next/image";
 
 const myLoader = ({ src, width, quality }) => {
   return `https://minio.salvawebpro.com:9000/eleganza-products/new/${src}?w=${width}&q=${
@@ -25,7 +25,7 @@ const CartItemComponent = () => {
 
   return (
     <div className="flex flex-col gap-y-2">
-      <div className="md:hidden inline-flex items-center justify-between font-semibold bg-white py-3 px-5">
+      <div className="maxmd:hidden inline-flex items-center justify-between font-semibold bg-white py-3 px-5">
         <p className="text-black">Dress</p>
         <p className="">Model</p>
         <p className="flex items-center justify-end">Quantity</p>
@@ -35,7 +35,7 @@ const CartItemComponent = () => {
         {productData?.map((item) => (
           <div
             key={item?._id}
-            className="w-full bg-white p-4 flex sm:flex-col flex-row items-center gap-4"
+            className="w-full bg-white p-4 flex maxsm:flex-col flex-row items-center gap-4"
           >
             <div className="flex items-center gap-x-3 w-full ">
               <span
@@ -50,11 +50,11 @@ const CartItemComponent = () => {
                 width={500}
                 height={500}
                 alt="product image"
-                className="w-[50%] sm:w-full md:w-2/3 h-30 object-cover"
+                className="w-[50%] maxsm:w-full maxmd:w-2/3 h-30 object-cover"
               />
             </div>
             {/* Model Value */}
-            <div className="w-full flex  justify-start sm:items-center sm:justify-center">
+            <div className="w-full flex  justify-start maxsm:items-center maxsm:justify-center">
               {/* <p className='text-lg font-semibold'>
                                 <FormatedPrice amount={item?.quantity * item.price}/>
                             </p> */}
@@ -71,8 +71,8 @@ const CartItemComponent = () => {
                     dispatch(decreaseQuantity(item)) &&
                     toast.success(`${item.title} disminuyo en cantidad`, {
                       position: toast.POSITION.TOP_CENTER,
-                      className: 'foo-bar',
-                      theme: 'dark',
+                      className: "foo-bar",
+                      theme: "dark",
                       transition: Bounce,
                     })
                   }
@@ -86,8 +86,8 @@ const CartItemComponent = () => {
                     dispatch(increaseQuantity(item)) &&
                     toast.success(`${item.title} incremento en cantidad`, {
                       position: toast.POSITION.TOP_CENTER,
-                      className: 'foo-bar',
-                      theme: 'dark',
+                      className: "foo-bar",
+                      theme: "dark",
                       transition: Bounce,
                     })
                   }

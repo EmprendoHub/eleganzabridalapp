@@ -1,6 +1,6 @@
-'use client';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
+"use client";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 const HeroTextComponent = ({ title, subtitle, btnText, btnUrl }) => {
   return (
@@ -10,7 +10,7 @@ const HeroTextComponent = ({ title, subtitle, btnText, btnUrl }) => {
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="text-7xl md:text-4xl font-bold text-white font-playfair-display "
+          className="text-7xl maxmd:text-4xl font-bold text-white font-playfair-display "
         >
           {title}
         </motion.h2>
