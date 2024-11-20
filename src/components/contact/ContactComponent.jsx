@@ -81,7 +81,7 @@ const ContactComponent = ({ contact, quiz, contactform }) => {
             </div>
           </div>
 
-          <div className="w-[100%] px-3">
+          <div className="w-[100%] px-3 ">
             <iframe
               className="border-none"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3221.325313676726!2d-115.14048879999999!3d36.1586376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8c39aa59ef563%3A0x18ef5fa65bf8513!2sEleganza%20Bridal%20%26%20Banquet!5e0!3m2!1sen!2smx!4v1698590785674!5m2!1sen!2smx"
