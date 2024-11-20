@@ -40,9 +40,9 @@ const ProductCardComponet = ({ product, lang }) => {
               priority
               loader={myLoader}
               src={product.mainImageUrl}
-              alt="product image"
-              width={1000}
-              height={1000}
+              alt="dress"
+              width={350}
+              height={500}
               className="min-w-full min-h-[500px] max-h-[500px] object-cover hover:scale-110 duration-300 ease-in-out rounded-t-lg "
             />
             {product?.isNewest && (
