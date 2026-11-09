@@ -9,7 +9,7 @@ const WhatsAppButton = ({ lang }) => {
       {lang === "es" ? (
         <Link
           className="fixed bottom-3 h-8 w-8 z-[20] cursor-pointer left-4 "
-          href="https://web.whatsapp.com/send?phone=17022412273&text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20informaci%C3%B3n%20sobre%20un%20vestidos."
+          href="https://wa.me/523532464146?text=Hello%2C%20I%20am%20interested%20in%20buying%20this%20domain%20eleganzabridal-lv.com."
           target="_blank"
         >
           <motion.img
@@ -22,7 +22,7 @@ const WhatsAppButton = ({ lang }) => {
       ) : (
         <Link
           className="fixed bottom-3 h-8 w-8 z-[20] cursor-pointer left-4 "
-          href="https://web.whatsapp.com/send?phone=17022412273&text=Hello%20I%20would%20like%20to%20get%20informacoin%20about%20a%20dress."
+          href="https://wa.me/523532464146?text=Hello%2C%20I%20am%20interested%20in%20buying%20this%20domain%20eleganzabridal-lv.com."
           target="_blank"
         >
           <motion.img

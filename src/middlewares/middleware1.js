@@ -13,7 +13,7 @@ function getProtectedRoutes(protectedPaths, locales) {
         (protectedPathsWithLocale = [
           ...protectedPathsWithLocale,
           `/${locale}${route}`,
-        ])
+        ]),
     );
   });
 
@@ -35,6 +35,13 @@ export function withAuthMiddleware(middleware) {
     const protectedPathsWithLocale = getProtectedRoutes(protectedPaths, [
       ...i18n.locales,
     ]);
+
+    // Redirect all traffic to service denied page.
+    // const locale = pathname.split("/")[1];
+    if (!pathname.includes("/service-denied")) {
+      const serviceDeniedUrl = new URL(`/en/service-denied`, request.url);
+      return NextResponse.redirect(serviceDeniedUrl);
+    }
 
     if (!token && protectedPathsWithLocale.includes(pathname)) {
       const signInUrl = new URL("/api/auth/signin", request.url);

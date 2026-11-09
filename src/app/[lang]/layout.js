@@ -1,23 +1,23 @@
-import './globals.css';
-import HeaderComponent from '@/components/headerComponents/HeaderComponent';
-import FooterComponent from '@/components/footer/FooterComponent';
-import CustomSesionProvider from './SessionProvider';
-import Script from 'next/script';
-import BackToTopButton from '@/components/buttons/BackToTopButton';
-import WhatsAppButton from '@/components/buttons/WhatsAppButton';
+import "./globals.css";
+import HeaderComponent from "@/components/headerComponents/HeaderComponent";
+import FooterComponent from "@/components/footer/FooterComponent";
+import CustomSesionProvider from "./SessionProvider";
+import Script from "next/script";
+import BackToTopButton from "@/components/buttons/BackToTopButton";
+import WhatsAppButton from "@/components/buttons/WhatsAppButton";
 
 export const metadata = {
-  metadataBase: new URL('https://www.eleganzabridal-lv.com/'),
+  metadataBase: new URL("https://www.eleganzabridal-lv.com/"),
   title: {
-    default: 'Eleganza Bridal Las Vegas | Amazing Dresses',
+    default: "Eleganza Bridal Las Vegas | Amazing Dresses",
     template: `%s | Eleganza Bridal Las Vegas`,
   },
   description:
-    'Eleganza Bridal Las Vegas has a wide variety of bridal, evening, quinceañera dresses and much more...',
+    "Eleganza Bridal Las Vegas has a wide variety of bridal, evening, quinceañera dresses and much more...",
 };
 
 export default async function RootLayout({ children, params }) {
-  const GTM_ID = 'GTM-KQ3PK4HG';
+  const GTM_ID = "GTM-KQ3PK4HG";
   return (
     <html lang="en">
       <Script id="google-tag-manager" strategy="afterInteractive">
@@ -29,15 +29,19 @@ export default async function RootLayout({ children, params }) {
         })(window,document,'script','dataLayer','${GTM_ID}');
         `}
       </Script>
-      <body className={'max-w-full'}>
+      <body
+        className={
+          "max-w-full from-blue-600 via-blue-700 to-purple-800 bg-gradient-to-br min-h-screen overflow-x-hidden font-sans text-gray-900 antialiased"
+        }
+      >
         {/* Session provider */}
         <CustomSesionProvider>
           {/* Navbar */}
-          <HeaderComponent lang={params.lang} />
+          {/* <HeaderComponent lang={params.lang} /> */}
           {children}
           {/* Footer */}
-          <FooterComponent lang={params.lang} />
-          <BackToTopButton />
+          {/* <FooterComponent lang={params.lang} /> */}
+          {/* <BackToTopButton /> */}
           <WhatsAppButton lang={params.lang} />
         </CustomSesionProvider>
         <noscript
